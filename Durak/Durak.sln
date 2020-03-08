@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardLibrary", "CardLibrary\CardLibrary.csproj", "{5BD6A3DF-A6BA-437A-8439-7F7761527E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DurakLibrary", "DurakLibrary\DurakLibrary.csproj", "{79ECFFDC-DB19-4EA8-8018-CC0930004EDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BD6A3DF-A6BA-437A-8439-7F7761527E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BD6A3DF-A6BA-437A-8439-7F7761527E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BD6A3DF-A6BA-437A-8439-7F7761527E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BD6A3DF-A6BA-437A-8439-7F7761527E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79ECFFDC-DB19-4EA8-8018-CC0930004EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79ECFFDC-DB19-4EA8-8018-CC0930004EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79ECFFDC-DB19-4EA8-8018-CC0930004EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79ECFFDC-DB19-4EA8-8018-CC0930004EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE314422-C6DE-45D1-A69C-1EF94CCDEF56}
+	EndGlobalSection
+EndGlobal

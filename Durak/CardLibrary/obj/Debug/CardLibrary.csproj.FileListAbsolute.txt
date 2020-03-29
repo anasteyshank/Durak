@@ -1,0 +1,8 @@
+D:\Apps\Downloads\Git\Durak\Durak\CardLibrary\bin\Debug\CardLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\CardLibrary\bin\Debug\CardLibrary.pdb
+D:\Apps\Downloads\Git\Durak\Durak\CardLibrary\obj\Debug\CardLibrary.csprojAssemblyReference.cache
+D:\Apps\Downloads\Git\Durak\Durak\CardLibrary\obj\Debug\CardLibrary.Properties.Resources.resources
+D:\Apps\Downloads\Git\Durak\Durak\CardLibrary\obj\Debug\CardLibrary.csproj.GenerateResource.cache
+D:\Apps\Downloads\Git\Durak\Durak\CardLibrary\obj\Debug\CardLibrary.csproj.CoreCompileInputs.cache
+D:\Apps\Downloads\Git\Durak\Durak\CardLibrary\obj\Debug\CardLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\CardLibrary\obj\Debug\CardLibrary.pdb

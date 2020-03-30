@@ -20,7 +20,7 @@ namespace DurakLibrary
     {
         #region Fields and Properties
         private int currentCard;        // Points to the next card in the deck   
-        private Deck playDeck;          // A deck of cards used for the game
+        private DurakDeck playDeck;     // A deck of cards used for the game
         private Player[] players;       // An array of Player objects
         private Cards discardedCards;   // A collection of cards that have been discarded by players
 
@@ -36,7 +36,7 @@ namespace DurakLibrary
         public Game()
         {
             currentCard = 0;                     // Points to the 1st card in the deck   
-            playDeck = new Deck(true);           // Set a default deck
+            playDeck = new DurakDeck();          // Set a default deck
             playDeck.Shuffle();                  // Shuffle the deck
             discardedCards = new Cards();        // Empty cards collection
         }
@@ -69,7 +69,7 @@ namespace DurakLibrary
             for (int player = 0; player < players.Length; player++)
             {
                 // Deal cards from the remaining deck
-                for (int card = 0; card < NumberOfCards; card++)
+                for (int card = players[player].PlayHand.Count; card < NumberOfCards; card++)
                     players[player].PlayHand.Add(playDeck.GetCard(currentCard++));
             }
         }

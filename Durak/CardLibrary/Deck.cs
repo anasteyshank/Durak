@@ -18,7 +18,7 @@ namespace CardLibrary
     public class Deck : ICloneable
     {
         #region Fields and Properties
-        private Cards cards = new Cards();      // a Cards collection
+        protected Cards cards = new Cards();    // a Cards collection
         private static bool useJokers = false;  // flag for jokers usage
         #endregion
 

@@ -11,16 +11,11 @@
  * @see     Beginning Visual C# 2012 Programming By Karli Watson, et al.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CardLibrary;
 
 namespace DurakLibrary
 {
-    class DurakDeck : Deck
+    public class DurakDeck : Deck
     {
         #region Fields and Properties
         private static int lowestRankValue = 6; // the lowest possible rank in the deck
@@ -31,17 +26,26 @@ namespace DurakLibrary
         /// Nondefault constructor. A standard constructor for the Durak deck.
         /// </summary>
         /// <param name="trump"></param>
-        public DurakDeck() : base(false)
+        public DurakDeck()
         {
             PlayingCard.IsAceHigh = true;   // set aces to be high
             PlayingCard.UseTrumps = true;   // use trump suits
 
-            // remove cards with the ranks lower than the lowest possible rank
-            foreach (PlayingCard card in cards)
+            int numberOfRanks = 14;
+            int rankVal = 1;
+
+            // Add aces in the deck to the Cards collection
+            for (int suitVal = 0; suitVal < 4; suitVal++)
             {
-                if ((int)card.Rank < lowestRankValue && card.Rank != CardRank.Ace)
+                cards.Add(new PlayingCard((CardRank)rankVal, (CardSuit)suitVal));
+            }
+
+            // Add aces in the deck to the Cards collection
+            for (int suitVal = 0; suitVal < 4; suitVal++)
+            {
+                for (rankVal = lowestRankValue; rankVal < numberOfRanks; rankVal++)
                 {
-                    cards.Remove(card);
+                    cards.Add(new PlayingCard((CardRank)rankVal, (CardSuit)suitVal));
                 }
             }
         }

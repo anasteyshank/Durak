@@ -160,8 +160,8 @@
   <data name="Clubs_Three" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clubs_Three.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Clubs_Two" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clubs_Two.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Clubs_Deuce" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clubs_Deuce.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Diamonds_Ace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Diamonds_Ace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +199,8 @@
   <data name="Diamonds_Three" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Diamonds_Three.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Diamonds_Two" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Diamonds_Two.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Diamonds_Deuce" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Diamonds_Deuce.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hearts_Ace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hearts_Ace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +238,8 @@
   <data name="Hearts_Three" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hearts_Three.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hearts_Two" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hearts_Two.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Hearts_Deuce" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_Deuce.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Red_Joker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Red_Joker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,7 +280,7 @@
   <data name="Spades_Three" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Spades_Three.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Spades_Two" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Spades_Two.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Spades_Deuce" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spades_Deuce.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

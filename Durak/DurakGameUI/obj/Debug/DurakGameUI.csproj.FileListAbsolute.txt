@@ -15,9 +15,7 @@ D:\Computer Programmer - WINTER 2020\OOP III\Project\Durak-master\Durak\DurakGam
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\DurakGameUI.exe.config
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\DurakGameUI.exe
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\DurakGameUI.pdb
-D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\CardBox.dll
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\CardLibrary.dll
-D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\CardBox.pdb
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\CardLibrary.pdb
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Debug\DurakGameUI.csprojAssemblyReference.cache
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Debug\DurakGameUI.frmDurak.resources
@@ -27,3 +25,7 @@ D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Debug\DurakGameUI.csproj.CoreC
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Debug\DurakGameUI.csproj.CopyComplete
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Debug\DurakGameUI.exe
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Debug\DurakGameUI.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\DurakLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\MyCardBox.dll
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\DurakLibrary.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\MyCardBox.pdb

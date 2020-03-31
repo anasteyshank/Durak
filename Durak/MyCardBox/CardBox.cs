@@ -1,13 +1,11 @@
 ﻿/**
  * CardBox.cs - The CardBox class
  * 
- * CardBox class represents a custom user control.
- * 
  * @author  Anastasiia Kononirenko
  * @author  Harry Palmer
  * @author  Andrew Rocha
  * @author  Natan Colavite Dellagiustina
- * @since   2020-03-07
+ * @since   2020-03-25
  * @see     https://www.youtube.com/watch?v=gK6bJ9IudW8&list=PLfNfAX7mRzNqDFJr-9UJZ6praJY10fXvY&index=3
  */
 
@@ -16,11 +14,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using CardLibrary;
 
-namespace CardBox
+namespace MyCardBox
 {
-    /// <summary>
-    /// A control to use in a Windows Forms Application that displays a playing card.
-    /// </summary>
     public partial class CardBox: UserControl
     {
         #region Fields and Properties
@@ -108,6 +103,23 @@ namespace CardBox
             }
             get { return myOrientation; }
         }
+
+        /// <summary>
+        /// UpdateCardImage Helper Method: sets the PictureBox image using
+        /// the underlying card and the orientation
+        /// </summary>
+        private void UpdateCardImage()
+        {
+            // set the image using the underlying card
+            pbMyPictureBox.Image = myCard.GetCardImage();
+
+            // if the orientation is horizontal 
+            if (myOrientation == Orientation.Horizontal)
+            {
+                // rotate the image
+                pbMyPictureBox.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            }
+        }
         #endregion
 
         #region Constructors
@@ -168,23 +180,6 @@ namespace CardBox
         #endregion
 
         #region Other Methods
-        /// <summary>
-        /// UpdateCardImage Helper Method: sets the PictureBox image using
-        /// the underlying card and the orientation
-        /// </summary>
-        private void UpdateCardImage()
-        {
-            // set the image using the underlying card
-            pbMyPictureBox.Image = myCard.GetCardImage();
-
-            // if the orientation is horizontal 
-            if (myOrientation == Orientation.Horizontal)
-            {
-                // rotate the image
-                pbMyPictureBox.Image.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            }
-        }
-
         /// <summary>
         /// ToString: Overrides System.Object.ToString()
         /// </summary>

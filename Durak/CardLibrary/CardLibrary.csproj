@@ -59,13 +59,14 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Spades_Three.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Spades_Two.png" />
+    <None Include="Resources\Spades_Deuce.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Back.png" />
@@ -110,7 +111,7 @@
     <None Include="Resources\Clubs_Three.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Clubs_Two.png" />
+    <None Include="Resources\Clubs_Deuce.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Diamonds_Ace.png" />
@@ -149,7 +150,7 @@
     <None Include="Resources\Diamonds_Three.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Diamonds_Two.png" />
+    <None Include="Resources\Diamonds_Deuce.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Hearts_Ace.png" />
@@ -188,7 +189,7 @@
     <None Include="Resources\Hearts_Three.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Hearts_Two.png" />
+    <None Include="Resources\Hearts_Deuce.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Red_Joker.png" />

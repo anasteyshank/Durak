@@ -7,7 +7,7 @@
  * @author  Harry Palmer
  * @author  Andrew Rocha
  * @author  Natan Colavite Dellagiustina
- * @since   2020-03-25
+ * @since   2020-04-04
  * @see     Beginning Visual C# 2012 Programming By Karli Watson, et al.
  */
 
@@ -26,7 +26,6 @@ using System.Windows.Forms;
 using MyCardBox;
 using CardLibrary;
 using DurakLibrary;
-using System.Diagnostics;
 
 namespace DurakGameUI
 {
@@ -41,16 +40,18 @@ namespace DurakGameUI
         /// <summary>
         /// The regular size of a CardBox control
         /// </summary>
-        static private Size regularSize = new Size(75, 107);
+        static private Size regularSize = new Size(94, 128);
 
         private Cards myDealer = new Cards(new DurakDeck());
 
         static private int numberOfCardsInHand = 6;
 
+        private int numberOfCardsInPlay = 0;
+
         /// <summary>
         /// Refers to the card being dragged from one panel to another.
         /// </summary>
-        private CardBox dragCard;
+        private PictureBox dragCard;
         #endregion
 
         #region Form and Static Event Handlers
@@ -79,10 +80,169 @@ namespace DurakGameUI
         {
             
         }
-        #endregion
-        
-        #region CardBox Event Handlers
 
+        /// <summary>
+        /// Make the mouse pointer a "move" pointer when a drag enters a Panel.
+        /// </summary>
+        private void Panel_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;  // Make the mouse pointer a "move" pointer
+        }
+
+        private void pnlPlayArea_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;  // Make the mouse pointer a "move" pointer
+        }
+
+        /// <summary>
+        /// Move a card/control when it is dropped from one Panel to another.
+        /// </summary>
+        private void Panel_DragDrop(object sender, DragEventArgs e)
+        {
+            // If there is a CardBox to move
+            if (dragCard != null)
+            {
+                // Determine which Panel is which
+                Panel thisPanel = sender as Panel;
+                Panel fromPanel = dragCard.Parent.Parent as Panel;
+
+                // If neither panel is null (no conversion issue)
+                if (thisPanel != null && fromPanel != null)
+                {
+                    // if the Panels are not the same 
+                    if (thisPanel != fromPanel)
+                    {
+                        // (this would happen if a card is dragged from one spot in the Panel to another)
+                        // Remove the card from the Panel it started in
+                        fromPanel.Controls.Remove(dragCard.Parent);
+                        // Add the card to the Panel it was dropped in 
+                        thisPanel.Controls.Add(dragCard.Parent);
+                        // Realign cards in both Panels
+                        RealignCards(thisPanel);
+                        RealignCards(fromPanel);
+                    }
+                }
+            }
+        }
+
+        private void pnlPlayArea_DragDrop(object sender, DragEventArgs e)
+        {
+            // If there is a CardBox to move
+            if (dragCard != null)
+            {
+                // Determine which Panel is which
+                Panel thisPanel = sender as Panel;
+                Panel fromPanel = dragCard.Parent.Parent as Panel;
+
+                // If neither panel is null (no conversion issue)
+                if (thisPanel != null && fromPanel != null)
+                {
+                    // if the Panels are not the same 
+                    if (thisPanel != fromPanel)
+                    {
+                        // (this would happen if a card is dragged from one spot in the Panel to another)
+                        // Remove the card from the Panel it started in
+                        fromPanel.Controls.Remove(dragCard.Parent);
+                        // Add the card to the Panel it was dropped in 
+                        thisPanel.Controls.Add(dragCard.Parent);
+                        // Realign cards in both Panels
+                        RealignCards(fromPanel);
+
+                        dragCard.MouseDown -= CardBox_MouseDown;
+                        dragCard.DragEnter -= CardBox_DragEnter;
+                        dragCard.DragDrop -= CardBox_DragDrop;
+                        dragCard.MouseEnter -= CardBox_MouseEnter;
+                        dragCard.MouseLeave -= CardBox_MouseLeave;
+
+                        numberOfCardsInPlay++;
+
+                        AddCardToPlayArea(thisPanel.Controls[thisPanel.Controls.Count - 1]);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region CardBox Event Handlers
+        /// <summary>
+        /// CardBox controls grow in size when the mouse is over it.
+        /// </summary>
+        void CardBox_MouseEnter(object sender, EventArgs e)
+        {
+            // Convert sender to a CardBox
+            PictureBox aCardBox = sender as PictureBox;
+
+            // If the conversion worked
+            if (aCardBox != null)
+            {
+                // Enlarge the card for visual effect
+                aCardBox.Parent.Size = new Size(regularSize.Width + POP, regularSize.Height + POP);
+                // move the card to the top edge of the panel.
+                aCardBox.Parent.Top = 0;
+            }
+        }
+
+        /// <summary>
+        /// CardBox control shrinks to regular size when the mouse leaves.
+        /// </summary>
+        void CardBox_MouseLeave(object sender, EventArgs e)
+        {
+            // Convert sender to a CardBox
+            PictureBox aCardBox = sender as PictureBox;
+            // If the conversion worked
+            if (aCardBox != null)
+            {
+                aCardBox.Parent.Size = regularSize; // resize the card back to regular size
+                aCardBox.Parent.Top = POP;          // move the card down to accommodate for the smaller size.
+            }
+        }
+
+        /// <summary>
+        /// Initiate a card move on the start of a drag.
+        /// </summary>
+        private void CardBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Set dragCard 
+            dragCard = sender as PictureBox;
+            // If the conversion worked
+            if (dragCard != null)
+            {
+                // Set the data to be dragged and the allowed effect dragging will have.
+                DoDragDrop(dragCard, DragDropEffects.Move);
+            }
+        }
+
+        /// <summary>
+        /// When a drag is enters a card, enter the parent panel instead.
+        /// </summary>
+        private void CardBox_DragEnter(object sender, DragEventArgs e)
+        {
+            // Convert sender to a CardBox
+            PictureBox aCardBox = sender as PictureBox;
+
+            // If the conversion worked
+            if (aCardBox != null)
+            {
+                // Do the operation on the parent panel instead
+                Panel_DragEnter(aCardBox.Parent.Parent, e);
+            }
+        }
+
+        /// <summary>
+        /// When a drag is dropped on a card, drop on the parent panel instead.
+        /// </summary>
+        private void CardBox_DragDrop(object sender, DragEventArgs e)
+        {
+            // Convert sender to a CardBox
+            PictureBox aCardBox = sender as PictureBox;
+
+            // If the conversion worked
+            if (aCardBox != null)
+            {
+                // Do the operation on the parent panel instead
+                Panel_DragDrop(aCardBox.Parent.Parent, e);
+            }
+        }
         #endregion
 
         #region Helper Methods
@@ -92,9 +252,18 @@ namespace DurakGameUI
             {
                 CardBox computerCard = new CardBox(myDealer.DrawNextCard());
                 CardBox playerCard = new CardBox(myDealer.DrawNextCard());
-                
+
+                computerCard.Card = new PlayingCard();
                 playerCard.FaceUp = true;
-                computerCard.Card = new PlayingCard();   
+
+                playerCard.BackColor = Color.Transparent;
+                computerCard.BackColor = Color.Transparent;
+
+                playerCard.Controls[0].MouseDown += CardBox_MouseDown;
+                playerCard.Controls[0].DragEnter += CardBox_DragEnter;
+                playerCard.Controls[0].DragDrop += CardBox_DragDrop;
+                playerCard.Controls[0].MouseEnter += CardBox_MouseEnter;
+                playerCard.Controls[0].MouseLeave += CardBox_MouseLeave;
 
                 pnlCPUHand.Controls.Add(computerCard);
                 pnlPlayerHand.Controls.Add(playerCard);
@@ -151,10 +320,6 @@ namespace DurakGameUI
                     // Set the start point to where the left-hand edge of the "first" card should be.
                     startPoint = (panelHand.Width - allCardsWidth) / 2;
                 }
-                // Aligning the cards: Note that I align them in reserve order from how they
-                // are stored in the controls collection. This is so that cards on the left 
-                // appear underneath cards to the right. This allows the user to see the rank
-                // and suit more easily.
 
                 // Align the "first" card (which is the last control in the collection)
                 panelHand.Controls[myCount - 1].Top = POP;
@@ -168,6 +333,35 @@ namespace DurakGameUI
                     panelHand.Controls[index].Left = panelHand.Controls[index + 1].Left + offset;
                 }
             }
+        }
+
+        private void AddCardToPlayArea(Control control)
+        {
+            if (numberOfCardsInPlay == 1)
+            {
+                control.Location = new Point(16, 16);
+            }
+            else if (numberOfCardsInPlay == 2)
+            {
+                control.Location = new Point(16, 16 * 5);
+            }
+            else if (numberOfCardsInPlay == 3)
+            {
+                control.Location = new Point(16 * 7, 16);
+            }
+            else if (numberOfCardsInPlay == 4)
+            {
+                control.Location = new Point(16 * 7, 16 * 5);
+            }
+            else if (numberOfCardsInPlay == 5)
+            {
+                control.Location = new Point(16 * 13, 16);
+            }
+            else if (numberOfCardsInPlay == 6)
+            {
+                control.Location = new Point(16 * 13, 16 * 5);
+            }
+            control.BringToFront();
         }
         #endregion
     }

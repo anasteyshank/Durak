@@ -45,13 +45,6 @@ namespace DurakLibrary
         /// Indicates whether the player has won the game
         /// </summary>
         /// <returns>true if player has no cards left</returns>
-        public bool HasWon()
-        {
-            bool won = false;   // a return value
-            // Player wins if they have no cards left
-            if (PlayHand.Count == 0) won = true;
-            return won;
-        }
         #endregion
     }
 }

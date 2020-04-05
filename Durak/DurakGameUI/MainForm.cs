@@ -48,6 +48,10 @@ namespace DurakGameUI
 
         private int numberOfCardsInPlay = 0;
 
+        private bool computerAttacks = false;
+
+        private Game game;
+
         /// <summary>
         /// Refers to the card being dragged from one panel to another.
         /// </summary>
@@ -248,10 +252,16 @@ namespace DurakGameUI
         #region Helper Methods
         private void StartGame()
         {
+            game = new Game();
+            
+            // Set players' hands
             for (int index = 0; index < numberOfCardsInHand; index++)
             {
-                CardBox computerCard = new CardBox(myDealer.DrawNextCard());
-                CardBox playerCard = new CardBox(myDealer.DrawNextCard());
+                PlayingCard computerPlayingCard = myDealer.DrawNextCard();
+                PlayingCard playerPlayingCard = myDealer.DrawNextCard();
+
+                CardBox computerCard = new CardBox(computerPlayingCard);
+                CardBox playerCard = new CardBox(playerPlayingCard);
 
                 computerCard.Card = new PlayingCard();
                 playerCard.FaceUp = true;
@@ -267,17 +277,33 @@ namespace DurakGameUI
 
                 pnlCPUHand.Controls.Add(computerCard);
                 pnlPlayerHand.Controls.Add(playerCard);
+
+                game.Computer.PlayHand.Add(computerPlayingCard);
+                game.Human.PlayHand.Add(playerPlayingCard);
             }
 
+            // Last card in the deck
             PlayingCard lastCard = myDealer[myDealer.Count - 1];
             pbTrump.FaceUp = true;
             pbTrump.Suit = lastCard.Suit;
             pbTrump.Rank = lastCard.Rank;
 
-            PlayingCard.TrumpSuit = lastCard.Suit;
+            PlayingCard.TrumpSuit = lastCard.Suit;  // Set trump suit
 
+            // Realign cards in the hands
             RealignCards(pnlCPUHand);
             RealignCards(pnlPlayerHand);
+
+            if (game.GetHighestCard(game.Human.PlayHand) > game.GetHighestCard(game.Computer.PlayHand))
+            {
+                computerAttacks = false;
+            }
+            else
+            {
+                System.Diagnostics.Debug.Print("I'm attacking");
+                computerAttacks = true;
+                ComputerAttacks();
+            }
         }
 
         /// <summary>
@@ -362,6 +388,26 @@ namespace DurakGameUI
                 control.Location = new Point(16 * 13, 16 * 5);
             }
             control.BringToFront();
+        }
+
+        private void ComputerAttacks()
+        {
+            PlayingCard attackCard = game.ComputerAttacks();
+            CardBox playCard = new CardBox(attackCard);
+            playCard.FaceUp = true;
+            playCard.BackColor = Color.Transparent;
+
+            if (game.ComputerFoundCard)
+            {
+                pnlCPUHand.Controls.RemoveAt(0);
+                pnlPlayArea.Controls.Add(playCard);
+
+                RealignCards(pnlCPUHand);
+
+                numberOfCardsInPlay++;
+
+                AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
+            }
         }
         #endregion
     }

@@ -24,6 +24,11 @@ namespace DurakLibrary
         private Player[] players;       // An array of Player objects
         private Cards discardedCards;   // A collection of cards that have been discarded by players
 
+        public Player Computer { get; set; }
+        public Player Human { get; set; }
+        public Cards CardsInPlay { get; set; }
+        public bool ComputerFoundCard = false;
+
         public static int MinimumNumberOfPlayers = 2;   // Minimum number of players
         public static int MaximumNumberOfPlayers = 7;   // Maximum number of players
         public static int NumberOfCards = 6;            // Number of cards in the game
@@ -35,52 +40,138 @@ namespace DurakLibrary
         /// </summary>
         public Game()
         {
-            currentCard = 0;                     // Points to the 1st card in the deck   
-            playDeck = new DurakDeck();          // Set a default deck
-            playDeck.Shuffle();                  // Shuffle the deck
-            discardedCards = new Cards();        // Empty cards collection
+            Human = new Player("Human");
+            Computer = new Player("Computer");
+            CardsInPlay = new Cards();
         }
         #endregion
 
         #region Public Methods
-        /// <summary>
-        /// Set an array of players 
-        /// </summary>
-        /// <param name="newPlayers"></param>
-        public void SetPlayers(Player[] newPlayers)
+        public PlayingCard GetHighestCard(Cards cards)
         {
-            // If more than a defined maximum number of players want to the game, throw an exception
-            if (newPlayers.Length > MaximumNumberOfPlayers)
-                throw new ArgumentException("A maximum of " + MaximumNumberOfPlayers + " players may play this game.");
+            PlayingCard highestCard = cards[0];
 
-            // If less than a defined minimum number of players want to the game, throw an exception
-            if (newPlayers.Length < MinimumNumberOfPlayers)
-                throw new ArgumentException("A minimum of " + MinimumNumberOfPlayers + " players may play this game.");
-
-            players = newPlayers;   // Set an array of players
-        }
-
-        /// <summary>
-        /// A method to deal cards
-        /// </summary>
-        private void DealHands()
-        {
-            // Loop through the players of the game:
-            for (int player = 0; player < players.Length; player++)
+            for (int index = 1; index < cards.Count; index++)
             {
-                // Deal cards from the remaining deck
-                for (int card = players[player].PlayHand.Count; card < NumberOfCards; card++)
-                    players[player].PlayHand.Add(playDeck.GetCard(currentCard++));
+                if (cards[index] > highestCard)
+                {
+                    highestCard = cards[index];
+                }
             }
+            return highestCard;
         }
 
-        /// <summary>
-        /// The main logic of the card game
-        /// </summary>
-        /// <returns></returns>
-        public void PlayGame()
+        public PlayingCard GetLowestCard(Cards cards)
         {
+            PlayingCard lowestCard = cards[0];
 
+            for (int index = 1; index < cards.Count; index++)
+            {
+                if (cards[index] < lowestCard)
+                {
+                    lowestCard = cards[index];
+                }
+            }
+            return lowestCard;
+        }
+
+        private Cards GetLowestCards(Cards cards)
+        {
+            Cards returnCards = new Cards();
+            PlayingCard lowestCard = cards[0];
+
+            for (int index = 1; index < cards.Count; index++)
+            {
+                if (cards[index] < lowestCard)
+                {
+                    lowestCard = cards[index];
+                }
+            }
+
+            returnCards.Add(lowestCard);
+
+            for (int index = 1; index < cards.Count; index++)
+            {
+                if (cards[index].Rank == lowestCard.Rank && cards[index] != lowestCard && cards[index].Suit != PlayingCard.TrumpSuit)
+                {
+                    returnCards.Add(cards[index]);
+                }
+            }
+            return returnCards;
+        }
+
+        private PlayingCard GetMostPopularCard(Cards cards)
+        {
+            int[] ranksInHand = new int[cards.Count];
+            int returnIndex = 0;
+
+            for (int rankIndex = 0; rankIndex < cards.Count; rankIndex++)
+            {
+                for (int index = 0; index < Computer.PlayHand.Count; index++)
+                {
+                    if (Computer.PlayHand[index].Rank == cards[rankIndex].Rank)
+                    {
+                        ranksInHand[rankIndex]++;
+                    }
+                }
+            }
+
+            for (int index = 1; index < cards.Count; index++)
+            {
+                if (ranksInHand[index] > ranksInHand[returnIndex])
+                {
+                    returnIndex = index;
+                }
+            }
+
+            return cards[returnIndex];
+        }
+
+        public PlayingCard ComputerAttacks()
+        {
+            ComputerFoundCard = false;
+            PlayingCard returnCard = new PlayingCard();
+
+            if (CardsInPlay.Count == 0)
+            {
+                ComputerFoundCard = true;
+
+                bool onlyTrumpSuit = true;
+                for (int index = 0; index < Computer.PlayHand.Count && onlyTrumpSuit; index++)
+                {
+                    if (Computer.PlayHand[index].Suit != PlayingCard.TrumpSuit)
+                    {
+                        onlyTrumpSuit = false;
+                    }
+                }
+
+                if (onlyTrumpSuit)
+                {
+                    returnCard = GetLowestCard(Computer.PlayHand);
+                }
+                else
+                {
+                    Cards lowestCards = GetLowestCards(Computer.PlayHand);
+                    if (lowestCards.Count == 1)
+                    {
+                        returnCard = lowestCards[0];
+                    }
+                    else
+                    {
+                        returnCard = GetMostPopularCard(lowestCards);
+                    }
+                }
+            }
+            else
+            {
+
+            }
+
+            if (ComputerFoundCard)
+            {
+                Computer.PlayHand.Remove(returnCard);
+            }
+            return returnCard;
         }
         #endregion
     }

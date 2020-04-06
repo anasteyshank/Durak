@@ -50,6 +50,8 @@ namespace DurakGameUI
 
         private bool computerAttacks = false;
 
+        private bool playerTakes = false;
+
         private Game game;
 
         /// <summary>
@@ -82,7 +84,7 @@ namespace DurakGameUI
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            
+            StartGame();
         }
 
         /// <summary>
@@ -134,33 +136,54 @@ namespace DurakGameUI
             // If there is a CardBox to move
             if (dragCard != null)
             {
-                // Determine which Panel is which
-                Panel thisPanel = sender as Panel;
-                Panel fromPanel = dragCard.Parent.Parent as Panel;
-
-                // If neither panel is null (no conversion issue)
-                if (thisPanel != null && fromPanel != null)
+                CardBox humanCardBox = (CardBox)dragCard.Parent;
+                PlayingCard humanCard = new PlayingCard(humanCardBox.Rank, humanCardBox.Suit);
+                if ((computerAttacks && humanCard > game.CardsInPlay[game.CardsInPlay.Count - 1] && 
+                    (humanCard.Suit == game.CardsInPlay[game.CardsInPlay.Count - 1].Suit || humanCard.Suit == PlayingCard.TrumpSuit)) || 
+                    (!computerAttacks && game.CanAttack(humanCard)) || 
+                    (!computerAttacks && numberOfCardsInPlay == 0))
                 {
-                    // if the Panels are not the same 
-                    if (thisPanel != fromPanel)
+                    // Determine which Panel is which
+                    Panel thisPanel = sender as Panel;
+                    Panel fromPanel = dragCard.Parent.Parent as Panel;
+
+                    // If neither panel is null (no conversion issue)
+                    if (thisPanel != null && fromPanel != null)
                     {
-                        // (this would happen if a card is dragged from one spot in the Panel to another)
-                        // Remove the card from the Panel it started in
-                        fromPanel.Controls.Remove(dragCard.Parent);
-                        // Add the card to the Panel it was dropped in 
-                        thisPanel.Controls.Add(dragCard.Parent);
-                        // Realign cards in both Panels
-                        RealignCards(fromPanel);
+                        // if the Panels are not the same 
+                        if (thisPanel != fromPanel)
+                        {
+                            // (this would happen if a card is dragged from one spot in the Panel to another)
+                            // Remove the card from the Panel it started in
+                            fromPanel.Controls.Remove(dragCard.Parent);
+                            // Add the card to the Panel it was dropped in 
+                            thisPanel.Controls.Add(dragCard.Parent);
+                            // Realign cards in both Panels
+                            RealignCards(fromPanel);
 
-                        dragCard.MouseDown -= CardBox_MouseDown;
-                        dragCard.DragEnter -= CardBox_DragEnter;
-                        dragCard.DragDrop -= CardBox_DragDrop;
-                        dragCard.MouseEnter -= CardBox_MouseEnter;
-                        dragCard.MouseLeave -= CardBox_MouseLeave;
+                            dragCard.MouseDown -= CardBox_MouseDown;
+                            dragCard.DragEnter -= CardBox_DragEnter;
+                            dragCard.DragDrop -= CardBox_DragDrop;
+                            dragCard.MouseEnter -= CardBox_MouseEnter;
+                            dragCard.MouseLeave -= CardBox_MouseLeave;
 
-                        numberOfCardsInPlay++;
+                            numberOfCardsInPlay++;
 
-                        AddCardToPlayArea(thisPanel.Controls[thisPanel.Controls.Count - 1]);
+                            game.Human.PlayHand.Remove(humanCard);
+
+                            game.CardsInPlay.Add(humanCard);
+
+                            AddCardToPlayArea(thisPanel.Controls[thisPanel.Controls.Count - 1]);
+                        }
+                    }
+
+                    if (computerAttacks)
+                    {
+                        ComputerAttacks();
+                    }
+                    else
+                    {
+                        ComputerDefends();
                     }
                 }
             }
@@ -253,34 +276,8 @@ namespace DurakGameUI
         private void StartGame()
         {
             game = new Game();
-            
-            // Set players' hands
-            for (int index = 0; index < numberOfCardsInHand; index++)
-            {
-                PlayingCard computerPlayingCard = myDealer.DrawNextCard();
-                PlayingCard playerPlayingCard = myDealer.DrawNextCard();
 
-                CardBox computerCard = new CardBox(computerPlayingCard);
-                CardBox playerCard = new CardBox(playerPlayingCard);
-
-                computerCard.Card = new PlayingCard();
-                playerCard.FaceUp = true;
-
-                playerCard.BackColor = Color.Transparent;
-                computerCard.BackColor = Color.Transparent;
-
-                playerCard.Controls[0].MouseDown += CardBox_MouseDown;
-                playerCard.Controls[0].DragEnter += CardBox_DragEnter;
-                playerCard.Controls[0].DragDrop += CardBox_DragDrop;
-                playerCard.Controls[0].MouseEnter += CardBox_MouseEnter;
-                playerCard.Controls[0].MouseLeave += CardBox_MouseLeave;
-
-                pnlCPUHand.Controls.Add(computerCard);
-                pnlPlayerHand.Controls.Add(playerCard);
-
-                game.Computer.PlayHand.Add(computerPlayingCard);
-                game.Human.PlayHand.Add(playerPlayingCard);
-            }
+            DealCards();
 
             // Last card in the deck
             PlayingCard lastCard = myDealer[myDealer.Count - 1];
@@ -290,18 +287,23 @@ namespace DurakGameUI
 
             PlayingCard.TrumpSuit = lastCard.Suit;  // Set trump suit
 
-            // Realign cards in the hands
-            RealignCards(pnlCPUHand);
-            RealignCards(pnlPlayerHand);
-
-            if (game.GetHighestCard(game.Human.PlayHand) > game.GetHighestCard(game.Computer.PlayHand))
+            PlayingCard humanCard = game.GetLowestTrump(game.Human.PlayHand);
+            PlayingCard computerCard = game.GetLowestTrump(game.Computer.PlayHand);
+            computerAttacks = true;
+            if (humanCard.Suit == PlayingCard.TrumpSuit && computerCard.Suit != PlayingCard.TrumpSuit)
             {
                 computerAttacks = false;
             }
-            else
+            else if (humanCard.Suit != PlayingCard.TrumpSuit && computerCard.Suit == PlayingCard.TrumpSuit)
             {
-                System.Diagnostics.Debug.Print("I'm attacking");
                 computerAttacks = true;
+            }
+            else if (humanCard < computerCard)
+            {
+                computerAttacks = false;
+            }
+            if (computerAttacks)
+            {
                 ComputerAttacks();
             }
         }
@@ -363,52 +365,206 @@ namespace DurakGameUI
 
         private void AddCardToPlayArea(Control control)
         {
+            const int STARTING_POINT = 16;
+            const int HORIZONTAL_INCREASE = 131;
+            const int VERTICAL_INCREASE = 5;
+
+            System.Diagnostics.Debug.Print(numberOfCardsInPlay.ToString());
+
             if (numberOfCardsInPlay == 1)
             {
-                control.Location = new Point(16, 16);
+                control.Location = new Point(STARTING_POINT, STARTING_POINT);
             }
             else if (numberOfCardsInPlay == 2)
             {
-                control.Location = new Point(16, 16 * 5);
+                control.Location = new Point(STARTING_POINT, STARTING_POINT * VERTICAL_INCREASE);
             }
-            else if (numberOfCardsInPlay == 3)
+            else
             {
-                control.Location = new Point(16 * 7, 16);
+                if (numberOfCardsInPlay % 2 == 0)
+                {
+                    control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay - 3)), STARTING_POINT * VERTICAL_INCREASE);
+                }
+                else
+                {
+                    control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay - 2)), STARTING_POINT);
+                }
             }
-            else if (numberOfCardsInPlay == 4)
-            {
-                control.Location = new Point(16 * 7, 16 * 5);
-            }
-            else if (numberOfCardsInPlay == 5)
-            {
-                control.Location = new Point(16 * 13, 16);
-            }
-            else if (numberOfCardsInPlay == 6)
-            {
-                control.Location = new Point(16 * 13, 16 * 5);
-            }
+
             control.BringToFront();
+        }
+
+        private void DealCards()
+        {
+            bool dealMoreCards = false;
+
+            if (game.Human.PlayHand.Count < numberOfCardsInHand && myDealer.Count != 0)
+            {
+                dealMoreCards = true;
+                PlayingCard playerPlayingCard = myDealer.DrawNextCard();
+                CardBox playerCard = new CardBox(playerPlayingCard);
+
+                playerCard.FaceUp = true;
+                playerCard.BackColor = Color.Transparent;
+
+                playerCard.Controls[0].MouseDown += CardBox_MouseDown;
+                playerCard.Controls[0].DragEnter += CardBox_DragEnter;
+                playerCard.Controls[0].DragDrop += CardBox_DragDrop;
+                playerCard.Controls[0].MouseEnter += CardBox_MouseEnter;
+                playerCard.Controls[0].MouseLeave += CardBox_MouseLeave;
+
+                pnlPlayerHand.Controls.Add(playerCard);
+                game.Human.PlayHand.Add(playerPlayingCard);
+            }
+
+            if (game.Computer.PlayHand.Count < numberOfCardsInHand && myDealer.Count != 0)
+            {
+                dealMoreCards = true;
+
+                PlayingCard computerPlayingCard = myDealer.DrawNextCard();
+                CardBox computerCard = new CardBox(computerPlayingCard);
+
+                computerCard.Card = new PlayingCard();
+                computerCard.BackColor = Color.Transparent;
+
+                pnlCPUHand.Controls.Add(computerCard);
+                game.Computer.PlayHand.Add(computerPlayingCard);
+            }
+
+            // Realign cards in the hands
+            RealignCards(pnlCPUHand);
+            RealignCards(pnlPlayerHand);
+
+            if (dealMoreCards)
+            {
+                DealCards();
+            }
         }
 
         private void ComputerAttacks()
         {
-            PlayingCard attackCard = game.ComputerAttacks();
-            CardBox playCard = new CardBox(attackCard);
-            playCard.FaceUp = true;
-            playCard.BackColor = Color.Transparent;
-
-            if (game.ComputerFoundCard)
+            if (playerTakes)
             {
-                pnlCPUHand.Controls.RemoveAt(0);
-                pnlPlayArea.Controls.Add(playCard);
-
-                RealignCards(pnlCPUHand);
-
                 numberOfCardsInPlay++;
+            }
 
-                AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
+            if (numberOfCardsInPlay < numberOfCardsInHand * 2)
+            {
+                PlayingCard attackCard = game.ComputerAttacks();
+                CardBox playCard = new CardBox(attackCard);
+                playCard.FaceUp = true;
+                playCard.BackColor = Color.Transparent;
+
+                if (game.ComputerFoundCard)
+                {
+                    pnlCPUHand.Controls.RemoveAt(0);
+                    pnlPlayArea.Controls.Add(playCard);
+
+                    RealignCards(pnlCPUHand);
+
+                    numberOfCardsInPlay++;
+
+                    AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
+
+                    game.CardsInPlay.Add(attackCard);
+
+                    if (playerTakes)
+                    {
+                        ComputerAttacks();
+                    }
+                }
+                else
+                {
+                    NewRound();
+                    computerAttacks = false;
+                }
+            }
+            else
+            {
+                NewRound();
+                computerAttacks = false;
+            }
+        }
+
+        private void NewRound()
+        {
+            if (playerTakes)
+            {
+                PlayerPicksUp();
+            }
+
+            numberOfCardsInPlay = 0;
+            game.ComputerPicksUp = false;
+            for (int index = 0; pnlPlayArea.Controls.Count > 3;)
+            {
+                pnlPlayArea.Controls.RemoveAt(index);
+            }
+            game.CardsInPlay.Clear();
+            DealCards();
+
+            if (playerTakes)
+            {
+                playerTakes = false;
+                computerAttacks = true;
+                ComputerAttacks();
+            }
+        }
+
+        private void ComputerDefends()
+        {
+            if (!game.ComputerPicksUp)
+            {
+                PlayingCard defendCard = game.ComputerDefends();
+                if (!game.ComputerPicksUp)
+                {
+                    numberOfCardsInPlay++;
+
+                    CardBox newControl = new CardBox(defendCard);
+                    newControl.FaceUp = true;
+                    newControl.BackColor = Color.Transparent;
+
+                    pnlPlayArea.Controls.Add(newControl);
+                    AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
+
+                    pnlCPUHand.Controls.RemoveAt(0);
+                    RealignCards(pnlCPUHand);
+                }
             }
         }
         #endregion
+
+        private void btnPickUp_Click(object sender, EventArgs e)
+        {
+            playerTakes = true;
+            ComputerAttacks();
+            computerAttacks = true;
+        }
+
+        private void PlayerPicksUp()
+        {
+            for (int index = 0; index < game.CardsInPlay.Count;)
+            {
+                game.Human.PlayHand.Add(game.CardsInPlay[index]);
+                CardBox card = new CardBox(game.CardsInPlay[index]);
+                
+                card.Card = game.CardsInPlay[index];
+                card.FaceUp = true;
+
+                card.Controls[0].MouseDown += CardBox_MouseDown;
+                card.Controls[0].DragEnter += CardBox_DragEnter;
+                card.Controls[0].DragDrop += CardBox_DragDrop;
+                card.Controls[0].MouseEnter += CardBox_MouseEnter;
+                card.Controls[0].MouseLeave += CardBox_MouseLeave;
+
+                pnlPlayerHand.Controls.Add(card);
+                game.CardsInPlay.RemoveAt(index);
+            }
+            RealignCards(pnlPlayerHand);
+        }
+
+        private void btnReady_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

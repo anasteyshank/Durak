@@ -28,6 +28,8 @@ namespace DurakLibrary
         /// <param name="trump"></param>
         public DurakDeck()
         {
+            cards = new Cards();
+
             PlayingCard.IsAceHigh = true;   // set aces to be high
             PlayingCard.UseTrumps = true;   // use trump suits
 

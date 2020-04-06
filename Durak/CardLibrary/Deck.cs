@@ -18,7 +18,7 @@ namespace CardLibrary
     public class Deck : ICloneable
     {
         #region Fields and Properties
-        protected Cards cards = new Cards();    // a Cards collection
+        public Cards cards = new Cards();    // a Cards collection
         private static bool useJokers = false;  // flag for jokers usage
         #endregion
 
@@ -97,7 +97,7 @@ namespace CardLibrary
         public PlayingCard GetCard(int cardNum)
         {
             // Return the requested card if the index is within the range
-            if (cardNum >= 0 && cardNum <= 51)
+            if (cardNum >= 0 && cardNum <= cards.Count - 1)
                 return cards[cardNum];
             // Otherwise, throw an exception
             else
@@ -110,17 +110,17 @@ namespace CardLibrary
         public void Shuffle()
         {
             Cards newDeck = new Cards();        // temporary collection of cards
-            bool[] assigned = new bool[52];     // indicates if the spot is taken by the card
+            bool[] assigned = new bool[cards.Count];     // indicates if the spot is taken by the card
             Random sourceGen = new Random();    // generates a random number 
             // Loop through the deck of cards
-            for (int i = 0; i < 52; i++)
+            for (int i = 0; i < cards.Count; i++)
             {
                 int sourceCard = 0;       // index of the destination card
                 bool foundCard = false;   // indicates if the spot was found
                 // while the card isn't found
                 while (!foundCard)
                 {
-                    sourceCard = sourceGen.Next(52);    // generate a random number from 1 to 52
+                    sourceCard = sourceGen.Next(cards.Count);    // generate a random number from 1 to 52
                     // if the spot is found, quit the loop
                     if (assigned[sourceCard] == false)
                         foundCard = true;

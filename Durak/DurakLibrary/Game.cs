@@ -28,6 +28,7 @@ namespace DurakLibrary
         public Player Human { get; set; }
         public Cards CardsInPlay { get; set; }
         public bool ComputerFoundCard = false;
+        public bool ComputerPicksUp = false;
 
         public static int MinimumNumberOfPlayers = 2;   // Minimum number of players
         public static int MaximumNumberOfPlayers = 7;   // Maximum number of players
@@ -73,6 +74,28 @@ namespace DurakLibrary
                 }
             }
             return lowestCard;
+        }
+
+        public PlayingCard GetLowestTrump(Cards cards)
+        {
+            PlayingCard lowestCard = cards[0];
+
+            for (int index = 1; index < cards.Count; index++)
+            {
+                if (cards[index] < lowestCard && cards[index].Suit == PlayingCard.TrumpSuit)
+                {
+                    lowestCard = cards[index];
+                }
+            }
+
+            if (lowestCard.Suit == PlayingCard.TrumpSuit)
+            {
+                return lowestCard;
+            }
+            else
+            {
+                return GetLowestCard(cards);
+            }
         }
 
         private Cards GetLowestCards(Cards cards)
@@ -132,45 +155,154 @@ namespace DurakLibrary
             ComputerFoundCard = false;
             PlayingCard returnCard = new PlayingCard();
 
-            if (CardsInPlay.Count == 0)
+            if (Computer.PlayHand.Count != 0)
             {
-                ComputerFoundCard = true;
-
-                bool onlyTrumpSuit = true;
-                for (int index = 0; index < Computer.PlayHand.Count && onlyTrumpSuit; index++)
+                if (CardsInPlay.Count == 0)
                 {
-                    if (Computer.PlayHand[index].Suit != PlayingCard.TrumpSuit)
-                    {
-                        onlyTrumpSuit = false;
-                    }
-                }
-
-                if (onlyTrumpSuit)
-                {
-                    returnCard = GetLowestCard(Computer.PlayHand);
+                    ComputerFoundCard = true;
+                    returnCard = GetCardToAttack();
                 }
                 else
                 {
-                    Cards lowestCards = GetLowestCards(Computer.PlayHand);
-                    if (lowestCards.Count == 1)
+                    bool canAttack = false;
+                    for (int index = 0; index < Computer.PlayHand.Count && !canAttack; index++)
                     {
-                        returnCard = lowestCards[0];
+                        canAttack = CanAttack(Computer.PlayHand[index]);
                     }
-                    else
+
+                    if (canAttack)
                     {
-                        returnCard = GetMostPopularCard(lowestCards);
+                        ComputerFoundCard = true;
+                        returnCard = GetCardToAttack();
                     }
                 }
-            }
-            else
-            {
-
             }
 
             if (ComputerFoundCard)
             {
                 Computer.PlayHand.Remove(returnCard);
             }
+            return returnCard;
+        }
+
+        public bool CanAttack(PlayingCard card)
+        {
+            bool returnValue = false;
+
+            if (CardsInPlay.Count == 0)
+            {
+                returnValue = true;
+            }
+            else
+            {
+                for (int index = 0; index < CardsInPlay.Count && !returnValue; index++)
+                {
+                    if (card.Rank == CardsInPlay[index].Rank)
+                    {
+                        returnValue = true;
+                    }
+                }
+            }
+
+            return returnValue;
+        }
+
+        private PlayingCard GetCardToAttack()
+        {
+            Cards cardsList = new Cards();
+
+            if (CardsInPlay.Count == 0)
+            {
+                cardsList = Computer.PlayHand;
+            }
+            else
+            {
+                for (int index = 0; index < Computer.PlayHand.Count; index++)
+                {
+                    if (CanAttack(Computer.PlayHand[index]))
+                    {
+                        cardsList.Add(Computer.PlayHand[index]);
+                    }
+                }
+            }
+
+            PlayingCard returnCard = new PlayingCard();
+            bool onlyTrumpSuit = true;
+            for (int index = 0; index < Computer.PlayHand.Count && onlyTrumpSuit; index++)
+            {
+                if (Computer.PlayHand[index].Suit != PlayingCard.TrumpSuit)
+                {
+                    onlyTrumpSuit = false;
+                }
+            }
+
+            if (onlyTrumpSuit)
+            {
+                returnCard = GetLowestCard(cardsList);
+            }
+            else
+            {
+                Cards lowestCards = GetLowestCards(cardsList);
+                if (lowestCards.Count == 1)
+                {
+                    returnCard = lowestCards[0];
+                }
+                else
+                {
+                    returnCard = GetMostPopularCard(lowestCards);
+                }
+            }
+            return returnCard;
+        }
+
+        public PlayingCard ComputerDefends()
+        {
+            PlayingCard returnCard = new PlayingCard();
+            Cards defendCards = new Cards();
+            for (int index = 0; index < Computer.PlayHand.Count; index++)
+            {
+                if (Computer.PlayHand[index].Suit == CardsInPlay[CardsInPlay.Count - 1].Suit && Computer.PlayHand[index] > CardsInPlay[CardsInPlay.Count - 1])
+                {
+                    defendCards.Add(Computer.PlayHand[index]);
+                }
+            }
+
+            if (defendCards.Count > 0)
+            {
+                returnCard = GetLowestCard(defendCards);
+            }
+            else
+            {
+                if (CardsInPlay[CardsInPlay.Count - 1].Suit != PlayingCard.TrumpSuit)
+                {
+                    for (int index = 0; index < Computer.PlayHand.Count; index++)
+                    {
+                        if (Computer.PlayHand[index].Suit == PlayingCard.TrumpSuit)
+                        {
+                            defendCards.Add(Computer.PlayHand[index]);
+                        }
+                    }
+
+                    if (defendCards.Count > 0)
+                    {
+                        returnCard = GetLowestCard(defendCards);
+                    }
+                    else
+                    {
+                        ComputerPicksUp = true;
+                    }
+                }
+                else
+                {
+                    ComputerPicksUp = true;
+                }
+            }
+
+            if (!ComputerPicksUp)
+            {
+                Computer.PlayHand.Remove(returnCard);
+            }
+
             return returnCard;
         }
         #endregion

@@ -96,7 +96,17 @@ namespace DurakGameUI
 
         private void btnReady_Click(object sender, EventArgs e)
         {
-
+            computerAttacks = true;
+            if (game.ComputerPicksUp)
+            {
+                ComputerPicksUp();
+                computerAttacks = false;
+            }
+            NewRound();
+            if (computerAttacks)
+            {
+                ComputerAttacks();
+            }
         }
 
         /// <summary>
@@ -196,6 +206,10 @@ namespace DurakGameUI
                     else
                     {
                         ComputerDefends();
+                        if (game.ComputerPicksUp)
+                        {
+                            numberOfCardsInHand++;
+                        }
                     }
                 }
             }
@@ -378,29 +392,16 @@ namespace DurakGameUI
         private void AddCardToPlayArea(Control control)
         {
             const int STARTING_POINT = 16;
-            const int HORIZONTAL_INCREASE = 131;
+            const int HORIZONTAL_INCREASE = 111;
             const int VERTICAL_INCREASE = 5;
 
-            System.Diagnostics.Debug.Print(numberOfCardsInPlay.ToString());
-
-            if (numberOfCardsInPlay == 1)
+            if (numberOfCardsInPlay % 2 == 0)
             {
-                control.Location = new Point(STARTING_POINT, STARTING_POINT);
-            }
-            else if (numberOfCardsInPlay == 2)
-            {
-                control.Location = new Point(STARTING_POINT, STARTING_POINT * VERTICAL_INCREASE);
+                control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay / 2 - 1)), STARTING_POINT * VERTICAL_INCREASE);
             }
             else
             {
-                if (numberOfCardsInPlay % 2 == 0)
-                {
-                    control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay - 3)), STARTING_POINT * VERTICAL_INCREASE);
-                }
-                else
-                {
-                    control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay - 2)), STARTING_POINT);
-                }
+                control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay / 2)), STARTING_POINT);
             }
 
             control.BringToFront();
@@ -441,6 +442,18 @@ namespace DurakGameUI
 
                 pnlCPUHand.Controls.Add(computerCard);
                 game.Computer.PlayHand.Add(computerPlayingCard);
+            }
+
+            if (myDealer.Count == 1)
+            {
+                pbDeck.Visible = false;
+                lblDeck.Visible = false;
+            }
+            else if (myDealer.Count == 0)
+            {
+                pbDeck.Visible = false;
+                pbTrump.Visible = false;
+                lblDeck.Visible = false;
             }
 
             // Realign cards in the hands
@@ -540,7 +553,13 @@ namespace DurakGameUI
 
                     pnlCPUHand.Controls.RemoveAt(0);
                     RealignCards(pnlCPUHand);
+
+                    game.CardsInPlay.Add(defendCard);
                 }
+            }
+            else
+            {
+                numberOfCardsInPlay++;
             }
         }
 
@@ -561,6 +580,22 @@ namespace DurakGameUI
                 card.Controls[0].MouseLeave += CardBox_MouseLeave;
 
                 pnlPlayerHand.Controls.Add(card);
+                game.CardsInPlay.RemoveAt(index);
+            }
+            RealignCards(pnlPlayerHand);
+        }
+
+        private void ComputerPicksUp()
+        {
+            for (int index = 0; index < game.CardsInPlay.Count;)
+            {
+                game.Computer.PlayHand.Add(game.CardsInPlay[index]);
+                CardBox card = new CardBox(game.CardsInPlay[index]);
+
+                card.Card = game.CardsInPlay[index];
+                card.FaceUp = false;
+
+                pnlCPUHand.Controls.Add(card);
                 game.CardsInPlay.RemoveAt(index);
             }
             RealignCards(pnlPlayerHand);

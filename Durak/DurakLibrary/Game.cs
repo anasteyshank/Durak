@@ -127,51 +127,53 @@ namespace DurakLibrary
         public PlayingCard ComputerDefends()
         {
             PlayingCard returnCard = new PlayingCard();
-            Cards defendCards = new Cards();
-            for (int index = 0; index < Computer.PlayHand.Count; index++)
+            if (!ComputerPicksUp)
             {
-                if (Computer.PlayHand[index].Suit == CardsInPlay[CardsInPlay.Count - 1].Suit && Computer.PlayHand[index] > CardsInPlay[CardsInPlay.Count - 1])
+                Cards defendCards = new Cards();
+                for (int index = 0; index < Computer.PlayHand.Count; index++)
                 {
-                    defendCards.Add(Computer.PlayHand[index]);
-                }
-            }
-
-            if (defendCards.Count > 0)
-            {
-                returnCard = GetLowestCard(defendCards);
-            }
-            else
-            {
-                if (CardsInPlay[CardsInPlay.Count - 1].Suit != PlayingCard.TrumpSuit)
-                {
-                    for (int index = 0; index < Computer.PlayHand.Count; index++)
+                    if (Computer.PlayHand[index].Suit == CardsInPlay[CardsInPlay.Count - 1].Suit && Computer.PlayHand[index] > CardsInPlay[CardsInPlay.Count - 1])
                     {
-                        if (Computer.PlayHand[index].Suit == PlayingCard.TrumpSuit)
-                        {
-                            defendCards.Add(Computer.PlayHand[index]);
-                        }
+                        defendCards.Add(Computer.PlayHand[index]);
                     }
+                }
 
-                    if (defendCards.Count > 0)
+                if (defendCards.Count > 0)
+                {
+                    returnCard = GetLowestCard(defendCards);
+                }
+                else
+                {
+                    if (CardsInPlay[CardsInPlay.Count - 1].Suit != PlayingCard.TrumpSuit)
                     {
-                        returnCard = GetLowestCard(defendCards);
+                        for (int index = 0; index < Computer.PlayHand.Count; index++)
+                        {
+                            if (Computer.PlayHand[index].Suit == PlayingCard.TrumpSuit)
+                            {
+                                defendCards.Add(Computer.PlayHand[index]);
+                            }
+                        }
+
+                        if (defendCards.Count > 0)
+                        {
+                            returnCard = GetLowestCard(defendCards);
+                        }
+                        else
+                        {
+                            ComputerPicksUp = true;
+                        }
                     }
                     else
                     {
                         ComputerPicksUp = true;
                     }
                 }
-                else
+
+                if (!ComputerPicksUp)
                 {
-                    ComputerPicksUp = true;
+                    Computer.PlayHand.Remove(returnCard);
                 }
             }
-
-            if (!ComputerPicksUp)
-            {
-                Computer.PlayHand.Remove(returnCard);
-            }
-
             return returnCard;
         }
         #endregion

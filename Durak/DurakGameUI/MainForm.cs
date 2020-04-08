@@ -84,7 +84,19 @@ namespace DurakGameUI
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            StartGame();
+            
+        }
+
+        private void btnPickUp_Click(object sender, EventArgs e)
+        {
+            playerTakes = true;
+            ComputerAttacks();
+            computerAttacks = true;
+        }
+
+        private void btnReady_Click(object sender, EventArgs e)
+        {
+
         }
 
         /// <summary>
@@ -273,41 +285,6 @@ namespace DurakGameUI
         #endregion
 
         #region Helper Methods
-        private void StartGame()
-        {
-            game = new Game();
-
-            DealCards();
-
-            // Last card in the deck
-            PlayingCard lastCard = myDealer[myDealer.Count - 1];
-            pbTrump.FaceUp = true;
-            pbTrump.Suit = lastCard.Suit;
-            pbTrump.Rank = lastCard.Rank;
-
-            PlayingCard.TrumpSuit = lastCard.Suit;  // Set trump suit
-
-            PlayingCard humanCard = game.GetLowestTrump(game.Human.PlayHand);
-            PlayingCard computerCard = game.GetLowestTrump(game.Computer.PlayHand);
-            computerAttacks = true;
-            if (humanCard.Suit == PlayingCard.TrumpSuit && computerCard.Suit != PlayingCard.TrumpSuit)
-            {
-                computerAttacks = false;
-            }
-            else if (humanCard.Suit != PlayingCard.TrumpSuit && computerCard.Suit == PlayingCard.TrumpSuit)
-            {
-                computerAttacks = true;
-            }
-            else if (humanCard < computerCard)
-            {
-                computerAttacks = false;
-            }
-            if (computerAttacks)
-            {
-                ComputerAttacks();
-            }
-        }
-
         /// <summary>
         /// Repositions the cards in a panel so that they are evenly distributed in the area available.
         /// </summary>
@@ -360,6 +337,41 @@ namespace DurakGameUI
                     panelHand.Controls[index].Top = POP;
                     panelHand.Controls[index].Left = panelHand.Controls[index + 1].Left + offset;
                 }
+            }
+        }
+
+        private void StartGame()
+        {
+            game = new Game();
+
+            DealCards();
+
+            // Last card in the deck
+            PlayingCard lastCard = myDealer[myDealer.Count - 1];
+            pbTrump.FaceUp = true;
+            pbTrump.Suit = lastCard.Suit;
+            pbTrump.Rank = lastCard.Rank;
+
+            PlayingCard.TrumpSuit = lastCard.Suit;  // Set trump suit
+
+            PlayingCard humanCard = game.GetLowestTrump(game.Human.PlayHand);
+            PlayingCard computerCard = game.GetLowestTrump(game.Computer.PlayHand);
+            computerAttacks = true;
+            if (humanCard.Suit == PlayingCard.TrumpSuit && computerCard.Suit != PlayingCard.TrumpSuit)
+            {
+                computerAttacks = false;
+            }
+            else if (humanCard.Suit != PlayingCard.TrumpSuit && computerCard.Suit == PlayingCard.TrumpSuit)
+            {
+                computerAttacks = true;
+            }
+            else if (humanCard < computerCard)
+            {
+                computerAttacks = false;
+            }
+            if (computerAttacks)
+            {
+                ComputerAttacks();
             }
         }
 
@@ -531,14 +543,6 @@ namespace DurakGameUI
                 }
             }
         }
-        #endregion
-
-        private void btnPickUp_Click(object sender, EventArgs e)
-        {
-            playerTakes = true;
-            ComputerAttacks();
-            computerAttacks = true;
-        }
 
         private void PlayerPicksUp()
         {
@@ -546,7 +550,7 @@ namespace DurakGameUI
             {
                 game.Human.PlayHand.Add(game.CardsInPlay[index]);
                 CardBox card = new CardBox(game.CardsInPlay[index]);
-                
+
                 card.Card = game.CardsInPlay[index];
                 card.FaceUp = true;
 
@@ -561,10 +565,6 @@ namespace DurakGameUI
             }
             RealignCards(pnlPlayerHand);
         }
-
-        private void btnReady_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

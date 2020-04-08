@@ -266,9 +266,9 @@ namespace DurakLibrary
 
             PlayingCard returnCard = new PlayingCard();
             bool onlyTrumpSuit = true;
-            for (int index = 0; index < Computer.PlayHand.Count && onlyTrumpSuit; index++)
+            for (int index = 0; index < cardsList.Count && onlyTrumpSuit; index++)
             {
-                if (Computer.PlayHand[index].Suit != PlayingCard.TrumpSuit)
+                if (cardsList[index].Suit != PlayingCard.TrumpSuit)
                 {
                     onlyTrumpSuit = false;
                 }

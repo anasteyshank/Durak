@@ -227,40 +227,57 @@ namespace CardLibrary
         /// <returns></returns>
         public static bool operator >=(PlayingCard card1, PlayingCard card2)
         {
-            // If 2 cards are of the same suit:
-            if (card1.Suit == card2.Suit)
+            bool returnValue = true;
+            if (useTrumps)
             {
-                // If aces are higher than kings:
+                if (card1.Suit == TrumpSuit && card2.Suit != TrumpSuit)
+                {
+                    returnValue = true;
+                }
+                else if (card1.Suit != TrumpSuit && card2.Suit == TrumpSuit)
+                {
+                    returnValue = false;
+                }
+                else if ((card1.Suit == TrumpSuit && card2.Suit == TrumpSuit) || (card1.Suit != TrumpSuit && card2.Suit != TrumpSuit))
+                {
+                    if (isAceHigh)
+                    {
+                        // If the rank of the 1st card is Ace, return true
+                        if (card1.Rank == CardRank.Ace)
+                        {
+                            returnValue = true;
+                        }
+                        else  // If the rank of the 1st card is not Ace
+                        {
+                            // If the rank of the 2nd card is Ace, return false
+                            if (card2.Rank == CardRank.Ace)
+                                returnValue = false;
+                            else // Otherwise, return the value based on the rank
+                                returnValue = (card1.Rank >= card2.Rank);
+                        }
+                    }
+                }
+            }
+            else
+            {
                 if (isAceHigh)
                 {
                     // If the rank of the 1st card is Ace, return true
                     if (card1.Rank == CardRank.Ace)
                     {
-                        return true;
+                        returnValue = true;
                     }
                     else  // If the rank of the 1st card is not Ace
                     {
                         // If the rank of the 2nd card is Ace, return false
                         if (card2.Rank == CardRank.Ace)
-                            return false;
+                            returnValue = false;
                         else // Otherwise, return the value based on the rank
-                            return (card1.Rank >= card2.Rank);
+                            returnValue = (card1.Rank >= card2.Rank);
                     }
                 }
-                else  // Return the value based on the rank
-                {
-                    return (card1.Rank >= card2.Rank);
-                }
             }
-            // If cards have different suits:
-            else
-            {
-                // If the 2nd card's suit is a trump suit return false, true otherwise
-                if (useTrumps && (card2.Suit == trumpSuit))
-                    return false;
-                else
-                    return true;
-            }
+            return returnValue;
         }
 
         /// <summary>

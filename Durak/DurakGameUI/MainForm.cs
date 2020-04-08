@@ -58,6 +58,11 @@ namespace DurakGameUI
         /// Refers to the card being dragged from one panel to another.
         /// </summary>
         private PictureBox dragCard;
+
+        private const string DRAW = "DRAW!";
+        private const string PLAYER_LOST = "YOU LOST:(";
+        private const string PLAYER_WON = "YOU WON!";
+
         #endregion
 
         #region Form and Static Event Handlers
@@ -191,6 +196,11 @@ namespace DurakGameUI
 
                             numberOfCardsInPlay++;
 
+                            if (game.ComputerPicksUp)
+                            {
+                                numberOfCardsInPlay++;
+                            }
+
                             game.Human.PlayHand.Remove(humanCard);
 
                             game.CardsInPlay.Add(humanCard);
@@ -206,10 +216,6 @@ namespace DurakGameUI
                     else
                     {
                         ComputerDefends();
-                        if (game.ComputerPicksUp)
-                        {
-                            numberOfCardsInHand++;
-                        }
                     }
                 }
             }

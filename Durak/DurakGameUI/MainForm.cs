@@ -173,8 +173,8 @@ namespace DurakGameUI
                 PlayingCard humanCard = new PlayingCard(humanCardBox.Rank, humanCardBox.Suit);
                 if ((computerAttacks && humanCard > game.CardsInPlay[game.CardsInPlay.Count - 1] && 
                     (humanCard.Suit == game.CardsInPlay[game.CardsInPlay.Count - 1].Suit || humanCard.Suit == PlayingCard.TrumpSuit)) || 
-                    (!computerAttacks && game.CanAttack(humanCard)) || 
-                    (!computerAttacks && numberOfCardsInPlay == 0))
+                    (!computerAttacks && game.CanAttack(humanCard) && numberOfCardsInPlay < computerHandCount * 2) || 
+                    (!computerAttacks && numberOfCardsInPlay == 0 && numberOfCardsInPlay < computerHandCount * 2))
                 {
                     // Determine which Panel is which
                     Panel thisPanel = sender as Panel;
@@ -223,6 +223,7 @@ namespace DurakGameUI
                     {
                         ComputerDefends();
                     }
+                    EndOfGame();
                 }
             }
         }
@@ -395,9 +396,32 @@ namespace DurakGameUI
             {
                 computerAttacks = false;
             }
+
+            if (game.Human.PlayHand.Count >= numberOfCardsInHand)
+            {
+                playerHandCount = numberOfCardsInHand;
+            }
+            else
+            {
+                playerHandCount = game.Human.PlayHand.Count;
+            }
+            if (game.Computer.PlayHand.Count >= numberOfCardsInHand)
+            {
+                computerHandCount = numberOfCardsInHand;
+            }
+            else
+            {
+                computerHandCount = game.Computer.PlayHand.Count;
+            }
+
             if (computerAttacks)
             {
+                btnReady.Enabled = false;
                 ComputerAttacks();
+            }
+            else
+            {
+                btnTake.Enabled = false;
             }
         }
 
@@ -511,14 +535,14 @@ namespace DurakGameUI
                 }
                 else
                 {
-                    NewRound();
                     computerAttacks = false;
+                    NewRound();
                 }
             }
             else
             {
-                NewRound();
                 computerAttacks = false;
+                NewRound();
             }
         }
 
@@ -562,6 +586,7 @@ namespace DurakGameUI
                 computerAttacks = true;
                 ComputerAttacks();
             }
+            ReenableButtons();
         }
 
         private void ComputerDefends()
@@ -596,8 +621,8 @@ namespace DurakGameUI
             {
                 if (numberOfCardsInPlay >= computerHandCount * 2)
                 {
-                    NewRound();
                     computerAttacks = false;
+                    ComputerPicksUp();
                 }
             }
             EndOfGame();
@@ -676,11 +701,25 @@ namespace DurakGameUI
 
             for (int index = 0; index < pnlPlayerHand.Controls.Count; index++)
             {
-                pnlPlayerHand.Controls[0].Controls[0].MouseDown -= CardBox_MouseDown;
-                pnlPlayerHand.Controls[0].Controls[0].DragEnter -= CardBox_DragEnter;
-                pnlPlayerHand.Controls[0].Controls[0].DragDrop -= CardBox_DragDrop;
-                pnlPlayerHand.Controls[0].Controls[0].MouseEnter -= CardBox_MouseEnter;
-                pnlPlayerHand.Controls[0].Controls[0].MouseLeave -= CardBox_MouseLeave;
+                pnlPlayerHand.Controls[0].MouseDown -= CardBox_MouseDown;
+                pnlPlayerHand.Controls[0].DragEnter -= CardBox_DragEnter;
+                pnlPlayerHand.Controls[0].DragDrop -= CardBox_DragDrop;
+                pnlPlayerHand.Controls[0].MouseEnter -= CardBox_MouseEnter;
+                pnlPlayerHand.Controls[0].MouseLeave -= CardBox_MouseLeave;
+            }
+        }
+
+        private void ReenableButtons()
+        {
+            if (!computerAttacks)
+            {
+                btnTake.Enabled = false;
+                btnReady.Enabled = true;
+            }
+            else
+            {
+                btnTake.Enabled = true;
+                btnReady.Enabled = false;
             }
         }
         #endregion

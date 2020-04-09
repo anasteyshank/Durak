@@ -40,8 +40,6 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlPlayArea = new System.Windows.Forms.Panel();
-            this.pbDeck = new MyCardBox.CardBox();
-            this.pbTrump = new MyCardBox.CardBox();
             this.lblDeck = new System.Windows.Forms.Label();
             this.pnlPlayerHand = new System.Windows.Forms.Panel();
             this.lblPlayerHand = new System.Windows.Forms.Label();
@@ -49,6 +47,9 @@
             this.lblCPUHand = new System.Windows.Forms.Label();
             this.btnTake = new System.Windows.Forms.Button();
             this.btnReady = new System.Windows.Forms.Button();
+            this.pbDeck = new MyCardBox.CardBox();
+            this.pbTrump = new MyCardBox.CardBox();
+            this.lblResult = new System.Windows.Forms.Label();
             this.pnlPlayArea.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,6 +190,7 @@
             this.pnlPlayArea.BackColor = System.Drawing.Color.SaddleBrown;
             this.pnlPlayArea.BackgroundImage = global::DurakGameUI.Properties.Resources.placemat;
             this.pnlPlayArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlPlayArea.Controls.Add(this.lblResult);
             this.pnlPlayArea.Controls.Add(this.pbDeck);
             this.pnlPlayArea.Controls.Add(this.pbTrump);
             this.pnlPlayArea.Controls.Add(this.lblDeck);
@@ -199,34 +201,6 @@
             this.pnlPlayArea.TabIndex = 2;
             this.pnlPlayArea.DragDrop += new System.Windows.Forms.DragEventHandler(this.pnlPlayArea_DragDrop);
             this.pnlPlayArea.DragEnter += new System.Windows.Forms.DragEventHandler(this.pnlPlayArea_DragEnter);
-            // 
-            // pbDeck
-            // 
-            this.pbDeck.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbDeck.BackColor = System.Drawing.Color.Transparent;
-            this.pbDeck.CardOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.pbDeck.FaceUp = false;
-            this.pbDeck.Location = new System.Drawing.Point(1116, 88);
-            this.pbDeck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbDeck.Name = "pbDeck";
-            this.pbDeck.Rank = CardLibrary.CardRank.Ace;
-            this.pbDeck.Size = new System.Drawing.Size(125, 158);
-            this.pbDeck.Suit = CardLibrary.CardSuit.Hearts;
-            this.pbDeck.TabIndex = 4;
-            // 
-            // pbTrump
-            // 
-            this.pbTrump.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbTrump.BackColor = System.Drawing.Color.Transparent;
-            this.pbTrump.CardOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.pbTrump.FaceUp = false;
-            this.pbTrump.Location = new System.Drawing.Point(1042, 88);
-            this.pbTrump.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbTrump.Name = "pbTrump";
-            this.pbTrump.Rank = CardLibrary.CardRank.Ace;
-            this.pbTrump.Size = new System.Drawing.Size(125, 158);
-            this.pbTrump.Suit = CardLibrary.CardSuit.Hearts;
-            this.pbTrump.TabIndex = 3;
             // 
             // lblDeck
             // 
@@ -316,6 +290,43 @@
             this.btnReady.UseVisualStyleBackColor = true;
             this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
+            // pbDeck
+            // 
+            this.pbDeck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbDeck.BackColor = System.Drawing.Color.Transparent;
+            this.pbDeck.CardOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.pbDeck.FaceUp = false;
+            this.pbDeck.Location = new System.Drawing.Point(1116, 88);
+            this.pbDeck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbDeck.Name = "pbDeck";
+            this.pbDeck.Rank = CardLibrary.CardRank.Ace;
+            this.pbDeck.Size = new System.Drawing.Size(125, 158);
+            this.pbDeck.Suit = CardLibrary.CardSuit.Hearts;
+            this.pbDeck.TabIndex = 4;
+            // 
+            // pbTrump
+            // 
+            this.pbTrump.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbTrump.BackColor = System.Drawing.Color.Transparent;
+            this.pbTrump.CardOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.pbTrump.FaceUp = false;
+            this.pbTrump.Location = new System.Drawing.Point(1042, 88);
+            this.pbTrump.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbTrump.Name = "pbTrump";
+            this.pbTrump.Rank = CardLibrary.CardRank.Ace;
+            this.pbTrump.Size = new System.Drawing.Size(125, 158);
+            this.pbTrump.Suit = CardLibrary.CardSuit.Hearts;
+            this.pbTrump.TabIndex = 3;
+            // 
+            // lblResult
+            // 
+            this.lblResult.BackColor = System.Drawing.Color.Snow;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.Location = new System.Drawing.Point(307, 110);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(599, 91);
+            this.lblResult.TabIndex = 5;
+            // 
             // frmDurak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,6 +388,7 @@
         private MyCardBox.CardBox pbDeck;
         private System.Windows.Forms.Button btnTake;
         private System.Windows.Forms.Button btnReady;
+        private System.Windows.Forms.Label lblResult;
     }
 }
 

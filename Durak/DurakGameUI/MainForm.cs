@@ -48,6 +48,10 @@ namespace DurakGameUI
 
         private int numberOfCardsInPlay = 0;
 
+        private int playerHandCount = 0;
+
+        private int computerHandCount = 0;
+
         private bool computerAttacks = false;
 
         private bool playerTakes = false;
@@ -72,6 +76,7 @@ namespace DurakGameUI
         public frmDurak()
         {
             InitializeComponent();
+            lblResult.Hide();
         }
 
         /// <summary>
@@ -94,6 +99,7 @@ namespace DurakGameUI
 
         private void btnPickUp_Click(object sender, EventArgs e)
         {
+            EndOfGame();
             playerTakes = true;
             ComputerAttacks();
             computerAttacks = true;
@@ -409,7 +415,6 @@ namespace DurakGameUI
             {
                 control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay / 2)), STARTING_POINT);
             }
-
             control.BringToFront();
         }
 
@@ -479,7 +484,7 @@ namespace DurakGameUI
                 numberOfCardsInPlay++;
             }
 
-            if (numberOfCardsInPlay < numberOfCardsInHand * 2)
+            if (numberOfCardsInPlay < playerHandCount * 2)
             {
                 PlayingCard attackCard = game.ComputerAttacks();
                 CardBox playCard = new CardBox(attackCard);
@@ -533,6 +538,24 @@ namespace DurakGameUI
             game.CardsInPlay.Clear();
             DealCards();
 
+            if (game.Human.PlayHand.Count >= numberOfCardsInHand)
+            {
+                playerHandCount = numberOfCardsInHand;
+            }
+            else
+            {
+                playerHandCount = game.Human.PlayHand.Count;
+            }
+
+            if (game.Computer.PlayHand.Count >= numberOfCardsInHand)
+            {
+                computerHandCount = numberOfCardsInHand;
+            }
+            else
+            {
+                computerHandCount = game.Computer.PlayHand.Count;
+            }
+
             if (playerTakes)
             {
                 playerTakes = false;
@@ -561,12 +584,23 @@ namespace DurakGameUI
                     RealignCards(pnlCPUHand);
 
                     game.CardsInPlay.Add(defendCard);
+
+                    if (numberOfCardsInPlay >= computerHandCount * 2)
+                    {
+                        NewRound();
+                        ComputerAttacks();
+                    }
                 }
             }
             else
             {
-                numberOfCardsInPlay++;
+                if (numberOfCardsInPlay >= computerHandCount * 2)
+                {
+                    NewRound();
+                    computerAttacks = false;
+                }
             }
+            EndOfGame();
         }
 
         private void PlayerPicksUp()
@@ -605,6 +639,49 @@ namespace DurakGameUI
                 game.CardsInPlay.RemoveAt(index);
             }
             RealignCards(pnlPlayerHand);
+        }
+
+        private void EndOfGame()
+        {
+            if (!pbTrump.Visible)
+            {
+                if (game.Computer.PlayHand.Count == 0 && game.Human.PlayHand.Count == 0)
+                {
+                    GameOver(DRAW, Color.Green);
+                }
+                else if (game.Computer.PlayHand.Count == 0)
+                {
+                    GameOver(PLAYER_LOST, Color.Black);
+                }
+                else if (game.Human.PlayHand.Count == 0)
+                {
+                    GameOver(PLAYER_WON, Color.Red);
+                }
+            } 
+        }
+
+        private void GameOver(string result, Color colour)
+        {
+            btnReady.Enabled = false;
+            btnTake.Enabled = false;
+
+            pnlPlayArea.Controls.Add(lblResult);
+
+            lblResult.Show();
+            lblResult.Text = result;
+            lblResult.TextAlign = ContentAlignment.MiddleCenter;
+            lblResult.ForeColor = colour;
+            Update();
+            lblResult.BringToFront();
+
+            for (int index = 0; index < pnlPlayerHand.Controls.Count; index++)
+            {
+                pnlPlayerHand.Controls[0].Controls[0].MouseDown -= CardBox_MouseDown;
+                pnlPlayerHand.Controls[0].Controls[0].DragEnter -= CardBox_DragEnter;
+                pnlPlayerHand.Controls[0].Controls[0].DragDrop -= CardBox_DragDrop;
+                pnlPlayerHand.Controls[0].Controls[0].MouseEnter -= CardBox_MouseEnter;
+                pnlPlayerHand.Controls[0].Controls[0].MouseLeave -= CardBox_MouseLeave;
+            }
         }
         #endregion
     }

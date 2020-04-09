@@ -100,9 +100,12 @@ namespace DurakGameUI
         private void btnPickUp_Click(object sender, EventArgs e)
         {
             EndOfGame();
-            playerTakes = true;
-            ComputerAttacks();
-            computerAttacks = true;
+            if (!lblResult.Visible)
+            {
+                playerTakes = true;
+                ComputerAttacks();
+                computerAttacks = true;
+            }
         }
 
         private void btnReady_Click(object sender, EventArgs e)
@@ -173,8 +176,8 @@ namespace DurakGameUI
                 PlayingCard humanCard = new PlayingCard(humanCardBox.Rank, humanCardBox.Suit);
                 if ((computerAttacks && humanCard > game.CardsInPlay[game.CardsInPlay.Count - 1] && 
                     (humanCard.Suit == game.CardsInPlay[game.CardsInPlay.Count - 1].Suit || humanCard.Suit == PlayingCard.TrumpSuit)) || 
-                    (!computerAttacks && game.CanAttack(humanCard) && numberOfCardsInPlay < computerHandCount * 2) || 
-                    (!computerAttacks && numberOfCardsInPlay == 0 && numberOfCardsInPlay < computerHandCount * 2))
+                    (!computerAttacks && game.CanAttack(humanCard) && numberOfCardsInPlay < computerHandCount * 2 - 1) || 
+                    (!computerAttacks && numberOfCardsInPlay == 0 && numberOfCardsInPlay < computerHandCount * 2 - 1))
                 {
                     // Determine which Panel is which
                     Panel thisPanel = sender as Panel;
@@ -454,6 +457,7 @@ namespace DurakGameUI
 
                 playerCard.FaceUp = true;
                 playerCard.BackColor = Color.Transparent;
+                playerCard.Size = regularSize;
 
                 playerCard.Controls[0].MouseDown += CardBox_MouseDown;
                 playerCard.Controls[0].DragEnter += CardBox_DragEnter;
@@ -474,6 +478,7 @@ namespace DurakGameUI
 
                 computerCard.Card = new PlayingCard();
                 computerCard.BackColor = Color.Transparent;
+                computerCard.Size = regularSize;
 
                 pnlCPUHand.Controls.Add(computerCard);
                 game.Computer.PlayHand.Add(computerPlayingCard);
@@ -514,6 +519,7 @@ namespace DurakGameUI
                 CardBox playCard = new CardBox(attackCard);
                 playCard.FaceUp = true;
                 playCard.BackColor = Color.Transparent;
+                playCard.Size = regularSize;
 
                 if (game.ComputerFoundCard)
                 {
@@ -593,27 +599,36 @@ namespace DurakGameUI
         {
             if (!game.ComputerPicksUp)
             {
-                PlayingCard defendCard = game.ComputerDefends();
-                if (!game.ComputerPicksUp)
+                if (game.Computer.PlayHand.Count == 0)
                 {
-                    numberOfCardsInPlay++;
-
-                    CardBox newControl = new CardBox(defendCard);
-                    newControl.FaceUp = true;
-                    newControl.BackColor = Color.Transparent;
-
-                    pnlPlayArea.Controls.Add(newControl);
-                    AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
-
-                    pnlCPUHand.Controls.RemoveAt(0);
-                    RealignCards(pnlCPUHand);
-
-                    game.CardsInPlay.Add(defendCard);
-
-                    if (numberOfCardsInPlay >= computerHandCount * 2)
+                    NewRound();
+                    ComputerAttacks();
+                }
+                else
+                {
+                    PlayingCard defendCard = game.ComputerDefends();
+                    if (!game.ComputerPicksUp)
                     {
-                        NewRound();
-                        ComputerAttacks();
+                        numberOfCardsInPlay++;
+
+                        CardBox newControl = new CardBox(defendCard);
+                        newControl.FaceUp = true;
+                        newControl.BackColor = Color.Transparent;
+                        newControl.Size = regularSize;
+
+                        pnlPlayArea.Controls.Add(newControl);
+                        AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
+
+                        pnlCPUHand.Controls.RemoveAt(0);
+                        RealignCards(pnlCPUHand);
+
+                        game.CardsInPlay.Add(defendCard);
+
+                        if (numberOfCardsInPlay >= computerHandCount * 2)
+                        {
+                            NewRound();
+                            ComputerAttacks();
+                        }
                     }
                 }
             }
@@ -637,6 +652,7 @@ namespace DurakGameUI
 
                 card.Card = game.CardsInPlay[index];
                 card.FaceUp = true;
+                card.Size = regularSize;
 
                 card.Controls[0].MouseDown += CardBox_MouseDown;
                 card.Controls[0].DragEnter += CardBox_DragEnter;
@@ -659,6 +675,7 @@ namespace DurakGameUI
 
                 card.Card = game.CardsInPlay[index];
                 card.FaceUp = false;
+                card.Size = regularSize;
 
                 pnlCPUHand.Controls.Add(card);
                 game.CardsInPlay.RemoveAt(index);

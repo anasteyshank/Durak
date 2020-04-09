@@ -634,7 +634,7 @@ namespace DurakGameUI
             }
             else
             {
-                if (numberOfCardsInPlay >= computerHandCount * 2)
+                if (numberOfCardsInPlay >= computerHandCount * 2 - 1)
                 {
                     computerAttacks = false;
                     ComputerPicksUp();

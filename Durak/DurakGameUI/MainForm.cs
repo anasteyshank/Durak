@@ -56,6 +56,13 @@ namespace DurakGameUI
 
         private bool playerTakes = false;
 
+        private bool gameOver = false;
+
+        private int numberOfGames = 0;
+        private int numberOfWins = 0;
+        private int numberOfLosses = 0;
+        private int numberOfDraws = 0;
+
         private Game game;
 
         /// <summary>
@@ -94,7 +101,26 @@ namespace DurakGameUI
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            
+            lblResult.Hide();
+            btnTake.Enabled = true;
+            btnReady.Enabled = true;
+            myDealer = new Cards(new DurakDeck());
+            numberOfCardsInPlay = 0;
+            playerHandCount = 0;
+            computerHandCount = 0;
+            computerAttacks = false;
+            playerTakes = false;
+            pnlCPUHand.Controls.Clear();
+            pnlPlayerHand.Controls.Clear();
+            pbDeck.Visible = true;
+            pnlPlayArea.Controls.Clear();
+            pnlPlayArea.Controls.Add(lblDeck);
+            pnlPlayArea.Controls.Add(pbDeck);
+            pnlPlayArea.Controls.Add(pbTrump);
+            pbTrump.Visible = true;
+            lblDeck.Visible = true;
+            gameOver = false;
+            StartGame();
         }
 
         private void btnPickUp_Click(object sender, EventArgs e)
@@ -205,6 +231,8 @@ namespace DurakGameUI
                             dragCard.DragDrop -= CardBox_DragDrop;
                             dragCard.MouseEnter -= CardBox_MouseEnter;
                             dragCard.MouseLeave -= CardBox_MouseLeave;
+
+                            dragCard.Parent.Size = new Size(94, 128);
 
                             numberOfCardsInPlay++;
 
@@ -460,7 +488,6 @@ namespace DurakGameUI
 
                 playerCard.FaceUp = true;
                 playerCard.BackColor = Color.Transparent;
-                playerCard.Size = regularSize;
 
                 playerCard.Controls[0].MouseDown += CardBox_MouseDown;
                 playerCard.Controls[0].DragEnter += CardBox_DragEnter;
@@ -481,7 +508,6 @@ namespace DurakGameUI
 
                 computerCard.Card = new PlayingCard();
                 computerCard.BackColor = Color.Transparent;
-                computerCard.Size = regularSize;
 
                 pnlCPUHand.Controls.Add(computerCard);
                 game.Computer.PlayHand.Add(computerPlayingCard);
@@ -522,7 +548,6 @@ namespace DurakGameUI
                 CardBox playCard = new CardBox(attackCard);
                 playCard.FaceUp = true;
                 playCard.BackColor = Color.Transparent;
-                playCard.Size = regularSize;
 
                 if (game.ComputerFoundCard)
                 {
@@ -617,7 +642,6 @@ namespace DurakGameUI
                         CardBox newControl = new CardBox(defendCard);
                         newControl.FaceUp = true;
                         newControl.BackColor = Color.Transparent;
-                        newControl.Size = regularSize;
 
                         pnlPlayArea.Controls.Add(newControl);
                         AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
@@ -641,6 +665,7 @@ namespace DurakGameUI
                 {
                     computerAttacks = false;
                     ComputerPicksUp();
+                    NewRound();
                 }
             }
             EndOfGame();
@@ -655,7 +680,6 @@ namespace DurakGameUI
 
                 card.Card = game.CardsInPlay[index];
                 card.FaceUp = true;
-                card.Size = regularSize;
 
                 card.Controls[0].MouseDown += CardBox_MouseDown;
                 card.Controls[0].DragEnter += CardBox_DragEnter;
@@ -678,37 +702,45 @@ namespace DurakGameUI
 
                 card.Card = game.CardsInPlay[index];
                 card.FaceUp = false;
-                card.Size = regularSize;
 
                 pnlCPUHand.Controls.Add(card);
                 game.CardsInPlay.RemoveAt(index);
             }
-            RealignCards(pnlPlayerHand);
+            RealignCards(pnlCPUHand);
         }
 
         private void EndOfGame()
         {
-            if (!pbTrump.Visible)
+            if (!gameOver)
             {
-                if (game.Computer.PlayHand.Count == 0 && game.Human.PlayHand.Count == 0)
+                if (!pbTrump.Visible)
                 {
-                    GameOver(DRAW, Color.Green);
+                    if (game.Computer.PlayHand.Count == 0 && game.Human.PlayHand.Count == 0)
+                    {
+                        GameOver(DRAW, Color.Green);
+                        lblDrawCount.Text = (++numberOfDraws).ToString();
+                    }
+                    else if (game.Computer.PlayHand.Count == 0)
+                    {
+                        GameOver(PLAYER_LOST, Color.Black);
+                        lblLossCount.Text = (++numberOfLosses).ToString();
+                    }
+                    else if (game.Human.PlayHand.Count == 0)
+                    {
+                        GameOver(PLAYER_WON, Color.Red);
+                        lblWinsCount.Text = (++numberOfWins).ToString();
+                    }
                 }
-                else if (game.Computer.PlayHand.Count == 0)
-                {
-                    GameOver(PLAYER_LOST, Color.Black);
-                }
-                else if (game.Human.PlayHand.Count == 0)
-                {
-                    GameOver(PLAYER_WON, Color.Red);
-                }
-            } 
+            }
         }
 
         private void GameOver(string result, Color colour)
         {
+            gameOver = true;
+
             btnReady.Enabled = false;
             btnTake.Enabled = false;
+            lblGamesPlayedCount.Text = (++numberOfGames).ToString();
 
             pnlPlayArea.Controls.Add(lblResult);
 

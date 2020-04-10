@@ -110,16 +110,19 @@ namespace DurakGameUI
 
         private void btnReady_Click(object sender, EventArgs e)
         {
-            computerAttacks = true;
-            if (game.ComputerPicksUp)
+            if (game.CardsInPlay.Count > 0)
             {
-                ComputerPicksUp();
-                computerAttacks = false;
-            }
-            NewRound();
-            if (computerAttacks)
-            {
-                ComputerAttacks();
+                computerAttacks = true;
+                if (game.ComputerPicksUp)
+                {
+                    ComputerPicksUp();
+                    computerAttacks = false;
+                }
+                NewRound();
+                if (computerAttacks)
+                {
+                    ComputerAttacks();
+                }
             }
         }
 

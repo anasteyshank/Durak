@@ -6,7 +6,6 @@
  * @author  Andrew Rocha
  * @author  Natan Colavite Dellagiustina
  * @since   2020-03-07
- * @see     https://www.youtube.com/watch?v=xXohVJYKqjw&list=PLfNfAX7mRzNqDFJr-9UJZ6praJY10fXvY&index=2
  */
 
 namespace CardLibrary

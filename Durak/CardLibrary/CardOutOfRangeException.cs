@@ -1,5 +1,5 @@
 ﻿/**
- * CardOutOfRangeException.cs - The Deck class
+ * CardOutOfRangeException.cs
  * 
  * CardOutOfRangeException class that defines a custom exception for the Card class.
  * 

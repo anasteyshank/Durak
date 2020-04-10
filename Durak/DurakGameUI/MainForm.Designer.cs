@@ -200,7 +200,7 @@
             this.pnlPlayArea.Size = new System.Drawing.Size(1272, 305);
             this.pnlPlayArea.TabIndex = 2;
             this.pnlPlayArea.DragDrop += new System.Windows.Forms.DragEventHandler(this.pnlPlayArea_DragDrop);
-            this.pnlPlayArea.DragEnter += new System.Windows.Forms.DragEventHandler(this.pnlPlayArea_DragEnter);
+            this.pnlPlayArea.DragEnter += new System.Windows.Forms.DragEventHandler(this.Panel_DragEnter);
             // 
             // lblResult
             // 

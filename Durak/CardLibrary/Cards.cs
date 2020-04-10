@@ -27,13 +27,19 @@ namespace CardLibrary
 
         }
 
+        /// <summary>
+        /// Parameterized constructor that accepts a Deck object,
+        /// shuffled the deck, and stored the collection od cards in the deck
+        /// </summary>
+        /// <param name="deck"></param>
         public Cards(Deck deck)
         {
-            deck.Shuffle();
+            deck.Shuffle(); // shuffle the deck
 
             int index = 0;
             bool isValid = true;
 
+            // Add cards to the list of Playing Cards, while there are cards in the deck
             while (isValid)
             {
                 try
@@ -76,14 +82,22 @@ namespace CardLibrary
             return newCards;
         }
 
+        /// <summary>
+        /// A method that returns the next card in the list and 
+        /// removes it from that list
+        /// </summary>
+        /// <returns></returns>
         public PlayingCard DrawNextCard()
         {
-            PlayingCard returnCard = new PlayingCard();
+            PlayingCard returnCard = new PlayingCard(); // a PlayingCard to return
+
+            // if the list isn't emppty:
             if (Count != 0)
             {
-                returnCard = this[0];
-                Remove(returnCard);
+                returnCard = this[0];   // get the 1st card in the list
+                Remove(returnCard);     // remove this card from the list
             }
+            // if there are no cards in the list, throw an exception
             else
             {
                 throw new ArgumentNullException("The Cards list is empty.");

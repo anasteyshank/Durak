@@ -18,7 +18,7 @@ namespace CardLibrary
     public class Deck : ICloneable
     {
         #region Fields and Properties
-        public Cards cards = new Cards();    // a Cards collection
+        public Cards cards = new Cards();       // a Cards collection
         private static bool useJokers = false;  // flag for jokers usage
         #endregion
 
@@ -45,7 +45,7 @@ namespace CardLibrary
         }
 
         /// <summary>
-        /// Nondefault constructor. Allows aces to be set high.
+        /// Nondefault constructor. Allows aces to be set high and include jokers.
         /// </summary>
         /// <param name="isAceHigh"></param>
         public Deck(bool isAceHigh, bool includeJokers = false) : this(includeJokers)
@@ -109,9 +109,9 @@ namespace CardLibrary
         /// </summary>
         public void Shuffle()
         {
-            Cards newDeck = new Cards();        // temporary collection of cards
-            bool[] assigned = new bool[cards.Count];     // indicates if the spot is taken by the card
-            Random sourceGen = new Random();    // generates a random number 
+            Cards newDeck = new Cards();              // temporary collection of cards
+            bool[] assigned = new bool[cards.Count];  // indicates if the spot is taken by the card
+            Random sourceGen = new Random();          // generates a random number 
             // Loop through the deck of cards
             for (int i = 0; i < cards.Count; i++)
             {
@@ -120,7 +120,7 @@ namespace CardLibrary
                 // while the card isn't found
                 while (!foundCard)
                 {
-                    sourceCard = sourceGen.Next(cards.Count);    // generate a random number from 1 to 52
+                    sourceCard = sourceGen.Next(cards.Count);  // generate a random number from 1 to 52
                     // if the spot is found, quit the loop
                     if (assigned[sourceCard] == false)
                         foundCard = true;

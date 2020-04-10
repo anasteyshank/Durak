@@ -124,6 +124,12 @@ namespace DurakLibrary
             return returnValue;
         }
 
+        public bool PlayerCanDefend(bool computerAttacks, PlayingCard humanCard)
+        {
+            return computerAttacks && humanCard > CardsInPlay[CardsInPlay.Count - 1] &&
+                   (humanCard.Suit == CardsInPlay[CardsInPlay.Count - 1].Suit || humanCard.Suit == PlayingCard.TrumpSuit);
+        }
+
         public PlayingCard ComputerDefends()
         {
             PlayingCard returnCard = new PlayingCard();

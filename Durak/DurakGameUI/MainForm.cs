@@ -7,7 +7,7 @@
  * @author  Harry Palmer
  * @author  Andrew Rocha
  * @author  Natan Colavite Dellagiustina
- * @since   2020-04-04
+ * @since   2020-04-09
  * @see     Beginning Visual C# 2012 Programming By Karli Watson, et al.
  */
 
@@ -38,31 +38,68 @@ namespace DurakGameUI
         private const int POP = 25;
 
         /// <summary>
+        /// Result that indicates a draw
+        /// </summary>
+        private const string DRAW = "DRAW!";
+
+        /// <summary>
+        /// Result that indicates that the player lost the game
+        /// </summary>
+        private const string PLAYER_LOST = "YOU LOST:(";
+
+        /// <summary>
+        /// Result that indicates that the player won the game
+        /// </summary>
+        private const string PLAYER_WON = "YOU WON!";
+
+        /// <summary>
         /// The regular size of a CardBox control
         /// </summary>
         static private Size regularSize = new Size(94, 128);
 
-        private Cards myDealer = new Cards(new DurakDeck());
-
+        /// <summary>
+        /// The number od cards in a player's hand
+        /// </summary>
         static private int numberOfCardsInHand = 6;
 
+        /// <summary>
+        /// Tha playing deck of cards
+        /// </summary>
+        private Cards myDealer = new Cards(new DurakDeck());
+
+        /// <summary>
+        /// Number of cards in the playing area
+        /// </summary>
         private int numberOfCardsInPlay = 0;
 
+        /// <summary>
+        /// Number of cards in the player's hand
+        /// </summary>
         private int playerHandCount = 0;
 
+        /// <summary>
+        /// Number of cards in the computer's hand
+        /// </summary>
         private int computerHandCount = 0;
 
+        /// <summary>
+        /// Indicates whether it's computer's turn to attack
+        /// </summary>
         private bool computerAttacks = false;
 
+        /// <summary>
+        /// Indicates whether the player takes the cards
+        /// </summary>
         private bool playerTakes = false;
 
+        /// <summary>
+        /// Indicates whether the game is over
+        /// </summary>
         private bool gameOver = false;
 
-        private int numberOfGames = 0;
-        private int numberOfWins = 0;
-        private int numberOfLosses = 0;
-        private int numberOfDraws = 0;
-
+        /// <summary>
+        /// Game object that holds the main logic of the game
+        /// </summary>
         private Game game;
 
         /// <summary>
@@ -70,10 +107,27 @@ namespace DurakGameUI
         /// </summary>
         private PictureBox dragCard;
 
-        private const string DRAW = "DRAW!";
-        private const string PLAYER_LOST = "YOU LOST:(";
-        private const string PLAYER_WON = "YOU WON!";
+        // STATISTICS
 
+        /// <summary>
+        /// Number of games played
+        /// </summary>
+        private int numberOfGames = 0;
+
+        /// <summary>
+        /// Number of games the player won
+        /// </summary>
+        private int numberOfWins = 0;
+
+        /// <summary>
+        /// Number of games the player lost
+        /// </summary>
+        private int numberOfLosses = 0;
+
+        /// <summary>
+        /// Number of draws
+        /// </summary>
+        private int numberOfDraws = 0;
         #endregion
 
         #region Form and Static Event Handlers
@@ -83,7 +137,7 @@ namespace DurakGameUI
         public frmDurak()
         {
             InitializeComponent();
-            lblResult.Hide();
+            lblResult.Hide();   // Hide the Result label
         }
 
         /// <summary>
@@ -94,73 +148,109 @@ namespace DurakGameUI
             Close();
         }
 
+        /// <summary>
+        /// Fires when the game loads for the 1st time
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDurak_Load(object sender, EventArgs e)
         {
-            StartGame();
+            StartGame();    // start the game
         }
 
+        /// <summary>
+        /// Fires when the player clicks the Reset button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
+            // Hide the game's result
             lblResult.Hide();
+
+            // Enable the buttons
             btnTake.Enabled = true;
             btnReady.Enabled = true;
+
+            // Instantiate a new deck
             myDealer = new Cards(new DurakDeck());
-            numberOfCardsInPlay = 0;
-            playerHandCount = 0;
-            computerHandCount = 0;
-            computerAttacks = false;
+
+            // Reset counts
+            numberOfCardsInPlay = 0;    // reset number of cards on the table
+            playerHandCount = 0;        // reset number of player's cards
+            computerHandCount = 0;      // reset number of computers's cards
+
+            // Reset boolean values
+            computerAttacks = false;  
             playerTakes = false;
+            gameOver = false;
+
+            // Clear the panels
             pnlCPUHand.Controls.Clear();
             pnlPlayerHand.Controls.Clear();
-            pbDeck.Visible = true;
             pnlPlayArea.Controls.Clear();
+
+            // Add controls to the main playing area
             pnlPlayArea.Controls.Add(lblDeck);
             pnlPlayArea.Controls.Add(pbDeck);
             pnlPlayArea.Controls.Add(pbTrump);
+
+            // Show controls in the main playing area
+            pbDeck.Visible = true;
             pbTrump.Visible = true;
             lblDeck.Visible = true;
-            gameOver = false;
+            
+            // Start a new game
             StartGame();
         }
 
+        /// <summary>
+        /// Firea when the player clicks the Take button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPickUp_Click(object sender, EventArgs e)
         {
-            EndOfGame();
+            EndOfGame();    // check whether the game is over
+            // If the game isn't over
             if (!lblResult.Visible)
             {
-                playerTakes = true;
-                ComputerAttacks();
+                playerTakes = true;        // player takes the cards
+                ComputerAttacks();         // computer attacks
                 computerAttacks = true;
-            }
-        }
-
-        private void btnReady_Click(object sender, EventArgs e)
-        {
-            if (game.CardsInPlay.Count > 0)
-            {
-                computerAttacks = true;
-                if (game.ComputerPicksUp)
-                {
-                    ComputerPicksUp();
-                    computerAttacks = false;
-                }
-                NewRound();
-                if (computerAttacks)
-                {
-                    ComputerAttacks();
-                }
             }
         }
 
         /// <summary>
-        /// Make the mouse pointer a "move" pointer when a drag enters a Panel.
+        /// Fires when the player clicks the Ready button
         /// </summary>
-        private void Panel_DragEnter(object sender, DragEventArgs e)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReady_Click(object sender, EventArgs e)
         {
-            e.Effect = DragDropEffects.Move;  // Make the mouse pointer a "move" pointer
+            // if there are cards on the table:
+            if (game.CardsInPlay.Count > 0)
+            {
+                computerAttacks = true;     
+                // check whether the computer takes the cards
+                if (game.ComputerPicksUp)
+                {
+                    // computer takes the cards on the table
+                    ComputerPicksUp();          
+                    computerAttacks = false;
+                }
+
+                NewRound(); // start a new round
+                
+                // computer attacks if it's computer's turn
+                if (computerAttacks) ComputerAttacks();
+            }
         }
 
-        private void pnlPlayArea_DragEnter(object sender, DragEventArgs e)
+        /// <summary>
+        /// Make the mouse pointer a "move" pointer when a drag enters a Panel
+        /// </summary>
+        private void Panel_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;  // Make the mouse pointer a "move" pointer
         }
@@ -196,17 +286,27 @@ namespace DurakGameUI
             }
         }
 
+        /// <summary>
+        /// Move a card/control when it is dropped from one Panel to pnlPlayArea
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pnlPlayArea_DragDrop(object sender, DragEventArgs e)
         {
             // If there is a CardBox to move
             if (dragCard != null)
             {
+                // Get a PlayingCard object from the dragCard
                 CardBox humanCardBox = (CardBox)dragCard.Parent;
                 PlayingCard humanCard = new PlayingCard(humanCardBox.Rank, humanCardBox.Suit);
-                if ((computerAttacks && humanCard > game.CardsInPlay[game.CardsInPlay.Count - 1] && 
-                    (humanCard.Suit == game.CardsInPlay[game.CardsInPlay.Count - 1].Suit || humanCard.Suit == PlayingCard.TrumpSuit)) || 
-                    (!computerAttacks && game.CanAttack(humanCard) && numberOfCardsInPlay < computerHandCount * 2 - 1) || 
-                    (!computerAttacks && numberOfCardsInPlay == 0 && numberOfCardsInPlay < computerHandCount * 2 - 1))
+
+                // Move the card if:
+                //  player can defend OR
+                //  player can attack and number of cards on the table is less than a limit OR
+                //  player attacks. and there are no cards on the table
+                if ((game.PlayerCanDefend(computerAttacks, humanCard)) || 
+                   (!computerAttacks && game.CanAttack(humanCard) && numberOfCardsInPlay < computerHandCount * 2 - 1) || 
+                   (!computerAttacks && numberOfCardsInPlay == 0))
                 {
                     // Determine which Panel is which
                     Panel thisPanel = sender as Panel;
@@ -223,7 +323,7 @@ namespace DurakGameUI
                             fromPanel.Controls.Remove(dragCard.Parent);
                             // Add the card to the Panel it was dropped in 
                             thisPanel.Controls.Add(dragCard.Parent);
-                            // Realign cards in both Panels
+                            // Realign cards in the 1st Panel
                             RealignCards(fromPanel);
 
                             dragCard.MouseDown -= CardBox_MouseDown;
@@ -232,7 +332,7 @@ namespace DurakGameUI
                             dragCard.MouseEnter -= CardBox_MouseEnter;
                             dragCard.MouseLeave -= CardBox_MouseLeave;
 
-                            dragCard.Parent.Size = new Size(94, 128);
+                            dragCard.Parent.Size = regularSize;
 
                             numberOfCardsInPlay++;
 

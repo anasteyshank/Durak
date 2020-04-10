@@ -227,19 +227,24 @@ namespace CardLibrary
         /// <returns></returns>
         public static bool operator >=(PlayingCard card1, PlayingCard card2)
         {
-            bool returnValue = true;
+            bool returnValue = true;    // boolean value to return
+            // if a game uses a trump suit:
             if (useTrumps)
             {
+                // if the 1st card's suit is a trump suit, return true
                 if (card1.Suit == TrumpSuit && card2.Suit != TrumpSuit)
                 {
                     returnValue = true;
                 }
+                // if the 1nd card's suit is a trump suit, return false
                 else if (card1.Suit != TrumpSuit && card2.Suit == TrumpSuit)
                 {
                     returnValue = false;
                 }
+                // if both cards' suits are a trump suit or both cards' suits are not:
                 else if ((card1.Suit == TrumpSuit && card2.Suit == TrumpSuit) || (card1.Suit != TrumpSuit && card2.Suit != TrumpSuit))
                 {
+                    // if aces are high in a game:
                     if (isAceHigh)
                     {
                         // If the rank of the 1st card is Ace, return true
@@ -247,7 +252,7 @@ namespace CardLibrary
                         {
                             returnValue = true;
                         }
-                        else  // If the rank of the 1st card is not Ace
+                        else  // If the rank of the 1st card is not Ace:
                         {
                             // If the rank of the 2nd card is Ace, return false
                             if (card2.Rank == CardRank.Ace)
@@ -256,10 +261,17 @@ namespace CardLibrary
                                 returnValue = (card1.Rank >= card2.Rank);
                         }
                     }
+                    // if aces are not high in a game, return the value based on the rank
+                    else
+                    {
+                        returnValue = (card1.Rank >= card2.Rank);
+                    }
                 }
             }
+            // if a game doesn't use trump suits:
             else
             {
+                // if aces are high in a game:
                 if (isAceHigh)
                 {
                     // If the rank of the 1st card is Ace, return true
@@ -275,6 +287,11 @@ namespace CardLibrary
                         else // Otherwise, return the value based on the rank
                             returnValue = (card1.Rank >= card2.Rank);
                     }
+                }
+                // if aces are not high in a game, return the value based on the rank
+                else
+                {
+                    returnValue = (card1.Rank >= card2.Rank);
                 }
             }
             return returnValue;

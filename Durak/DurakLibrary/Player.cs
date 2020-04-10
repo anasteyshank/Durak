@@ -22,6 +22,7 @@ namespace DurakLibrary
         /// Player's name
         /// </summary>
         public string Name { get; private set; }
+
         /// <summary>
         /// Player's cards
         /// </summary>
@@ -38,13 +39,6 @@ namespace DurakLibrary
             Name = name;
             PlayHand = new Cards();
         }
-        #endregion
-
-        #region Public Methods
-        /// <summary>
-        /// Indicates whether the player has won the game
-        /// </summary>
-        /// <returns>true if player has no cards left</returns>
         #endregion
     }
 }

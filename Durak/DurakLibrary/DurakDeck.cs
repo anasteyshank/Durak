@@ -18,7 +18,10 @@ namespace DurakLibrary
     public class DurakDeck : Deck
     {
         #region Fields and Properties
-        private static int lowestRankValue = 6; // the lowest possible rank in the deck
+        /// <summary>
+        /// The lowest possible rank in the deck
+        /// </summary>
+        private static int lowestRankValue = 6;
         #endregion
 
         #region Constructors
@@ -28,27 +31,23 @@ namespace DurakLibrary
         /// <param name="trump"></param>
         public DurakDeck()
         {
-            cards = new Cards();
+            cards = new Cards();            // get a new cards' collection
 
             PlayingCard.IsAceHigh = true;   // set aces to be high
             PlayingCard.UseTrumps = true;   // use trump suits
 
-            int numberOfRanks = 14;
-            int rankVal = 1;
+            int numberOfRanks = 14; // number of ranks
+            int rankVal = 1;        // 1st rank to add
 
-            // Add aces in the deck to the Cards collection
+            // Add aces to the Cards collection
             for (int suitVal = 0; suitVal < 4; suitVal++)
-            {
                 cards.Add(new PlayingCard((CardRank)rankVal, (CardSuit)suitVal));
-            }
 
-            // Add aces in the deck to the Cards collection
+            // Add the rest of cards to the Cards collection
             for (int suitVal = 0; suitVal < 4; suitVal++)
             {
                 for (rankVal = lowestRankValue; rankVal < numberOfRanks; rankVal++)
-                {
                     cards.Add(new PlayingCard((CardRank)rankVal, (CardSuit)suitVal));
-                }
             }
         }
         #endregion

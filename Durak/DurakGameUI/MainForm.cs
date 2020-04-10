@@ -205,7 +205,7 @@ namespace DurakGameUI
         }
 
         /// <summary>
-        /// Firea when the player clicks the Take button
+        /// Fires when the player clicks the Take button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -326,37 +326,28 @@ namespace DurakGameUI
                             // Realign cards in the 1st Panel
                             RealignCards(fromPanel);
 
-                            dragCard.MouseDown -= CardBox_MouseDown;
-                            dragCard.DragEnter -= CardBox_DragEnter;
-                            dragCard.DragDrop -= CardBox_DragDrop;
-                            dragCard.MouseEnter -= CardBox_MouseEnter;
-                            dragCard.MouseLeave -= CardBox_MouseLeave;
+                            AddRemoveEventHandlers(dragCard, false); // remove event handlers from the card
 
-                            dragCard.Parent.Size = regularSize;
+                            dragCard.Parent.Size = regularSize;     // set the card's size to the regular size
+                            dragCard.BackColor = Color.Transparent; // set the back colour to transparent
 
+                            // Increase number of cards on the table
                             numberOfCardsInPlay++;
-
-                            if (game.ComputerPicksUp)
-                            {
-                                numberOfCardsInPlay++;
-                            }
-
+                            if (game.ComputerPicksUp) numberOfCardsInPlay++;
+                            // Remove a card from the player's hand
                             game.Human.PlayHand.Remove(humanCard);
-
+                            // Add a card to the playing area
                             game.CardsInPlay.Add(humanCard);
-
-                            AddCardToPlayArea(thisPanel.Controls[thisPanel.Controls.Count - 1]);
+                            // Set card's location on the table
+                            AddCardToPlayArea(thisPanel.Controls[thisPanel.Controls.Count - 1]);    
                         }
                     }
-
+                    // Determine whether it's computer's turn to attack or defend
                     if (computerAttacks)
-                    {
                         ComputerAttacks();
-                    }
                     else
-                    {
                         ComputerDefends();
-                    }
+                    // Determine whether the game is over
                     EndOfGame();
                 }
             }
@@ -501,123 +492,123 @@ namespace DurakGameUI
             }
         }
 
+        /// <summary>
+        /// Method that sets the initial game
+        /// </summary>
         private void StartGame()
         {
-            game = new Game();
+            game = new Game();  // instantiate a new Game object
 
-            DealCards();
+            DealCards();        // deal cards to players
 
-            // Last card in the deck
+            // Get the last card in the deck
             PlayingCard lastCard = myDealer[myDealer.Count - 1];
+
+            // Show a card with a trump suit on the table
             pbTrump.FaceUp = true;
             pbTrump.Suit = lastCard.Suit;
             pbTrump.Rank = lastCard.Rank;
 
-            PlayingCard.TrumpSuit = lastCard.Suit;  // Set trump suit
+            PlayingCard.TrumpSuit = lastCard.Suit;  // set trump suit
 
-            PlayingCard humanCard = game.GetLowestTrump(game.Human.PlayHand);
+            // Get players' cards with a trump suit and the lowest rank
+            PlayingCard humanCard = game.GetLowestTrump(game.Human.PlayHand);      
             PlayingCard computerCard = game.GetLowestTrump(game.Computer.PlayHand);
+
+            // Determine whether the computer attacks first
             computerAttacks = true;
             if (humanCard.Suit == PlayingCard.TrumpSuit && computerCard.Suit != PlayingCard.TrumpSuit)
-            {
                 computerAttacks = false;
-            }
             else if (humanCard.Suit != PlayingCard.TrumpSuit && computerCard.Suit == PlayingCard.TrumpSuit)
-            {
                 computerAttacks = true;
-            }
             else if (humanCard < computerCard)
-            {
                 computerAttacks = false;
-            }
 
-            if (game.Human.PlayHand.Count >= numberOfCardsInHand)
-            {
-                playerHandCount = numberOfCardsInHand;
-            }
-            else
-            {
-                playerHandCount = game.Human.PlayHand.Count;
-            }
-            if (game.Computer.PlayHand.Count >= numberOfCardsInHand)
-            {
-                computerHandCount = numberOfCardsInHand;
-            }
-            else
-            {
-                computerHandCount = game.Computer.PlayHand.Count;
-            }
+            // Set number of cards in players' hands
+            playerHandCount = numberOfCardsInHand;      
+            computerHandCount = numberOfCardsInHand;
 
+            // If computer attacks, disable the Ready button and call the ComputerAttacks() method
             if (computerAttacks)
             {
                 btnReady.Enabled = false;
                 ComputerAttacks();
             }
+            // If player attacks, disable the Take button
             else
             {
                 btnTake.Enabled = false;
             }
         }
 
+        /// <summary>
+        /// Sets card's location in the main playing area
+        /// </summary>
+        /// <param name="control"></param>
         private void AddCardToPlayArea(Control control)
         {
-            const int STARTING_POINT = 16;
-            const int HORIZONTAL_INCREASE = 111;
-            const int VERTICAL_INCREASE = 5;
+            const int STARTING_POINT = 16;          // 1st card's location
+            const int HORIZONTAL_INCREASE = 111;    // horizontal location increase
+            const int VERTICAL_INCREASE = 5;        // vertical location increase
 
+            // Set the card's location, depending on the number of cards on the table
             if (numberOfCardsInPlay % 2 == 0)
-            {
                 control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay / 2 - 1)), STARTING_POINT * VERTICAL_INCREASE);
-            }
             else
-            {
                 control.Location = new Point(STARTING_POINT + (HORIZONTAL_INCREASE * (numberOfCardsInPlay / 2)), STARTING_POINT);
-            }
+            // Bring card to the front of the panel
             control.BringToFront();
         }
 
+        /// <summary>
+        /// Deal cards to players
+        /// </summary>
         private void DealCards()
         {
-            bool dealMoreCards = false;
+            bool dealMoreCards = false; // indicates whether more cards should be distributed to players
 
+            // If player needs more cards:
             if (game.Human.PlayHand.Count < numberOfCardsInHand && myDealer.Count != 0)
             {
-                dealMoreCards = true;
-                PlayingCard playerPlayingCard = myDealer.DrawNextCard();
-                CardBox playerCard = new CardBox(playerPlayingCard);
+                dealMoreCards = true;   // set dealMoreCards value to true
+                PlayingCard playerPlayingCard = myDealer.DrawNextCard();    // get the next card in the deck
 
+                // Instantiate a new CardBox object
+                CardBox playerCard = new CardBox(playerPlayingCard);
                 playerCard.FaceUp = true;
                 playerCard.BackColor = Color.Transparent;
 
-                playerCard.Controls[0].MouseDown += CardBox_MouseDown;
-                playerCard.Controls[0].DragEnter += CardBox_DragEnter;
-                playerCard.Controls[0].DragDrop += CardBox_DragDrop;
-                playerCard.Controls[0].MouseEnter += CardBox_MouseEnter;
-                playerCard.Controls[0].MouseLeave += CardBox_MouseLeave;
+                AddRemoveEventHandlers(playerCard.Controls[0], true);   // add event handlers to the CardBox
 
-                pnlPlayerHand.Controls.Add(playerCard);
+                // Add a card to the player's hand
+                pnlPlayerHand.Controls.Add(playerCard);     
                 game.Human.PlayHand.Add(playerPlayingCard);
             }
 
+            // If computer needs more cards:
             if (game.Computer.PlayHand.Count < numberOfCardsInHand && myDealer.Count != 0)
             {
-                dealMoreCards = true;
+                dealMoreCards = true;   // set dealMoreCards value to true
 
-                PlayingCard computerPlayingCard = myDealer.DrawNextCard();
+                PlayingCard computerPlayingCard = myDealer.DrawNextCard();  // get the next card in the deck
+
+                // Instantiate a new CardBox object
                 CardBox computerCard = new CardBox(computerPlayingCard);
-
                 computerCard.Card = new PlayingCard();
                 computerCard.BackColor = Color.Transparent;
 
+                // Add a card to the computer's hand
                 pnlCPUHand.Controls.Add(computerCard);
                 game.Computer.PlayHand.Add(computerPlayingCard);
             }
 
+            // If there's 1 card left in the deck, hide deck from the table
             if (myDealer.Count == 1)
             {
                 pbDeck.Visible = false;
                 lblDeck.Visible = false;
             }
+            // If there's no cards left in the deck, hide a deck and a card with trump suit from the table
             else if (myDealer.Count == 0)
             {
                 pbDeck.Visible = false;
@@ -625,54 +616,58 @@ namespace DurakGameUI
                 lblDeck.Visible = false;
             }
 
-            // Realign cards in the hands
+            // Realign cards in hands
             RealignCards(pnlCPUHand);
             RealignCards(pnlPlayerHand);
 
-            if (dealMoreCards)
-            {
-                DealCards();
-            }
+            // If players need more cards, deal more cards
+            if (dealMoreCards) DealCards();
         }
 
+        /// <summary>
+        /// Method that implements computer attack logic
+        /// </summary>
         private void ComputerAttacks()
         {
-            if (playerTakes)
-            {
-                numberOfCardsInPlay++;
-            }
+            // If player takes the cards on the table, increase the number of cards on the table
+            if (playerTakes) numberOfCardsInPlay++;
 
+            // If number of cards on the table is less than a limit:
             if (numberOfCardsInPlay < playerHandCount * 2)
             {
+                // Attempt to get a card to attack with
                 PlayingCard attackCard = game.ComputerAttacks();
+
+                // Instantiate a new CardBox object
                 CardBox playCard = new CardBox(attackCard);
                 playCard.FaceUp = true;
                 playCard.BackColor = Color.Transparent;
 
+                // If computer found a card to attack with:
                 if (game.ComputerFoundCard)
                 {
+                    // Remove a card from computer's hand, add it to the table
                     pnlCPUHand.Controls.RemoveAt(0);
                     pnlPlayArea.Controls.Add(playCard);
-
+                    // Realign cards in computer's hand
                     RealignCards(pnlCPUHand);
-
+                    // Increase the number of cards on the table
                     numberOfCardsInPlay++;
-
+                    // Set card's location on the table
                     AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
-
+                    // Add card to the list of cards in play
                     game.CardsInPlay.Add(attackCard);
-
-                    if (playerTakes)
-                    {
-                        ComputerAttacks();
-                    }
+                    // If player takes cards on the table, attack again
+                    if (playerTakes) ComputerAttacks();
                 }
+                // If computer didn't find a card to attack with, start a new round
                 else
                 {
                     computerAttacks = false;
                     NewRound();
                 }
             }
+            // If number of cards on the table is greater than a limit, start a new round
             else
             {
                 computerAttacks = false;
@@ -680,200 +675,251 @@ namespace DurakGameUI
             }
         }
 
+        /// <summary>
+        /// Method that starts a new round
+        /// </summary>
         private void NewRound()
         {
-            if (playerTakes)
-            {
-                PlayerPicksUp();
-            }
+            // If player takes cards on the table, call PlayerPicksUp() method
+            if (playerTakes) PlayerPicksUp();
 
-            numberOfCardsInPlay = 0;
-            game.ComputerPicksUp = false;
+            numberOfCardsInPlay = 0;        // reset the number of cards on the table
+            game.ComputerPicksUp = false;   // set ComputerPicksUp property to false
+            game.CardsInPlay.Clear();       // remove all cards from the list of cards in play
+
+            // Remove all cards from the main playing area
             for (int index = 0; pnlPlayArea.Controls.Count > 3;)
-            {
                 pnlPlayArea.Controls.RemoveAt(index);
-            }
-            game.CardsInPlay.Clear();
-            DealCards();
 
+            DealCards();                    // deal cards to players
+
+            // If player has more than 6 cards, set the number of cards in hand to 6
             if (game.Human.PlayHand.Count >= numberOfCardsInHand)
-            {
                 playerHandCount = numberOfCardsInHand;
-            }
+            // Otherwise, set the number of cards in hand to the actual number of player's cards
             else
-            {
                 playerHandCount = game.Human.PlayHand.Count;
-            }
 
+            // If computer has more than 6 cards, set the number of cards in hand to 6
             if (game.Computer.PlayHand.Count >= numberOfCardsInHand)
-            {
                 computerHandCount = numberOfCardsInHand;
-            }
+            // Otherwise, set the number of cards in hand to the actual number of computer's cards
             else
-            {
                 computerHandCount = game.Computer.PlayHand.Count;
-            }
 
+            // If player took cards, computer attacks
             if (playerTakes)
             {
                 playerTakes = false;
                 computerAttacks = true;
                 ComputerAttacks();
             }
+            // Re-enable Take and Ready buttons
             ReenableButtons();
         }
 
+        /// <summary>
+        /// Method that implements computer defense logic
+        /// </summary>
         private void ComputerDefends()
         {
+            // If computer doesn't take cards:
             if (!game.ComputerPicksUp)
             {
+                // If computer ran out of cards:
                 if (game.Computer.PlayHand.Count == 0)
                 {
-                    NewRound();
-                    ComputerAttacks();
+                    NewRound();         // start a new round
+                    ComputerAttacks();  // computer attacks
                 }
+                // If computer has cards:
                 else
                 {
+                    // Attempt to get a card to defend with
                     PlayingCard defendCard = game.ComputerDefends();
+                    // If computer has a card to defend with:
                     if (!game.ComputerPicksUp)
                     {
-                        numberOfCardsInPlay++;
+                        numberOfCardsInPlay++;  // increase number of cards in play
 
+                        // Instantiate a new CardBox object
                         CardBox newControl = new CardBox(defendCard);
                         newControl.FaceUp = true;
                         newControl.BackColor = Color.Transparent;
 
+                        // Add a card to the main playing area and set its location
                         pnlPlayArea.Controls.Add(newControl);
                         AddCardToPlayArea(pnlPlayArea.Controls[pnlPlayArea.Controls.Count - 1]);
 
+                        // Remove a card from the computer's hand and realign cards
                         pnlCPUHand.Controls.RemoveAt(0);
                         RealignCards(pnlCPUHand);
 
-                        game.CardsInPlay.Add(defendCard);
+                        game.CardsInPlay.Add(defendCard);   // add a card to the list of cards in play
 
+                        // If number of cards in play is greater than a limit:
                         if (numberOfCardsInPlay >= computerHandCount * 2)
                         {
-                            NewRound();
-                            ComputerAttacks();
+                            NewRound();         // start a new round
+                            ComputerAttacks();  // computer attacks
                         }
                     }
                 }
             }
-            else
+            // If number of cards in play is greater than a limit:
+            else if (numberOfCardsInPlay >= computerHandCount * 2 - 1)
             {
-                if (numberOfCardsInPlay >= computerHandCount * 2 - 1)
-                {
-                    computerAttacks = false;
-                    ComputerPicksUp();
-                    NewRound();
-                }
+                computerAttacks = false;
+                ComputerPicksUp();  // computer takes the cards on the table
+                NewRound();         // start a new round
             }
+            // Determine whether the game is over
             EndOfGame();
         }
 
+        /// <summary>
+        /// Method that is called when player decides to take cards
+        /// </summary>
         private void PlayerPicksUp()
         {
+            // Loop through the cards on the table
             for (int index = 0; index < game.CardsInPlay.Count;)
             {
+                // Add a card to the player's hand
                 game.Human.PlayHand.Add(game.CardsInPlay[index]);
+                // Instantiate a new CardBox object 
                 CardBox card = new CardBox(game.CardsInPlay[index]);
-
                 card.Card = game.CardsInPlay[index];
                 card.FaceUp = true;
-
-                card.Controls[0].MouseDown += CardBox_MouseDown;
-                card.Controls[0].DragEnter += CardBox_DragEnter;
-                card.Controls[0].DragDrop += CardBox_DragDrop;
-                card.Controls[0].MouseEnter += CardBox_MouseEnter;
-                card.Controls[0].MouseLeave += CardBox_MouseLeave;
-
+                // Add event handlers to the CardBox
+                AddRemoveEventHandlers(card.Controls[0], true);
+                // Add a card to the player's hand, remove it from the list of cards in play
                 pnlPlayerHand.Controls.Add(card);
                 game.CardsInPlay.RemoveAt(index);
             }
+            // Realign cards in the player's hand
             RealignCards(pnlPlayerHand);
         }
 
+        /// <summary>
+        /// Method that is called when computer decides to take cards
+        /// </summary>
         private void ComputerPicksUp()
         {
+            // Loop through the cards on the table
             for (int index = 0; index < game.CardsInPlay.Count;)
             {
+                // Add a card to the computer's hand
                 game.Computer.PlayHand.Add(game.CardsInPlay[index]);
+                // Instantiate a new CardBox object 
                 CardBox card = new CardBox(game.CardsInPlay[index]);
-
                 card.Card = game.CardsInPlay[index];
                 card.FaceUp = false;
-
+                // Add a card to the computer's hand, remove it from the list of cards in play
                 pnlCPUHand.Controls.Add(card);
                 game.CardsInPlay.RemoveAt(index);
             }
+            // Realign cards in the computer's hand
             RealignCards(pnlCPUHand);
         }
 
+        /// <summary>
+        /// Determines whether the game is over and the result of the game
+        /// </summary>
         private void EndOfGame()
         {
-            if (!gameOver)
+            // If a card with a trump suit was hidden:
+            if (!gameOver && !pbTrump.Visible)
             {
-                if (!pbTrump.Visible)
+                // If both players have no cards, it's a draw
+                if (game.Computer.PlayHand.Count == 0 && game.Human.PlayHand.Count == 0)
                 {
-                    if (game.Computer.PlayHand.Count == 0 && game.Human.PlayHand.Count == 0)
-                    {
-                        GameOver(DRAW, Color.Green);
-                        lblDrawCount.Text = (++numberOfDraws).ToString();
-                    }
-                    else if (game.Computer.PlayHand.Count == 0)
-                    {
-                        GameOver(PLAYER_LOST, Color.Black);
-                        lblLossCount.Text = (++numberOfLosses).ToString();
-                    }
-                    else if (game.Human.PlayHand.Count == 0)
-                    {
-                        GameOver(PLAYER_WON, Color.Red);
-                        lblWinsCount.Text = (++numberOfWins).ToString();
-                    }
+                    DisplayResult(DRAW, Color.Green);        // display the result
+                    lblDrawCount.Text = (++numberOfDraws).ToString();
+                }
+                // If computer has no cards, player has lost
+                else if (game.Computer.PlayHand.Count == 0)
+                {
+                    DisplayResult(PLAYER_LOST, Color.Black); // display the result
+                    lblLossCount.Text = (++numberOfLosses).ToString();
+                }
+                // If player has no cards, player has won
+                else if (game.Human.PlayHand.Count == 0)
+                {
+                    DisplayResult(PLAYER_WON, Color.Red);    // display the result
+                    lblWinsCount.Text = (++numberOfWins).ToString();
                 }
             }
         }
 
-        private void GameOver(string result, Color colour)
+        /// <summary>
+        /// Displays the game's result for the user
+        /// </summary>
+        /// <param name="result"></param>
+        /// <param name="colour"></param>
+        private void DisplayResult(string result, Color colour)
         {
-            gameOver = true;
-
+            gameOver = true;    // set the gameOver value to true
+            // Disable Ready and Take buttons
             btnReady.Enabled = false;
             btnTake.Enabled = false;
+            // Display the games' count
             lblGamesPlayedCount.Text = (++numberOfGames).ToString();
-
+            // Add the Result label to the main playing area
             pnlPlayArea.Controls.Add(lblResult);
-
+            // Display the Result label
             lblResult.Show();
             lblResult.Text = result;
             lblResult.TextAlign = ContentAlignment.MiddleCenter;
             lblResult.ForeColor = colour;
-            Update();
             lblResult.BringToFront();
-
-            for (int index = 0; index < pnlPlayerHand.Controls.Count; index++)
-            {
-                pnlPlayerHand.Controls[0].MouseDown -= CardBox_MouseDown;
-                pnlPlayerHand.Controls[0].DragEnter -= CardBox_DragEnter;
-                pnlPlayerHand.Controls[0].DragDrop -= CardBox_DragDrop;
-                pnlPlayerHand.Controls[0].MouseEnter -= CardBox_MouseEnter;
-                pnlPlayerHand.Controls[0].MouseLeave -= CardBox_MouseLeave;
-            }
         }
 
+        /// <summary>
+        /// Re-enables Take and Ready buttons
+        /// </summary>
         private void ReenableButtons()
         {
+            // If computer defends
             if (!computerAttacks)
             {
-                btnTake.Enabled = false;
-                btnReady.Enabled = true;
+                btnTake.Enabled = false;    // disable the Take button
+                btnReady.Enabled = true;    // enable the Ready button
             }
+            // If computer attacks
             else
             {
-                btnTake.Enabled = true;
-                btnReady.Enabled = false;
+                btnTake.Enabled = true;     // enable the Take button
+                btnReady.Enabled = false;   // disable the Ready button
             }
         }
-        #endregion
+
+        /// <summary>
+        /// Adds or removes CardBox event handlers from a control
+        /// </summary>
+        /// <param name="card"></param>
+        /// <param name="add"></param>
+        private void AddRemoveEventHandlers(Control card, bool add)
+        {
+            // Add event handlers
+            if (add)
+            {
+                card.MouseDown += CardBox_MouseDown;
+                card.DragEnter += CardBox_DragEnter;
+                card.DragDrop += CardBox_DragDrop;
+                card.MouseEnter += CardBox_MouseEnter;
+                card.MouseLeave += CardBox_MouseLeave;
+            }
+            // Remove event handlers
+            else
+            {
+                card.MouseDown -= CardBox_MouseDown;
+                card.DragEnter -= CardBox_DragEnter;
+                card.DragDrop -= CardBox_DragDrop;
+                card.MouseEnter -= CardBox_MouseEnter;
+                card.MouseLeave -= CardBox_MouseLeave;
+            }
+        }
+        #endregion 
     }
 }

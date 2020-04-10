@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblStatistics = new System.Windows.Forms.Label();
             this.lblNumOfGames = new System.Windows.Forms.Label();
             this.lblNumOfWins = new System.Windows.Forms.Label();
@@ -41,8 +42,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlPlayArea = new System.Windows.Forms.Panel();
             this.lblResult = new System.Windows.Forms.Label();
-            this.pbDeck = new MyCardBox.CardBox();
-            this.pbTrump = new MyCardBox.CardBox();
             this.lblDeck = new System.Windows.Forms.Label();
             this.pnlPlayerHand = new System.Windows.Forms.Panel();
             this.lblPlayerHand = new System.Windows.Forms.Label();
@@ -50,6 +49,9 @@
             this.lblCPUHand = new System.Windows.Forms.Label();
             this.btnTake = new System.Windows.Forms.Button();
             this.btnReady = new System.Windows.Forms.Button();
+            this.pbDeck = new MyCardBox.CardBox();
+            this.pbTrump = new MyCardBox.CardBox();
+            this.GameToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.pnlPlayArea.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,6 +124,7 @@
             this.lblGamesPlayedCount.TabIndex = 8;
             this.lblGamesPlayedCount.Text = "0";
             this.lblGamesPlayedCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GameToolTips.SetToolTip(this.lblGamesPlayedCount, "Number of games played");
             // 
             // lblWinsCount
             // 
@@ -134,6 +137,7 @@
             this.lblWinsCount.TabIndex = 9;
             this.lblWinsCount.Text = "0";
             this.lblWinsCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GameToolTips.SetToolTip(this.lblWinsCount, "Number of times you won");
             // 
             // lblLossCount
             // 
@@ -146,6 +150,7 @@
             this.lblLossCount.TabIndex = 10;
             this.lblLossCount.Text = "0";
             this.lblLossCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GameToolTips.SetToolTip(this.lblLossCount, "Number of times you lost");
             // 
             // lblDrawCount
             // 
@@ -158,6 +163,7 @@
             this.lblDrawCount.TabIndex = 11;
             this.lblDrawCount.Text = "0";
             this.lblDrawCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GameToolTips.SetToolTip(this.lblDrawCount, "Number of draws");
             // 
             // btnReset
             // 
@@ -166,8 +172,9 @@
             this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(159, 28);
-            this.btnReset.TabIndex = 12;
+            this.btnReset.TabIndex = 2;
             this.btnReset.Text = "Reset";
+            this.GameToolTips.SetToolTip(this.btnReset, "Click to reset a game");
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -178,8 +185,9 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(159, 28);
-            this.btnExit.TabIndex = 13;
+            this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
+            this.GameToolTips.SetToolTip(this.btnExit, "Click to exit the application");
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -210,34 +218,6 @@
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(599, 91);
             this.lblResult.TabIndex = 5;
-            // 
-            // pbDeck
-            // 
-            this.pbDeck.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbDeck.BackColor = System.Drawing.Color.Transparent;
-            this.pbDeck.CardOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.pbDeck.FaceUp = false;
-            this.pbDeck.Location = new System.Drawing.Point(1116, 88);
-            this.pbDeck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbDeck.Name = "pbDeck";
-            this.pbDeck.Rank = CardLibrary.CardRank.Ace;
-            this.pbDeck.Size = new System.Drawing.Size(125, 158);
-            this.pbDeck.Suit = CardLibrary.CardSuit.Hearts;
-            this.pbDeck.TabIndex = 4;
-            // 
-            // pbTrump
-            // 
-            this.pbTrump.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbTrump.BackColor = System.Drawing.Color.Transparent;
-            this.pbTrump.CardOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.pbTrump.FaceUp = false;
-            this.pbTrump.Location = new System.Drawing.Point(1042, 88);
-            this.pbTrump.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbTrump.Name = "pbTrump";
-            this.pbTrump.Rank = CardLibrary.CardRank.Ace;
-            this.pbTrump.Size = new System.Drawing.Size(125, 158);
-            this.pbTrump.Suit = CardLibrary.CardSuit.Hearts;
-            this.pbTrump.TabIndex = 3;
             // 
             // lblDeck
             // 
@@ -311,8 +291,9 @@
             this.btnTake.Margin = new System.Windows.Forms.Padding(4);
             this.btnTake.Name = "btnTake";
             this.btnTake.Size = new System.Drawing.Size(159, 28);
-            this.btnTake.TabIndex = 14;
+            this.btnTake.TabIndex = 1;
             this.btnTake.Text = "Take";
+            this.GameToolTips.SetToolTip(this.btnTake, "Click when you want to take cards");
             this.btnTake.UseVisualStyleBackColor = true;
             this.btnTake.Click += new System.EventHandler(this.btnPickUp_Click);
             // 
@@ -323,10 +304,41 @@
             this.btnReady.Margin = new System.Windows.Forms.Padding(4);
             this.btnReady.Name = "btnReady";
             this.btnReady.Size = new System.Drawing.Size(159, 28);
-            this.btnReady.TabIndex = 15;
+            this.btnReady.TabIndex = 0;
             this.btnReady.Text = "Ready";
+            this.GameToolTips.SetToolTip(this.btnReady, "Click when you want  to stop attacking");
             this.btnReady.UseVisualStyleBackColor = true;
             this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
+            // 
+            // pbDeck
+            // 
+            this.pbDeck.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbDeck.BackColor = System.Drawing.Color.Transparent;
+            this.pbDeck.CardOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.pbDeck.FaceUp = false;
+            this.pbDeck.Location = new System.Drawing.Point(1116, 88);
+            this.pbDeck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbDeck.Name = "pbDeck";
+            this.pbDeck.Rank = CardLibrary.CardRank.Ace;
+            this.pbDeck.Size = new System.Drawing.Size(125, 158);
+            this.pbDeck.Suit = CardLibrary.CardSuit.Hearts;
+            this.pbDeck.TabIndex = 4;
+            this.GameToolTips.SetToolTip(this.pbDeck, "A deck of cards");
+            // 
+            // pbTrump
+            // 
+            this.pbTrump.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbTrump.BackColor = System.Drawing.Color.Transparent;
+            this.pbTrump.CardOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.pbTrump.FaceUp = false;
+            this.pbTrump.Location = new System.Drawing.Point(1042, 88);
+            this.pbTrump.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbTrump.Name = "pbTrump";
+            this.pbTrump.Rank = CardLibrary.CardRank.Ace;
+            this.pbTrump.Size = new System.Drawing.Size(125, 158);
+            this.pbTrump.Suit = CardLibrary.CardSuit.Hearts;
+            this.pbTrump.TabIndex = 3;
+            this.GameToolTips.SetToolTip(this.pbTrump, "Trump Suit");
             // 
             // frmDurak
             // 
@@ -390,6 +402,7 @@
         private System.Windows.Forms.Button btnTake;
         private System.Windows.Forms.Button btnReady;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.ToolTip GameToolTips;
     }
 }
 

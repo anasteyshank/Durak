@@ -96,6 +96,7 @@
   <ItemGroup>
     <Content Include="Resources\background.jpg" />
     <None Include="Resources\placemat.jpg" />
+    <Content Include="Resources\spades.ico" />
     <Content Include="Resources\table.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

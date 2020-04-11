@@ -1,0 +1,11 @@
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\bin\Release\MyCardBox.dll
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\bin\Release\MyCardBox.pdb
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\bin\Release\CardLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\bin\Release\CardLibrary.pdb
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\obj\Release\MyCardBox.csprojAssemblyReference.cache
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\obj\Release\MyCardBox.CardBox.resources
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\obj\Release\MyCardBox.csproj.GenerateResource.cache
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\obj\Release\MyCardBox.csproj.CoreCompileInputs.cache
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\obj\Release\MyCardBox.csproj.CopyComplete
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\obj\Release\MyCardBox.dll
+D:\Apps\Downloads\Git\Durak\Durak\MyCardBox\obj\Release\MyCardBox.pdb

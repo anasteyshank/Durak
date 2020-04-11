@@ -213,7 +213,7 @@ namespace DurakGameUI
         {
             EndOfGame();    // check whether the game is over
             // If the game isn't over
-            if (!lblResult.Visible)
+            if (!gameOver)
             {
                 playerTakes = true;        // player takes the cards
                 ComputerAttacks();         // computer attacks
@@ -346,9 +346,10 @@ namespace DurakGameUI
                     if (computerAttacks)
                         ComputerAttacks();
                     else
+                    {
                         ComputerDefends();
-                    // Determine whether the game is over
-                    EndOfGame();
+                        EndOfGame();    // Determine whether the game is over
+                    }
                 }
             }
         }
@@ -716,6 +717,8 @@ namespace DurakGameUI
             }
             // Re-enable Take and Ready buttons
             ReenableButtons();
+            // Determine whether the game is over
+            EndOfGame();
         }
 
         /// <summary>
@@ -730,7 +733,7 @@ namespace DurakGameUI
                 if (game.Computer.PlayHand.Count == 0)
                 {
                     NewRound();         // start a new round
-                    ComputerAttacks();  // computer attacks
+                    if (!gameOver) ComputerAttacks();  // computer attacks if the game isn't over
                 }
                 // If computer has cards:
                 else
@@ -860,6 +863,10 @@ namespace DurakGameUI
         private void DisplayResult(string result, Color colour)
         {
             gameOver = true;    // set the gameOver value to true
+            for (int index = 0; index < pnlPlayerHand.Controls.Count; index++)
+            {
+                AddRemoveEventHandlers(pnlPlayerHand.Controls[index].Controls[0], false);
+            }
             // Disable Ready and Take buttons
             btnReady.Enabled = false;
             btnTake.Enabled = false;

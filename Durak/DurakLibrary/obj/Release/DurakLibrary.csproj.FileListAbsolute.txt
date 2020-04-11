@@ -1,0 +1,9 @@
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\bin\Release\DurakLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\bin\Release\DurakLibrary.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\bin\Release\CardLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\bin\Release\CardLibrary.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\obj\Release\DurakLibrary.csprojAssemblyReference.cache
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\obj\Release\DurakLibrary.csproj.CoreCompileInputs.cache
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\obj\Release\DurakLibrary.csproj.CopyComplete
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\obj\Release\DurakLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\DurakLibrary\obj\Release\DurakLibrary.pdb

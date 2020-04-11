@@ -1,0 +1,17 @@
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\DurakGameUI.exe.config
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\DurakGameUI.exe
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\DurakGameUI.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\CardLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\DurakLibrary.dll
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\MyCardBox.dll
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\DurakLibrary.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\MyCardBox.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Release\CardLibrary.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Release\DurakGameUI.csprojAssemblyReference.cache
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Release\DurakGameUI.frmDurak.resources
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Release\DurakGameUI.Properties.Resources.resources
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Release\DurakGameUI.csproj.GenerateResource.cache
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Release\DurakGameUI.csproj.CoreCompileInputs.cache
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Release\DurakGameUI.csproj.CopyComplete
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Release\DurakGameUI.exe
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Release\DurakGameUI.pdb

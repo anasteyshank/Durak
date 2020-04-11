@@ -346,10 +346,7 @@ namespace DurakGameUI
                     if (computerAttacks)
                         ComputerAttacks();
                     else
-                    {
                         ComputerDefends();
-                        EndOfGame();    // Determine whether the game is over
-                    }
                 }
             }
         }
@@ -568,39 +565,17 @@ namespace DurakGameUI
         {
             bool dealMoreCards = false; // indicates whether more cards should be distributed to players
 
-            // If player needs more cards:
-            if (game.Human.PlayHand.Count < numberOfCardsInHand && myDealer.Count != 0)
+            // If player was attacking, deal cards to the player first, then the computer
+            if (btnReady.Enabled)
             {
-                dealMoreCards = true;   // set dealMoreCards value to true
-                PlayingCard playerPlayingCard = myDealer.DrawNextCard();    // get the next card in the deck
-
-                // Instantiate a new CardBox object
-                CardBox playerCard = new CardBox(playerPlayingCard);
-                playerCard.FaceUp = true;
-                playerCard.BackColor = Color.Transparent;
-
-                AddRemoveEventHandlers(playerCard.Controls[0], true);   // add event handlers to the CardBox
-
-                // Add a card to the player's hand
-                pnlPlayerHand.Controls.Add(playerCard);     
-                game.Human.PlayHand.Add(playerPlayingCard);
+                dealMoreCards = DealCardsToPlayer(dealMoreCards);
+                dealMoreCards = DealCardsToComputer(dealMoreCards);
             }
-
-            // If computer needs more cards:
-            if (game.Computer.PlayHand.Count < numberOfCardsInHand && myDealer.Count != 0)
+            // Otherwise, deal cards to the computer first, then then player
+            else
             {
-                dealMoreCards = true;   // set dealMoreCards value to true
-
-                PlayingCard computerPlayingCard = myDealer.DrawNextCard();  // get the next card in the deck
-
-                // Instantiate a new CardBox object
-                CardBox computerCard = new CardBox(computerPlayingCard);
-                computerCard.Card = new PlayingCard();
-                computerCard.BackColor = Color.Transparent;
-
-                // Add a card to the computer's hand
-                pnlCPUHand.Controls.Add(computerCard);
-                game.Computer.PlayHand.Add(computerPlayingCard);
+                dealMoreCards = DealCardsToComputer(dealMoreCards);
+                dealMoreCards = DealCardsToPlayer(dealMoreCards);
             }
 
             // If there's 1 card left in the deck, hide deck from the table
@@ -623,6 +598,59 @@ namespace DurakGameUI
 
             // If players need more cards, deal more cards
             if (dealMoreCards) DealCards();
+        }
+
+        /// <summary>
+        /// Method that adds cards to the player's hand
+        /// </summary>
+        /// <param name="dealMoreCards"></param>
+        /// <returns></returns>
+        private bool DealCardsToPlayer(bool dealMoreCards)
+        {
+            // If player needs more cards:
+            if (game.Human.PlayHand.Count < numberOfCardsInHand && myDealer.Count != 0)
+            {
+                dealMoreCards = true;   // set dealMoreCards value to true
+                PlayingCard playerPlayingCard = myDealer.DrawNextCard();    // get the next card in the deck
+
+                // Instantiate a new CardBox object
+                CardBox playerCard = new CardBox(playerPlayingCard);
+                playerCard.FaceUp = true;
+                playerCard.BackColor = Color.Transparent;
+
+                AddRemoveEventHandlers(playerCard.Controls[0], true);   // add event handlers to the CardBox
+
+                // Add a card to the player's hand
+                pnlPlayerHand.Controls.Add(playerCard);
+                game.Human.PlayHand.Add(playerPlayingCard);
+            }
+            return dealMoreCards;
+        }
+
+        /// <summary>
+        /// Method that adds cards to the computer's hand
+        /// </summary>
+        /// <param name="dealMoreCards"></param>
+        /// <returns></returns>
+        private bool DealCardsToComputer(bool dealMoreCards)
+        {
+            // If computer needs more cards:
+            if (game.Computer.PlayHand.Count < numberOfCardsInHand && myDealer.Count != 0)
+            {
+                dealMoreCards = true;   // set dealMoreCards value to true
+
+                PlayingCard computerPlayingCard = myDealer.DrawNextCard();  // get the next card in the deck
+
+                // Instantiate a new CardBox object
+                CardBox computerCard = new CardBox(computerPlayingCard);
+                computerCard.Card = new PlayingCard();
+                computerCard.BackColor = Color.Transparent;
+
+                // Add a card to the computer's hand
+                pnlCPUHand.Controls.Add(computerCard);
+                game.Computer.PlayHand.Add(computerPlayingCard);
+            }
+            return dealMoreCards;
         }
 
         /// <summary>
@@ -664,15 +692,21 @@ namespace DurakGameUI
                 // If computer didn't find a card to attack with, start a new round
                 else
                 {
-                    computerAttacks = false;
-                    NewRound();
+                    if (!gameOver)
+                    {
+                        computerAttacks = false;
+                        NewRound();
+                    }
                 }
             }
             // If number of cards on the table is greater than a limit, start a new round
             else
             {
-                computerAttacks = false;
-                NewRound();
+                if (!gameOver)
+                {
+                    computerAttacks = false;
+                    NewRound();
+                }
             }
         }
 

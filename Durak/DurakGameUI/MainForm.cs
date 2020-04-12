@@ -26,6 +26,7 @@ using System.Windows.Forms;
 using MyCardBox;
 using CardLibrary;
 using DurakLibrary;
+using System.IO;
 
 namespace DurakGameUI
 {
@@ -51,6 +52,16 @@ namespace DurakGameUI
         /// Result that indicates that the player won the game
         /// </summary>
         private const string PLAYER_WON = "YOU WON!";
+
+        /// <summary>
+        /// Default player's name
+        /// </summary>
+        private const string DEFAULT_PLAYER_NAME = "Your Hand";
+
+        /// <summary>
+        /// Default value for the counts
+        /// </summary>
+        private const string DEFAULT_STATISTICS_VALUE = "0";
 
         /// <summary>
         /// The regular size of a CardBox control
@@ -128,6 +139,10 @@ namespace DurakGameUI
         /// Number of draws
         /// </summary>
         private int numberOfDraws = 0;
+
+        private string statisticsFile = "../../LogAndStatistics/statistics.txt";
+
+        private string logFile = "../../LogAndStatistics/logs.txt";
         #endregion
 
         #region Form and Static Event Handlers
@@ -141,14 +156,6 @@ namespace DurakGameUI
         }
 
         /// <summary>
-        /// Closes the current form
-        /// </summary>
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        /// <summary>
         /// Fires when the game loads for the 1st time
         /// </summary>
         /// <param name="sender"></param>
@@ -156,6 +163,62 @@ namespace DurakGameUI
         private void frmDurak_Load(object sender, EventArgs e)
         {
             StartGame();    // start the game
+
+            if (File.Exists(statisticsFile))
+            {
+                try
+                {
+                    StreamReader sr = new StreamReader(File.OpenRead(statisticsFile));
+                    lblPlayerHand.Text = GetStatistics(sr.ReadLine(), DEFAULT_PLAYER_NAME);
+                    lblGamesPlayedCount.Text = GetStatistics(sr.ReadLine(), DEFAULT_STATISTICS_VALUE);
+                    lblWinsCount.Text = GetStatistics(sr.ReadLine(), DEFAULT_STATISTICS_VALUE);
+                    lblLossCount.Text = GetStatistics(sr.ReadLine(), DEFAULT_STATISTICS_VALUE);
+                    lblDrawCount.Text = GetStatistics(sr.ReadLine(), DEFAULT_STATISTICS_VALUE);
+
+                    numberOfGames = int.Parse(lblGamesPlayedCount.Text);
+                    numberOfWins = int.Parse(lblWinsCount.Text);
+                    numberOfLosses = int.Parse(lblLossCount.Text);
+                    numberOfDraws = int.Parse(lblDrawCount.Text);
+
+                    sr.Close();
+                }
+                catch (Exception ex) { System.Diagnostics.Debug.Print(ex.ToString()); }
+            }
+            else
+            {
+                OpenNamePromptForm();
+            }
+        }
+
+        /// <summary>
+        /// Closes the current form
+        /// </summary>
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            UpdateStatistics();
+            UpdateLogs("The game ended at " + DateTime.Now.ToString("MM/dd/yyyy hh:mm:tt"));
+            UpdateLogs("==================================================================");
+            Close();
+        }
+
+        private void frmDurak_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UpdateStatistics();
+            UpdateLogs("The game ended at " + DateTime.Now.ToString("MM/dd/yyyy hh:mm:tt"));
+            UpdateLogs("==================================================================");
+        }
+
+        private void btnChangeName_Click(object sender, EventArgs e)
+        {
+            OpenNamePromptForm();
+        }
+
+        private void btnResetStatistics_Click(object sender, EventArgs e)
+        {
+            lblGamesPlayedCount.Text = DEFAULT_STATISTICS_VALUE;
+            lblWinsCount.Text = DEFAULT_STATISTICS_VALUE;
+            lblLossCount.Text = DEFAULT_STATISTICS_VALUE;
+            lblDrawCount.Text = DEFAULT_STATISTICS_VALUE;
         }
 
         /// <summary>
@@ -165,6 +228,9 @@ namespace DurakGameUI
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
+            UpdateLogs("Player clicked the Reset button.");
+            UpdateLogs("==================================================================");
+
             // Hide the game's result
             lblResult.Hide();
 
@@ -211,6 +277,7 @@ namespace DurakGameUI
         /// <param name="e"></param>
         private void btnPickUp_Click(object sender, EventArgs e)
         {
+            UpdateLogs("Player decided to take cards on the table.");
             EndOfGame();    // check whether the game is over
             // If the game isn't over
             if (!gameOver)
@@ -231,6 +298,7 @@ namespace DurakGameUI
             // if there are cards on the table:
             if (game.CardsInPlay.Count > 0)
             {
+                UpdateLogs("Player clicked on the Ready button.");
                 computerAttacks = true;     
                 // check whether the computer takes the cards
                 if (game.ComputerPicksUp)
@@ -308,6 +376,8 @@ namespace DurakGameUI
                    (!computerAttacks && game.CanAttack(humanCard) && numberOfCardsInPlay < computerHandCount * 2 - 1) || 
                    (!computerAttacks && numberOfCardsInPlay == 0))
                 {
+
+
                     // Determine which Panel is which
                     Panel thisPanel = sender as Panel;
                     Panel fromPanel = dragCard.Parent.Parent as Panel;
@@ -495,6 +565,9 @@ namespace DurakGameUI
         /// </summary>
         private void StartGame()
         {
+            UpdateLogs("==================================================================");
+            UpdateLogs("The game was started at " + DateTime.Now.ToString("MM/dd/yyyy hh:mm:tt"));
+
             game = new Game();  // instantiate a new Game object
 
             DealCards();        // deal cards to players
@@ -961,6 +1034,50 @@ namespace DurakGameUI
                 card.MouseLeave -= CardBox_MouseLeave;
             }
         }
-        #endregion 
+
+        private String GetStatistics(string line, string failedString)
+        {
+            if (line != null)
+                return line;
+            else
+                return failedString;
+        }
+
+        private void UpdateStatistics()
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(statisticsFile, false);
+                sw.WriteLine(lblPlayerHand.Text);
+                sw.WriteLine(lblGamesPlayedCount.Text);
+                sw.WriteLine(lblWinsCount.Text);
+                sw.WriteLine(lblLossCount.Text);
+                sw.WriteLine(lblDrawCount.Text);
+                sw.Close();
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.Print(ex.ToString()); }
+        }
+
+        private void UpdateLogs(String line)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(logFile, true);
+                sw.WriteLine(line);
+                sw.Close();
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.Print(ex.ToString()); }
+        }
+
+        private void OpenNamePromptForm()
+        {
+            frmNamePrompt nameForm = new frmNamePrompt();
+            nameForm.ShowDialog();
+            if (nameForm.PlayerName == String.Empty)
+                lblPlayerHand.Text = DEFAULT_PLAYER_NAME;
+            else
+                lblPlayerHand.Text = nameForm.PlayerName.Trim() + "'s Hand";
+        }
+        #endregion
     }
 }

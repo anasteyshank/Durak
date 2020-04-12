@@ -460,9 +460,9 @@ namespace CardLibrary
         public string DebugString()
         {
             string cardState = (myRank.ToString() + " of " + mySuit.ToString()).PadLeft(20);
-            cardState += ((FaceUp) ? "(Face Up)" : "(Face Down)").PadLeft(12);
-            cardState += " Value: " + myValue.ToString().PadLeft(2);
-            cardState += ((altValue != null) ? "/" + altValue.ToString() : "");
+            //cardState += ((FaceUp) ? "(Face Up)" : "(Face Down)").PadLeft(12);
+            //cardState += " Value: " + myValue.ToString().PadLeft(2);
+            //cardState += ((altValue != null) ? "/" + altValue.ToString() : "");
             return cardState;
         }
         #endregion

@@ -29,3 +29,4 @@ D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\DurakLibrary.dll
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\MyCardBox.dll
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\DurakLibrary.pdb
 D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\bin\Debug\MyCardBox.pdb
+D:\Apps\Downloads\Git\Durak\Durak\DurakGameUI\obj\Debug\DurakGameUI.frmNamePrompt.resources

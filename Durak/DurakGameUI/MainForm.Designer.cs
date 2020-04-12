@@ -53,6 +53,8 @@
             this.btnTake = new System.Windows.Forms.Button();
             this.btnReady = new System.Windows.Forms.Button();
             this.GameToolTips = new System.Windows.Forms.ToolTip(this.components);
+            this.btnChangeName = new System.Windows.Forms.Button();
+            this.btnResetStatistics = new System.Windows.Forms.Button();
             this.pnlPlayArea.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             // 
             this.lblNumOfGames.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumOfGames.AutoSize = true;
-            this.lblNumOfGames.Location = new System.Drawing.Point(179, 734);
+            this.lblNumOfGames.Location = new System.Drawing.Point(356, 733);
             this.lblNumOfGames.Name = "lblNumOfGames";
             this.lblNumOfGames.Size = new System.Drawing.Size(62, 13);
             this.lblNumOfGames.TabIndex = 4;
@@ -83,7 +85,7 @@
             // 
             this.lblNumOfWins.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumOfWins.AutoSize = true;
-            this.lblNumOfWins.Location = new System.Drawing.Point(213, 762);
+            this.lblNumOfWins.Location = new System.Drawing.Point(390, 761);
             this.lblNumOfWins.Name = "lblNumOfWins";
             this.lblNumOfWins.Size = new System.Drawing.Size(29, 13);
             this.lblNumOfWins.TabIndex = 5;
@@ -93,7 +95,7 @@
             // 
             this.lblNumOfLosses.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumOfLosses.AutoSize = true;
-            this.lblNumOfLosses.Location = new System.Drawing.Point(345, 734);
+            this.lblNumOfLosses.Location = new System.Drawing.Point(522, 733);
             this.lblNumOfLosses.Name = "lblNumOfLosses";
             this.lblNumOfLosses.Size = new System.Drawing.Size(32, 13);
             this.lblNumOfLosses.TabIndex = 6;
@@ -103,7 +105,7 @@
             // 
             this.lblNumOfDraws.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumOfDraws.AutoSize = true;
-            this.lblNumOfDraws.Location = new System.Drawing.Point(341, 762);
+            this.lblNumOfDraws.Location = new System.Drawing.Point(518, 761);
             this.lblNumOfDraws.Name = "lblNumOfDraws";
             this.lblNumOfDraws.Size = new System.Drawing.Size(35, 13);
             this.lblNumOfDraws.TabIndex = 7;
@@ -113,7 +115,7 @@
             // 
             this.lblGamesPlayedCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblGamesPlayedCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGamesPlayedCount.Location = new System.Drawing.Point(248, 728);
+            this.lblGamesPlayedCount.Location = new System.Drawing.Point(425, 727);
             this.lblGamesPlayedCount.Name = "lblGamesPlayedCount";
             this.lblGamesPlayedCount.Size = new System.Drawing.Size(62, 20);
             this.lblGamesPlayedCount.TabIndex = 8;
@@ -125,7 +127,7 @@
             // 
             this.lblWinsCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblWinsCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblWinsCount.Location = new System.Drawing.Point(248, 758);
+            this.lblWinsCount.Location = new System.Drawing.Point(425, 757);
             this.lblWinsCount.Name = "lblWinsCount";
             this.lblWinsCount.Size = new System.Drawing.Size(62, 20);
             this.lblWinsCount.TabIndex = 9;
@@ -137,7 +139,7 @@
             // 
             this.lblLossCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLossCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLossCount.Location = new System.Drawing.Point(383, 728);
+            this.lblLossCount.Location = new System.Drawing.Point(560, 727);
             this.lblLossCount.Name = "lblLossCount";
             this.lblLossCount.Size = new System.Drawing.Size(62, 20);
             this.lblLossCount.TabIndex = 10;
@@ -149,7 +151,7 @@
             // 
             this.lblDrawCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDrawCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDrawCount.Location = new System.Drawing.Point(383, 758);
+            this.lblDrawCount.Location = new System.Drawing.Point(560, 757);
             this.lblDrawCount.Name = "lblDrawCount";
             this.lblDrawCount.Size = new System.Drawing.Size(62, 20);
             this.lblDrawCount.TabIndex = 11;
@@ -160,7 +162,7 @@
             // btnReset
             // 
             this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnReset.Location = new System.Drawing.Point(728, 727);
+            this.btnReset.Location = new System.Drawing.Point(728, 726);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(119, 23);
             this.btnReset.TabIndex = 2;
@@ -172,7 +174,7 @@
             // btnExit
             // 
             this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExit.Location = new System.Drawing.Point(728, 756);
+            this.btnExit.Location = new System.Drawing.Point(728, 755);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(119, 23);
             this.btnExit.TabIndex = 3;
@@ -270,7 +272,7 @@
             this.lblPlayerHand.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPlayerHand.AutoSize = true;
             this.lblPlayerHand.BackColor = System.Drawing.Color.Teal;
-            this.lblPlayerHand.Location = new System.Drawing.Point(23, 500);
+            this.lblPlayerHand.Location = new System.Drawing.Point(23, 496);
             this.lblPlayerHand.Name = "lblPlayerHand";
             this.lblPlayerHand.Size = new System.Drawing.Size(58, 13);
             this.lblPlayerHand.TabIndex = 0;
@@ -323,6 +325,30 @@
             this.btnReady.UseVisualStyleBackColor = true;
             this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
+            // btnChangeName
+            // 
+            this.btnChangeName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChangeName.Location = new System.Drawing.Point(142, 728);
+            this.btnChangeName.Name = "btnChangeName";
+            this.btnChangeName.Size = new System.Drawing.Size(119, 23);
+            this.btnChangeName.TabIndex = 12;
+            this.btnChangeName.Text = "Change Name";
+            this.GameToolTips.SetToolTip(this.btnChangeName, "Click to change your name");
+            this.btnChangeName.UseVisualStyleBackColor = true;
+            this.btnChangeName.Click += new System.EventHandler(this.btnChangeName_Click);
+            // 
+            // btnResetStatistics
+            // 
+            this.btnResetStatistics.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnResetStatistics.Location = new System.Drawing.Point(142, 756);
+            this.btnResetStatistics.Name = "btnResetStatistics";
+            this.btnResetStatistics.Size = new System.Drawing.Size(119, 23);
+            this.btnResetStatistics.TabIndex = 13;
+            this.btnResetStatistics.Text = "Reset Statistics";
+            this.GameToolTips.SetToolTip(this.btnResetStatistics, "Click to reset statistics");
+            this.btnResetStatistics.UseVisualStyleBackColor = true;
+            this.btnResetStatistics.Click += new System.EventHandler(this.btnResetStatistics_Click);
+            // 
             // frmDurak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +356,8 @@
             this.BackgroundImage = global::DurakGameUI.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(995, 797);
+            this.Controls.Add(this.btnResetStatistics);
+            this.Controls.Add(this.btnChangeName);
             this.Controls.Add(this.btnReady);
             this.Controls.Add(this.btnTake);
             this.Controls.Add(this.lblPlayerHand);
@@ -354,6 +382,7 @@
             this.Name = "frmDurak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Durak";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDurak_FormClosing);
             this.Load += new System.EventHandler(this.frmDurak_Load);
             this.pnlPlayArea.ResumeLayout(false);
             this.pnlPlayArea.PerformLayout();
@@ -387,6 +416,8 @@
         private System.Windows.Forms.Button btnReady;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.ToolTip GameToolTips;
+        private System.Windows.Forms.Button btnChangeName;
+        private System.Windows.Forms.Button btnResetStatistics;
     }
 }
 

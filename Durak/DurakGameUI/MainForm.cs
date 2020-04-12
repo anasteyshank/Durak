@@ -140,8 +140,14 @@ namespace DurakGameUI
         /// </summary>
         private int numberOfDraws = 0;
 
+        /// <summary>
+        /// File that holds game's statistics
+        /// </summary>
         private string statisticsFile = "../../LogAndStatistics/statistics.txt";
 
+        /// <summary>
+        /// File that holds game logs
+        /// </summary>
         private string logFile = "../../LogAndStatistics/logs.txt";
         #endregion
 
@@ -164,30 +170,36 @@ namespace DurakGameUI
         {
             StartGame();    // start the game
 
+            // If file with statistics exists
             if (File.Exists(statisticsFile))
             {
+                // Attemp to open the file
                 try
                 {
+                    // Open the file to get data from it
                     StreamReader sr = new StreamReader(File.OpenRead(statisticsFile));
+
+                    // Update the form's labels based on the retrieved stats 
                     lblPlayerHand.Text = GetStatistics(sr.ReadLine(), DEFAULT_PLAYER_NAME);
                     lblGamesPlayedCount.Text = GetStatistics(sr.ReadLine(), DEFAULT_STATISTICS_VALUE);
                     lblWinsCount.Text = GetStatistics(sr.ReadLine(), DEFAULT_STATISTICS_VALUE);
                     lblLossCount.Text = GetStatistics(sr.ReadLine(), DEFAULT_STATISTICS_VALUE);
                     lblDrawCount.Text = GetStatistics(sr.ReadLine(), DEFAULT_STATISTICS_VALUE);
 
+                    // Convert counters to integers
                     numberOfGames = int.Parse(lblGamesPlayedCount.Text);
                     numberOfWins = int.Parse(lblWinsCount.Text);
                     numberOfLosses = int.Parse(lblLossCount.Text);
                     numberOfDraws = int.Parse(lblDrawCount.Text);
 
+                    // Close the file
                     sr.Close();
                 }
+                // Catch any exceptions occured
                 catch (Exception ex) { System.Diagnostics.Debug.Print(ex.ToString()); }
             }
-            else
-            {
-                OpenNamePromptForm();
-            }
+            // If file doesn't exists, open the NamePromptForm
+            else { OpenNamePromptForm(); }
         }
 
         /// <summary>
@@ -195,41 +207,67 @@ namespace DurakGameUI
         /// </summary>
         private void btnExit_Click(object sender, EventArgs e)
         {
-            UpdateStatistics();
-            UpdateLogs("The game ended at " + DateTime.Now.ToString("MM/dd/yyyy hh:mm:tt"));
-            UpdateLogs("==================================================================");
             Close();
         }
 
+        /// <summary>
+        /// Fires on form closing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDurak_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Update game's statistics
             UpdateStatistics();
+            // Update the logs file to indicate when the game ended
             UpdateLogs("The game ended at " + DateTime.Now.ToString("MM/dd/yyyy hh:mm:tt"));
-            UpdateLogs("==================================================================");
+            UpdateLogs("==================================================================================================================");
+            UpdateLogs("");
+            UpdateLogs("");
         }
 
+        /// <summary>
+        /// Fires when a user clicks on the ChangeName button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnChangeName_Click(object sender, EventArgs e)
         {
-            OpenNamePromptForm();
+            OpenNamePromptForm();   // Open the NamePromptForm
         }
 
+        /// <summary>
+        /// Fires when a user clicks on the ResetStatistics button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnResetStatistics_Click(object sender, EventArgs e)
         {
+            // Set statistics values to defaults
             lblGamesPlayedCount.Text = DEFAULT_STATISTICS_VALUE;
             lblWinsCount.Text = DEFAULT_STATISTICS_VALUE;
             lblLossCount.Text = DEFAULT_STATISTICS_VALUE;
             lblDrawCount.Text = DEFAULT_STATISTICS_VALUE;
+
+            // Convert counters to integers
+            numberOfGames = int.Parse(lblGamesPlayedCount.Text);
+            numberOfWins = int.Parse(lblWinsCount.Text);
+            numberOfLosses = int.Parse(lblLossCount.Text);
+            numberOfDraws = int.Parse(lblDrawCount.Text);
         }
 
         /// <summary>
-        /// Fires when the player clicks the Reset button
+        /// Fires when the player clicks on the Reset button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
-            UpdateLogs("Player clicked the Reset button.");
-            UpdateLogs("==================================================================");
+            // Update the logs file
+            UpdateLogs("Player clicks on the Reset button.");
+            UpdateLogs("==================================================================================================================");
+            UpdateLogs("");
+            UpdateLogs("");
 
             // Hide the game's result
             lblResult.Hide();
@@ -277,7 +315,7 @@ namespace DurakGameUI
         /// <param name="e"></param>
         private void btnPickUp_Click(object sender, EventArgs e)
         {
-            UpdateLogs("Player decided to take cards on the table.");
+            UpdateLogs("Player clicks on the Take button.");    // Update the logs file
             EndOfGame();    // check whether the game is over
             // If the game isn't over
             if (!gameOver)
@@ -298,7 +336,7 @@ namespace DurakGameUI
             // if there are cards on the table:
             if (game.CardsInPlay.Count > 0)
             {
-                UpdateLogs("Player clicked on the Ready button.");
+                UpdateLogs("Player clicks on the Ready button.");   // Update the logs file
                 computerAttacks = true;     
                 // check whether the computer takes the cards
                 if (game.ComputerPicksUp)
@@ -376,7 +414,11 @@ namespace DurakGameUI
                    (!computerAttacks && game.CanAttack(humanCard) && numberOfCardsInPlay < computerHandCount * 2 - 1) || 
                    (!computerAttacks && numberOfCardsInPlay == 0))
                 {
-
+                    // Update the logs file based on whose turn it is to attack
+                    if (computerAttacks)
+                        UpdateLogs("Player defends with " + humanCard.DebugString());
+                    else
+                        UpdateLogs("Player attacks with " + humanCard.DebugString());
 
                     // Determine which Panel is which
                     Panel thisPanel = sender as Panel;
@@ -565,12 +607,17 @@ namespace DurakGameUI
         /// </summary>
         private void StartGame()
         {
-            UpdateLogs("==================================================================");
+            // Update the logs file
+            UpdateLogs("==================================================================================================================");
             UpdateLogs("The game was started at " + DateTime.Now.ToString("MM/dd/yyyy hh:mm:tt"));
+            UpdateLogs("");
 
             game = new Game();  // instantiate a new Game object
 
             DealCards();        // deal cards to players
+            UpdateLogs(DisplayCardsInHand("Computer's hand: ", game.Computer));
+            UpdateLogs(DisplayCardsInHand("Player's hand: ", game.Human));
+            UpdateLogs("");
 
             // Get the last card in the deck
             PlayingCard lastCard = myDealer[myDealer.Count - 1];
@@ -599,6 +646,12 @@ namespace DurakGameUI
             playerHandCount = numberOfCardsInHand;      
             computerHandCount = numberOfCardsInHand;
 
+            // Update the logs file
+            UpdateLogs("Trump card: " + lastCard.DebugString());
+            UpdateLogs("");
+            UpdateLogs("------------------------------------------------------------------------------------------------------------------");
+
+
             // If computer attacks, disable the Ready button and call the ComputerAttacks() method
             if (computerAttacks)
             {
@@ -606,10 +659,7 @@ namespace DurakGameUI
                 ComputerAttacks();
             }
             // If player attacks, disable the Take button
-            else
-            {
-                btnTake.Enabled = false;
-            }
+            else { btnTake.Enabled = false; }
         }
 
         /// <summary>
@@ -748,6 +798,7 @@ namespace DurakGameUI
                 // If computer found a card to attack with:
                 if (game.ComputerFoundCard)
                 {
+                    UpdateLogs("Computer attacks with " + attackCard.DebugString());
                     // Remove a card from computer's hand, add it to the table
                     pnlCPUHand.Controls.RemoveAt(0);
                     pnlPlayArea.Controls.Add(playCard);
@@ -799,7 +850,16 @@ namespace DurakGameUI
             for (int index = 0; pnlPlayArea.Controls.Count > 3;)
                 pnlPlayArea.Controls.RemoveAt(index);
 
+            // Update the logs file
+            UpdateLogs("");
+            UpdateLogs("NEW ROUND");
+            UpdateLogs("------------------------------------------------------------------------------------------------------------------");
+
             DealCards();                    // deal cards to players
+            // Update the logs file
+            UpdateLogs(DisplayCardsInHand("Computer's hand: ", game.Computer));
+            UpdateLogs(DisplayCardsInHand("Player's hand: ", game.Human));
+            UpdateLogs("");
 
             // If player has more than 6 cards, set the number of cards in hand to 6
             if (game.Human.PlayHand.Count >= numberOfCardsInHand)
@@ -850,6 +910,8 @@ namespace DurakGameUI
                     // If computer has a card to defend with:
                     if (!game.ComputerPicksUp)
                     {
+                        UpdateLogs("Computer defends with " + defendCard.DebugString());    // Update the logs file
+
                         numberOfCardsInPlay++;  // increase number of cards in play
 
                         // Instantiate a new CardBox object
@@ -892,6 +954,7 @@ namespace DurakGameUI
         /// </summary>
         private void PlayerPicksUp()
         {
+            UpdateLogs("Player picks up the cards from the table.");    // Update the logs file
             // Loop through the cards on the table
             for (int index = 0; index < game.CardsInPlay.Count;)
             {
@@ -916,6 +979,7 @@ namespace DurakGameUI
         /// </summary>
         private void ComputerPicksUp()
         {
+            UpdateLogs("Computer picks up the cards from the table.");  // Update the logs file
             // Loop through the cards on the table
             for (int index = 0; index < game.CardsInPlay.Count;)
             {
@@ -946,18 +1010,21 @@ namespace DurakGameUI
                 {
                     DisplayResult(DRAW, Color.Green);        // display the result
                     lblDrawCount.Text = (++numberOfDraws).ToString();
+                    UpdateLogs("Game ends in a draw.");      // Update the logs file
                 }
                 // If computer has no cards, player has lost
                 else if (game.Computer.PlayHand.Count == 0)
                 {
                     DisplayResult(PLAYER_LOST, Color.Black); // display the result
                     lblLossCount.Text = (++numberOfLosses).ToString();
+                    UpdateLogs("Player loses the game.");    // Update the logs file
                 }
                 // If player has no cards, player has won
                 else if (game.Human.PlayHand.Count == 0)
                 {
                     DisplayResult(PLAYER_WON, Color.Red);    // display the result
                     lblWinsCount.Text = (++numberOfWins).ToString();
+                    UpdateLogs("Player wins the game.");     // Update the logs file
                 }
             }
         }
@@ -970,10 +1037,9 @@ namespace DurakGameUI
         private void DisplayResult(string result, Color colour)
         {
             gameOver = true;    // set the gameOver value to true
+            // Remove event handlers from player's cards
             for (int index = 0; index < pnlPlayerHand.Controls.Count; index++)
-            {
                 AddRemoveEventHandlers(pnlPlayerHand.Controls[index].Controls[0], false);
-            }
             // Disable Ready and Take buttons
             btnReady.Enabled = false;
             btnTake.Enabled = false;
@@ -1035,48 +1101,92 @@ namespace DurakGameUI
             }
         }
 
+        /// <summary>
+        /// Check if the line read from the file is null
+        /// </summary>
+        /// <param name="line"></param>
+        /// <param name="failedString"></param>
+        /// <returns></returns>
         private String GetStatistics(string line, string failedString)
         {
+            // Return the line if it's not null
             if (line != null)
                 return line;
+            // Otherwise, return an alternative value
             else
                 return failedString;
         }
 
+        /// <summary>
+        /// Methos that writes to the statistics.txt file
+        /// </summary>
         private void UpdateStatistics()
         {
+            // Attempt to write to the file
             try
             {
-                StreamWriter sw = new StreamWriter(statisticsFile, false);
+                StreamWriter sw = new StreamWriter(statisticsFile, false);  // open the file
+                // Write player's name and statistics values
                 sw.WriteLine(lblPlayerHand.Text);
                 sw.WriteLine(lblGamesPlayedCount.Text);
                 sw.WriteLine(lblWinsCount.Text);
                 sw.WriteLine(lblLossCount.Text);
                 sw.WriteLine(lblDrawCount.Text);
+                // Close the file
                 sw.Close();
             }
+            // Catch any exceptions occured
             catch (Exception ex) { System.Diagnostics.Debug.Print(ex.ToString()); }
         }
 
+        /// <summary>
+        /// Methos that writes to the logs.txt file
+        /// </summary>
+        /// <param name="line"></param>
         private void UpdateLogs(String line)
         {
+            // Attempt to write to the file
             try
             {
-                StreamWriter sw = new StreamWriter(logFile, true);
-                sw.WriteLine(line);
-                sw.Close();
+                StreamWriter sw = new StreamWriter(logFile, true);  // open the file
+                sw.WriteLine(line); // write a line to the file
+                sw.Close();         // close the file
             }
+            // Catch any exceptions occured
             catch (Exception ex) { System.Diagnostics.Debug.Print(ex.ToString()); }
         }
 
+        /// <summary>
+        /// Mehtod that opens the NamePromptForm
+        /// </summary>
         private void OpenNamePromptForm()
         {
+            // Open the form
             frmNamePrompt nameForm = new frmNamePrompt();
             nameForm.ShowDialog();
+            // If a user didn't enter any name, get the player's default name
             if (nameForm.PlayerName == String.Empty)
                 lblPlayerHand.Text = DEFAULT_PLAYER_NAME;
+            // Otherwise, get their name from the form
             else
                 lblPlayerHand.Text = nameForm.PlayerName.Trim() + "'s Hand";
+        }
+
+        /// <summary>
+        /// Method that gets players' cards and converts them to string
+        /// </summary>
+        /// <param name="line"></param>
+        /// <param name="player"></param>
+        /// <returns></returns>
+        private string DisplayCardsInHand(string line, Player player)
+        {
+            // Loop through the player's cards, and add them to the line to return
+            for (int index = 0; index < player.PlayHand.Count - 1; index++)
+                line += player.PlayHand[index].DebugString() + ", ";
+            if (player.PlayHand.Count > 0)
+                line += player.PlayHand[player.PlayHand.Count - 1].DebugString() + ".";
+            // return the line
+            return line;
         }
         #endregion
     }

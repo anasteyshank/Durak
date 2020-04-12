@@ -459,7 +459,7 @@ namespace CardLibrary
         /// <returns>a string showing the state of this card object</returns>
         public string DebugString()
         {
-            string cardState = (myRank.ToString() + " of " + mySuit.ToString()).PadLeft(20);
+            string cardState = myRank.ToString() + " of " + mySuit.ToString();
             //cardState += ((FaceUp) ? "(Face Up)" : "(Face Down)").PadLeft(12);
             //cardState += " Value: " + myValue.ToString().PadLeft(2);
             //cardState += ((altValue != null) ? "/" + altValue.ToString() : "");

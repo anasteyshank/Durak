@@ -1,0 +1,1771 @@
+==================================================================================================================
+The game was started at 04-11-2020 11:16:PM
+
+Computer's hand: Ten of Diamonds, Seven of Spades, Jack of Spades, Nine of Hearts, King of Hearts, Ace of Hearts.
+Player's hand: Jack of Hearts, King of Clubs, Seven of Clubs, Jack of Diamonds, Jack of Clubs, Eight of Spades.
+
+Trump card: Ace of Spades
+
+------------------------------------------------------------------------------------------------------------------
+Computer attacks with Nine of Hearts
+==================================================================================================================
+The game was started at 04-11-2020 11:20:PM
+
+Computer's hand: Seven of Clubs, Ten of Spades, Seven of Diamonds, Ace of Spades, Jack of Hearts, Seven of Hearts.
+Player's hand: Ace of Diamonds, Ten of Clubs, Nine of Clubs, Eight of Spades, Jack of Spades, Queen of Spades.
+
+Trump card: Jack of Diamonds
+
+------------------------------------------------------------------------------------------------------------------
+Computer attacks with Seven of Hearts
+Player clicks on the Take button.
+Computer attacks with Seven of Clubs
+Computer attacks with Seven of Diamonds
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Spades, Ace of Spades, Jack of Hearts, King of Hearts, Eight of Clubs, Queen of Diamonds.
+Player's hand: Ace of Diamonds, Ten of Clubs, Nine of Clubs, Eight of Spades, Jack of Spades, Queen of Spades, Seven of Hearts, Seven of Clubs, Seven of Diamonds.
+
+Computer attacks with Eight of Clubs
+Player defends with Nine of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Spades, Ace of Spades, Jack of Hearts, King of Hearts, Queen of Diamonds, Ten of Diamonds.
+Player's hand: Ace of Diamonds, Ten of Clubs, Eight of Spades, Jack of Spades, Queen of Spades, Seven of Hearts, Seven of Clubs, Seven of Diamonds.
+
+Player attacks with Seven of Hearts
+Computer defends with Jack of Hearts
+Player attacks with Seven of Clubs
+Computer defends with Ten of Diamonds
+Player attacks with Jack of Spades
+Computer defends with Ace of Spades
+Player attacks with Ten of Clubs
+Computer defends with Queen of Diamonds
+Player attacks with Queen of Spades
+Player attacks with Seven of Diamonds
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Spades, King of Hearts, Seven of Hearts, Jack of Hearts, Seven of Clubs, Ten of Diamonds, Jack of Spades, Ace of Spades, Ten of Clubs, Queen of Diamonds, Queen of Spades, Seven of Diamonds.
+Player's hand: Ace of Diamonds, Eight of Spades, Nine of Diamonds, King of Clubs, Nine of Spades, Queen of Hearts.
+
+Player attacks with Eight of Spades
+Computer defends with Ten of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, Seven of Hearts, Jack of Hearts, Seven of Clubs, Ten of Diamonds, Jack of Spades, Ace of Spades, Ten of Clubs, Queen of Diamonds, Queen of Spades, Seven of Diamonds.
+Player's hand: Ace of Diamonds, Nine of Diamonds, King of Clubs, Nine of Spades, Queen of Hearts, Six of Spades.
+
+Computer attacks with Seven of Hearts
+Player defends with Queen of Hearts
+Computer attacks with Seven of Clubs
+Player defends with Nine of Diamonds
+Computer attacks with Queen of Spades
+Player defends with Ace of Diamonds
+Computer attacks with Ace of Spades
+Player clicks on the Take button.
+Computer attacks with Seven of Diamonds
+Computer attacks with Queen of Diamonds
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, Jack of Hearts, Ten of Diamonds, Jack of Spades, Ten of Clubs, Six of Clubs.
+Player's hand: King of Clubs, Nine of Spades, Six of Spades, Seven of Hearts, Queen of Hearts, Seven of Clubs, Nine of Diamonds, Queen of Spades, Ace of Diamonds, Ace of Spades, Seven of Diamonds, Queen of Diamonds.
+
+Computer attacks with Six of Clubs
+Player defends with Seven of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, Jack of Hearts, Ten of Diamonds, Jack of Spades, Ten of Clubs, Ace of Clubs.
+Player's hand: King of Clubs, Nine of Spades, Six of Spades, Seven of Hearts, Queen of Hearts, Nine of Diamonds, Queen of Spades, Ace of Diamonds, Ace of Spades, Seven of Diamonds, Queen of Diamonds.
+
+Player attacks with Six of Spades
+Computer defends with Jack of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, Jack of Hearts, Ten of Diamonds, Ten of Clubs, Ace of Clubs, Jack of Clubs.
+Player's hand: King of Clubs, Nine of Spades, Seven of Hearts, Queen of Hearts, Nine of Diamonds, Queen of Spades, Ace of Diamonds, Ace of Spades, Seven of Diamonds, Queen of Diamonds.
+
+Computer attacks with Ten of Clubs
+Player defends with King of Clubs
+Computer attacks with King of Hearts
+Player defends with Seven of Diamonds
+Computer attacks with Ten of Diamonds
+Player defends with Queen of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Hearts, Ace of Clubs, Jack of Clubs, King of Spades, Ten of Hearts, Nine of Hearts.
+Player's hand: Nine of Spades, Seven of Hearts, Queen of Hearts, Nine of Diamonds, Queen of Spades, Ace of Diamonds, Ace of Spades.
+
+Player attacks with Seven of Hearts
+Computer defends with Nine of Hearts
+Player attacks with Nine of Spades
+Computer defends with King of Spades
+Player attacks with Nine of Diamonds
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Hearts, Ace of Clubs, Jack of Clubs, Ten of Hearts, Seven of Hearts, Nine of Hearts, Nine of Spades, King of Spades, Nine of Diamonds.
+Player's hand: Queen of Hearts, Queen of Spades, Ace of Diamonds, Ace of Spades, Six of Hearts, Seven of Spades.
+
+Player attacks with Six of Hearts
+Computer defends with Seven of Hearts
+Player attacks with Seven of Spades
+Computer defends with Nine of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Hearts, Ace of Clubs, Jack of Clubs, Ten of Hearts, Nine of Hearts, King of Spades, Nine of Diamonds.
+Player's hand: Queen of Hearts, Queen of Spades, Ace of Diamonds, Ace of Spades, King of Diamonds, Ace of Hearts.
+
+Computer attacks with Nine of Hearts
+Player defends with Queen of Hearts
+Computer attacks with Nine of Diamonds
+Player defends with King of Diamonds
+Computer attacks with King of Spades
+Player defends with Ace of Spades
+Computer attacks with Ace of Clubs
+Player defends with Ace of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Hearts, Jack of Clubs, Ten of Hearts, Eight of Diamonds, Six of Diamonds, Jack of Diamonds.
+Player's hand: Queen of Spades, Ace of Hearts, Queen of Clubs, Eight of Hearts.
+
+Player attacks with Eight of Hearts
+Computer defends with Ten of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Hearts, Jack of Clubs, Eight of Diamonds, Six of Diamonds, Jack of Diamonds.
+Player's hand: Queen of Spades, Ace of Hearts, Queen of Clubs.
+
+Computer attacks with Jack of Hearts
+Player defends with Ace of Hearts
+Computer attacks with Jack of Clubs
+Player defends with Queen of Clubs
+Computer attacks with Jack of Diamonds
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Eight of Diamonds, Six of Diamonds.
+Player's hand: Queen of Spades, Jack of Hearts, Ace of Hearts, Jack of Clubs, Queen of Clubs, Jack of Diamonds.
+
+Computer attacks with Six of Diamonds
+Player defends with Jack of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Eight of Diamonds.
+Player's hand: Queen of Spades, Jack of Hearts, Ace of Hearts, Jack of Clubs, Queen of Clubs.
+
+Player attacks with Jack of Hearts
+Computer defends with Eight of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: 
+Player's hand: Queen of Spades, Ace of Hearts, Jack of Clubs, Queen of Clubs.
+
+Player loses the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:28:PM
+
+Computer's hand: King of Hearts, Ace of Hearts, Eight of Clubs, Ace of Diamonds, Seven of Hearts, Queen of Spades.
+Player's hand: Six of Clubs, Ten of Clubs, Jack of Hearts, Nine of Spades, Queen of Diamonds, Eight of Hearts.
+
+Trump card: King of Clubs
+
+------------------------------------------------------------------------------------------------------------------
+Player attacks with Six of Clubs
+Computer defends with Eight of Clubs
+Player attacks with Eight of Hearts
+Computer defends with King of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Ace of Diamonds, Seven of Hearts, Queen of Spades, Jack of Diamonds, Jack of Clubs.
+Player's hand: Ten of Clubs, Jack of Hearts, Nine of Spades, Queen of Diamonds, Seven of Spades, Seven of Clubs.
+
+Computer attacks with Seven of Hearts
+Player defends with Jack of Hearts
+Computer attacks with Jack of Diamonds
+Player defends with Queen of Diamonds
+Computer attacks with Queen of Spades
+Player defends with Seven of Clubs
+Computer attacks with Jack of Clubs
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Ace of Diamonds, Queen of Clubs, King of Spades, Nine of Diamonds, Seven of Diamonds.
+Player's hand: Ten of Clubs, Nine of Spades, Seven of Spades, Seven of Hearts, Jack of Hearts, Jack of Diamonds, Queen of Diamonds, Queen of Spades, Seven of Clubs, Jack of Clubs.
+
+Computer attacks with Seven of Diamonds
+Player defends with Jack of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Ace of Diamonds, Queen of Clubs, King of Spades, Nine of Diamonds, Ten of Hearts.
+Player's hand: Ten of Clubs, Nine of Spades, Seven of Spades, Seven of Hearts, Jack of Hearts, Queen of Diamonds, Queen of Spades, Seven of Clubs, Jack of Clubs.
+
+Player attacks with Seven of Hearts
+Computer defends with Ten of Hearts
+Player attacks with Seven of Spades
+Computer defends with King of Spades
+Player attacks with Seven of Clubs
+Computer defends with Queen of Clubs
+Player attacks with Queen of Diamonds
+Computer defends with Ace of Diamonds
+Player attacks with Queen of Spades
+Player attacks with Ten of Clubs
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Nine of Diamonds, Seven of Hearts, Ten of Hearts, Seven of Spades, King of Spades, Seven of Clubs, Queen of Clubs, Queen of Diamonds, Ace of Diamonds, Queen of Spades, Ten of Clubs.
+Player's hand: Nine of Spades, Jack of Hearts, Jack of Clubs, Six of Hearts, Ten of Spades, Six of Spades.
+
+Player attacks with Six of Spades
+Computer defends with Seven of Spades
+Player attacks with Six of Hearts
+Computer defends with Seven of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Nine of Diamonds, Ten of Hearts, King of Spades, Seven of Clubs, Queen of Clubs, Queen of Diamonds, Ace of Diamonds, Queen of Spades, Ten of Clubs.
+Player's hand: Nine of Spades, Jack of Hearts, Jack of Clubs, Ten of Spades, Queen of Hearts, Nine of Clubs.
+
+Computer attacks with Nine of Diamonds
+Player defends with Nine of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Ten of Hearts, King of Spades, Seven of Clubs, Queen of Clubs, Queen of Diamonds, Ace of Diamonds, Queen of Spades, Ten of Clubs.
+Player's hand: Nine of Spades, Jack of Hearts, Jack of Clubs, Ten of Spades, Queen of Hearts, King of Diamonds.
+
+Player attacks with Nine of Spades
+Computer defends with Queen of Spades
+Player attacks with Queen of Hearts
+Computer defends with Ace of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, King of Spades, Seven of Clubs, Queen of Clubs, Queen of Diamonds, Ace of Diamonds, Ten of Clubs.
+Player's hand: Jack of Hearts, Jack of Clubs, Ten of Spades, King of Diamonds, Ace of Clubs, Ten of Diamonds.
+
+Computer attacks with Ten of Hearts
+Player defends with Jack of Hearts
+Computer attacks with Ten of Clubs
+Player defends with Jack of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Spades, Seven of Clubs, Queen of Clubs, Queen of Diamonds, Ace of Diamonds, Eight of Diamonds.
+Player's hand: Ten of Spades, King of Diamonds, Ace of Clubs, Ten of Diamonds, Six of Diamonds, Jack of Spades.
+
+Player attacks with Ten of Diamonds
+Computer defends with Queen of Diamonds
+Player attacks with Ten of Spades
+Computer defends with King of Spades
+Player attacks with King of Diamonds
+Computer defends with Ace of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Seven of Clubs, Queen of Clubs, Eight of Diamonds, Ace of Spades, King of Clubs.
+Player's hand: Ace of Clubs, Six of Diamonds, Jack of Spades, Eight of Spades, Nine of Hearts.
+
+Computer attacks with Eight of Diamonds
+Player defends with Ace of Clubs
+Computer attacks with Ace of Spades
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Seven of Clubs, Queen of Clubs, King of Clubs.
+Player's hand: Six of Diamonds, Jack of Spades, Eight of Spades, Nine of Hearts, Eight of Diamonds, Ace of Clubs, Ace of Spades.
+
+Computer attacks with Seven of Clubs
+Player defends with Ace of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Clubs, King of Clubs.
+Player's hand: Six of Diamonds, Jack of Spades, Eight of Spades, Nine of Hearts, Eight of Diamonds, Ace of Spades.
+
+Player attacks with Eight of Diamonds
+Computer defends with Queen of Clubs
+Player attacks with Eight of Spades
+Computer defends with King of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: 
+Player's hand: Six of Diamonds, Jack of Spades, Nine of Hearts, Ace of Spades.
+
+Player loses the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:30:PM
+
+Computer's hand: Jack of Spades, Jack of Diamonds, King of Spades, Ten of Clubs, Six of Diamonds, Six of Clubs.
+Player's hand: Ace of Spades, Seven of Spades, King of Hearts, Nine of Diamonds, Six of Hearts, Eight of Spades.
+
+Trump card: Ace of Diamonds
+
+------------------------------------------------------------------------------------------------------------------
+Computer attacks with Six of Clubs
+Player clicks on the Take button.
+Computer attacks with Six of Diamonds
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Spades, Jack of Diamonds, King of Spades, Ten of Clubs, Nine of Clubs, Ten of Spades.
+Player's hand: Ace of Spades, Seven of Spades, King of Hearts, Nine of Diamonds, Six of Hearts, Eight of Spades, Six of Clubs, Six of Diamonds.
+
+Computer attacks with Nine of Clubs
+Player defends with Six of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Spades, Jack of Diamonds, King of Spades, Ten of Clubs, Ten of Spades, Eight of Clubs.
+Player's hand: Ace of Spades, Seven of Spades, King of Hearts, Nine of Diamonds, Six of Hearts, Eight of Spades, Six of Clubs.
+
+Player attacks with Six of Clubs
+Computer defends with Eight of Clubs
+Player attacks with Six of Hearts
+Computer defends with Jack of Diamonds
+Player attacks with Eight of Spades
+Computer defends with Ten of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Spades, King of Spades, Ten of Clubs, Nine of Hearts, Seven of Clubs, Seven of Diamonds.
+Player's hand: Ace of Spades, Seven of Spades, King of Hearts, Nine of Diamonds, Ace of Hearts, Nine of Spades.
+
+Computer attacks with Seven of Clubs
+Player defends with Nine of Diamonds
+Computer attacks with Nine of Hearts
+Player defends with King of Hearts
+Computer attacks with King of Spades
+Player defends with Ace of Spades
+Computer attacks with Seven of Diamonds
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Spades, Ten of Clubs, Seven of Hearts, Ten of Hearts, Queen of Spades, Jack of Hearts.
+Player's hand: Seven of Spades, Ace of Hearts, Nine of Spades, Seven of Clubs, Nine of Diamonds, Nine of Hearts, King of Hearts, King of Spades, Ace of Spades, Seven of Diamonds.
+
+Computer attacks with Seven of Hearts
+Player defends with Nine of Hearts
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Spades, Ten of Clubs, Ten of Hearts, Queen of Spades, Jack of Hearts, Ace of Clubs.
+Player's hand: Seven of Spades, Ace of Hearts, Nine of Spades, Seven of Clubs, Nine of Diamonds, King of Hearts, King of Spades, Ace of Spades, Seven of Diamonds.
+
+Player attacks with Seven of Spades
+Computer defends with Jack of Spades
+Player attacks with Seven of Clubs
+Computer defends with Ten of Clubs
+Player attacks with Seven of Diamonds
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Queen of Spades, Jack of Hearts, Ace of Clubs, Seven of Spades, Jack of Spades, Seven of Clubs, Ten of Clubs, Seven of Diamonds.
+Player's hand: Ace of Hearts, Nine of Spades, Nine of Diamonds, King of Hearts, King of Spades, Ace of Spades.
+
+Player attacks with Nine of Spades
+Computer defends with Jack of Spades
+Player attacks with Nine of Diamonds
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Queen of Spades, Jack of Hearts, Ace of Clubs, Seven of Spades, Seven of Clubs, Ten of Clubs, Seven of Diamonds, Nine of Spades, Jack of Spades, Nine of Diamonds.
+Player's hand: Ace of Hearts, King of Hearts, King of Spades, Ace of Spades, Six of Spades, King of Clubs.
+
+Player attacks with Six of Spades
+Computer defends with Seven of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Queen of Spades, Jack of Hearts, Ace of Clubs, Seven of Clubs, Ten of Clubs, Seven of Diamonds, Nine of Spades, Jack of Spades, Nine of Diamonds.
+Player's hand: Ace of Hearts, King of Hearts, King of Spades, Ace of Spades, King of Clubs, Eight of Diamonds.
+
+Computer attacks with Seven of Clubs
+Player defends with King of Clubs
+Computer attacks with Seven of Diamonds
+Player defends with Eight of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Queen of Spades, Jack of Hearts, Ace of Clubs, Ten of Clubs, Nine of Spades, Jack of Spades, Nine of Diamonds.
+Player's hand: Ace of Hearts, King of Hearts, King of Spades, Ace of Spades, King of Diamonds, Queen of Clubs.
+
+Player attacks with King of Spades
+Computer defends with Nine of Diamonds
+Player attacks with King of Diamonds
+Player attacks with King of Hearts
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Queen of Spades, Jack of Hearts, Ace of Clubs, Ten of Clubs, Nine of Spades, Jack of Spades, King of Spades, Nine of Diamonds, King of Diamonds, King of Hearts.
+Player's hand: Ace of Hearts, Ace of Spades, Queen of Clubs, Queen of Diamonds, Ten of Diamonds, Queen of Hearts.
+
+Player attacks with Queen of Clubs
+Computer defends with Ace of Clubs
+Player attacks with Queen of Hearts
+Computer defends with King of Hearts
+Player attacks with Ace of Spades
+Computer defends with Nine of Diamonds
+Player attacks with Ace of Hearts
+Computer defends with King of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Queen of Spades, Jack of Hearts, Ten of Clubs, Nine of Spades, Jack of Spades, King of Spades.
+Player's hand: Queen of Diamonds, Ten of Diamonds, Eight of Hearts, Jack of Clubs, Ace of Diamonds.
+
+Computer attacks with Nine of Spades
+Player defends with Ten of Diamonds
+Computer attacks with Ten of Hearts
+Player defends with Queen of Diamonds
+Computer attacks with Ten of Clubs
+Player defends with Jack of Clubs
+Computer attacks with Jack of Spades
+Player defends with Ace of Diamonds
+Computer attacks with Jack of Hearts
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, King of Spades.
+Player's hand: Eight of Hearts, Nine of Spades, Ten of Diamonds, Ten of Hearts, Queen of Diamonds, Ten of Clubs, Jack of Clubs, Jack of Spades, Ace of Diamonds, Jack of Hearts.
+
+Computer attacks with Queen of Spades
+Player defends with Ten of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Spades.
+Player's hand: Eight of Hearts, Nine of Spades, Ten of Hearts, Queen of Diamonds, Ten of Clubs, Jack of Clubs, Jack of Spades, Ace of Diamonds, Jack of Hearts.
+
+Player attacks with Queen of Diamonds
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Spades, Queen of Diamonds.
+Player's hand: Eight of Hearts, Nine of Spades, Ten of Hearts, Ten of Clubs, Jack of Clubs, Jack of Spades, Ace of Diamonds, Jack of Hearts.
+
+Player attacks with Ten of Clubs
+Computer defends with Queen of Diamonds
+Player attacks with Ten of Hearts
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Spades, Ten of Clubs, Queen of Diamonds, Ten of Hearts.
+Player's hand: Eight of Hearts, Nine of Spades, Jack of Clubs, Jack of Spades, Ace of Diamonds, Jack of Hearts.
+
+Player attacks with Eight of Hearts
+Computer defends with Ten of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Spades, Ten of Clubs, Queen of Diamonds.
+Player's hand: Nine of Spades, Jack of Clubs, Jack of Spades, Ace of Diamonds, Jack of Hearts.
+
+Computer attacks with Ten of Clubs
+Player defends with Jack of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Spades, Queen of Diamonds.
+Player's hand: Nine of Spades, Jack of Spades, Ace of Diamonds, Jack of Hearts.
+
+Player attacks with Jack of Spades
+Computer defends with King of Spades
+Player attacks with Jack of Hearts
+Computer defends with Queen of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: 
+Player's hand: Nine of Spades, Ace of Diamonds.
+
+Player loses the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:35:PM
+
+Computer's hand: Ace of Diamonds, Queen of Hearts, Eight of Clubs, Ace of Hearts, Queen of Spades, King of Spades.
+Player's hand: Jack of Clubs, Seven of Diamonds, Nine of Hearts, Seven of Clubs, Queen of Clubs, Ace of Clubs.
+
+Trump card: Six of Clubs
+
+------------------------------------------------------------------------------------------------------------------
+Player attacks with Seven of Diamonds
+Computer defends with Ace of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Hearts, Eight of Clubs, Ace of Hearts, Queen of Spades, King of Spades, Eight of Hearts.
+Player's hand: Jack of Clubs, Nine of Hearts, Seven of Clubs, Queen of Clubs, Ace of Clubs, Ten of Clubs.
+
+Computer attacks with Eight of Hearts
+Player defends with Nine of Hearts
+Computer attacks with Eight of Clubs
+Player defends with Ten of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Hearts, Ace of Hearts, Queen of Spades, King of Spades, King of Hearts, Six of Spades.
+Player's hand: Jack of Clubs, Seven of Clubs, Queen of Clubs, Ace of Clubs, Eight of Diamonds, Six of Hearts.
+
+Player attacks with Six of Hearts
+Computer defends with Queen of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Queen of Spades, King of Spades, King of Hearts, Six of Spades, King of Diamonds.
+Player's hand: Jack of Clubs, Seven of Clubs, Queen of Clubs, Ace of Clubs, Eight of Diamonds, Nine of Clubs.
+
+Computer attacks with Six of Spades
+Player defends with Seven of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Queen of Spades, King of Spades, King of Hearts, King of Diamonds, Jack of Spades.
+Player's hand: Jack of Clubs, Queen of Clubs, Ace of Clubs, Eight of Diamonds, Nine of Clubs, Seven of Hearts.
+
+Player attacks with Seven of Hearts
+Computer defends with King of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Queen of Spades, King of Spades, King of Diamonds, Jack of Spades, Jack of Diamonds.
+Player's hand: Jack of Clubs, Queen of Clubs, Ace of Clubs, Eight of Diamonds, Nine of Clubs, Seven of Spades.
+
+Computer attacks with Jack of Spades
+Player defends with Nine of Clubs
+Computer attacks with Jack of Diamonds
+Player defends with Jack of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, Queen of Spades, King of Spades, King of Diamonds, Queen of Diamonds, Six of Diamonds.
+Player's hand: Queen of Clubs, Ace of Clubs, Eight of Diamonds, Seven of Spades, Jack of Hearts, Ten of Spades.
+
+Player attacks with Seven of Spades
+Computer defends with Queen of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, King of Spades, King of Diamonds, Queen of Diamonds, Six of Diamonds, Eight of Spades.
+Player's hand: Queen of Clubs, Ace of Clubs, Eight of Diamonds, Jack of Hearts, Ten of Spades, Nine of Diamonds.
+
+Computer attacks with Six of Diamonds
+Player defends with Eight of Diamonds
+Computer attacks with Eight of Spades
+Player defends with Ten of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, King of Spades, King of Diamonds, Queen of Diamonds, Ten of Hearts, King of Clubs.
+Player's hand: Queen of Clubs, Ace of Clubs, Jack of Hearts, Nine of Diamonds, Nine of Spades, Ten of Diamonds.
+
+Player attacks with Nine of Diamonds
+Computer defends with Queen of Diamonds
+Player attacks with Nine of Spades
+Computer defends with King of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, King of Diamonds, Ten of Hearts, King of Clubs, Six of Clubs.
+Player's hand: Queen of Clubs, Ace of Clubs, Jack of Hearts, Ten of Diamonds, Ace of Spades.
+
+Computer attacks with Ten of Hearts
+Player defends with Jack of Hearts
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, King of Diamonds, King of Clubs, Six of Clubs.
+Player's hand: Queen of Clubs, Ace of Clubs, Ten of Diamonds, Ace of Spades.
+
+Player attacks with Ten of Diamonds
+Computer defends with King of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Hearts, King of Clubs, Six of Clubs.
+Player's hand: Queen of Clubs, Ace of Clubs, Ace of Spades.
+
+Computer attacks with Ace of Hearts
+Player defends with Queen of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Clubs, Six of Clubs.
+Player's hand: Ace of Clubs, Ace of Spades.
+
+Player attacks with Ace of Clubs
+Player attacks with Ace of Spades
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Clubs, Six of Clubs, Ace of Clubs, Ace of Spades.
+Player's hand: 
+
+Player wins the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:37:PM
+
+Computer's hand: Six of Spades, Queen of Spades, Eight of Clubs, Ten of Diamonds, King of Diamonds, Jack of Diamonds.
+Player's hand: Ace of Hearts, Jack of Hearts, Queen of Hearts, Jack of Clubs, Nine of Diamonds, King of Spades.
+
+Trump card: Ten of Clubs
+
+------------------------------------------------------------------------------------------------------------------
+Computer attacks with Six of Spades
+Player defends with King of Spades
+Computer attacks with King of Diamonds
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, Eight of Clubs, Ten of Diamonds, Jack of Diamonds, King of Hearts, Seven of Hearts.
+Player's hand: Ace of Hearts, Jack of Hearts, Queen of Hearts, Jack of Clubs, Nine of Diamonds, Six of Spades, King of Spades, King of Diamonds.
+
+Computer attacks with Seven of Hearts
+Player defends with Jack of Hearts
+Computer attacks with Jack of Diamonds
+Player defends with King of Diamonds
+Computer attacks with King of Hearts
+Player defends with Ace of Hearts
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, Eight of Clubs, Ten of Diamonds, Six of Clubs, Ace of Clubs, King of Clubs.
+Player's hand: Queen of Hearts, Jack of Clubs, Nine of Diamonds, Six of Spades, King of Spades, Queen of Diamonds.
+
+Player attacks with Six of Spades
+Computer defends with Queen of Spades
+Player attacks with Queen of Diamonds
+Computer defends with Six of Clubs
+Player attacks with Queen of Hearts
+Computer defends with Eight of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, King of Clubs, Ten of Spades, Six of Hearts, Eight of Diamonds.
+Player's hand: Jack of Clubs, Nine of Diamonds, King of Spades, Ace of Spades, Eight of Spades, Queen of Clubs.
+
+Computer attacks with Six of Hearts
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, King of Clubs, Ten of Spades, Eight of Diamonds, Nine of Hearts.
+Player's hand: Jack of Clubs, Nine of Diamonds, King of Spades, Ace of Spades, Eight of Spades, Queen of Clubs, Six of Hearts.
+
+Computer attacks with Eight of Diamonds
+Player defends with Nine of Diamonds
+Computer attacks with Nine of Hearts
+Player defends with Jack of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, King of Clubs, Ten of Spades, Ten of Hearts, Nine of Spades.
+Player's hand: King of Spades, Ace of Spades, Eight of Spades, Queen of Clubs, Six of Hearts, Seven of Diamonds.
+
+Player attacks with Six of Hearts
+Computer defends with Ten of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, King of Clubs, Ten of Spades, Nine of Spades, Ace of Diamonds.
+Player's hand: King of Spades, Ace of Spades, Eight of Spades, Queen of Clubs, Seven of Diamonds, Nine of Clubs.
+
+Computer attacks with Nine of Spades
+Player defends with King of Spades
+Computer attacks with King of Clubs
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, Ten of Spades, Ace of Diamonds, Seven of Clubs, Six of Diamonds.
+Player's hand: Ace of Spades, Eight of Spades, Queen of Clubs, Seven of Diamonds, Nine of Clubs, Nine of Spades, King of Spades, King of Clubs.
+
+Computer attacks with Six of Diamonds
+Player defends with Seven of Diamonds
+Computer attacks with Seven of Clubs
+Player defends with Nine of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, Ten of Spades, Ace of Diamonds, Seven of Spades, Eight of Hearts.
+Player's hand: Ace of Spades, Eight of Spades, Queen of Clubs, Nine of Spades, King of Spades, King of Clubs.
+
+Player attacks with Eight of Spades
+Computer defends with Ten of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, Ace of Diamonds, Seven of Spades, Eight of Hearts, Ten of Clubs.
+Player's hand: Ace of Spades, Queen of Clubs, Nine of Spades, King of Spades, King of Clubs, Jack of Spades.
+
+Computer attacks with Seven of Spades
+Player defends with Nine of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, Ace of Diamonds, Eight of Hearts, Ten of Clubs.
+Player's hand: Ace of Spades, Queen of Clubs, King of Spades, King of Clubs, Jack of Spades.
+
+Player attacks with Jack of Spades
+Computer defends with Ten of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, Ace of Diamonds, Eight of Hearts.
+Player's hand: Ace of Spades, Queen of Clubs, King of Spades, King of Clubs.
+
+Computer attacks with Eight of Hearts
+Player defends with Queen of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Clubs, Ace of Diamonds.
+Player's hand: Ace of Spades, King of Spades, King of Clubs.
+
+Player attacks with King of Spades
+Computer defends with Ace of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Ace of Diamonds.
+Player's hand: Ace of Spades, King of Clubs.
+
+Computer attacks with Ten of Diamonds
+Player defends with King of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds.
+Player's hand: Ace of Spades.
+
+Player attacks with Ace of Spades
+Player wins the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:39:PM
+
+Computer's hand: Eight of Hearts, Jack of Spades, Nine of Hearts, Six of Hearts, Seven of Clubs, King of Hearts.
+Player's hand: Queen of Spades, Eight of Clubs, Six of Spades, Nine of Clubs, Seven of Hearts, Ace of Spades.
+
+Trump card: Nine of Diamonds
+
+------------------------------------------------------------------------------------------------------------------
+Computer attacks with Six of Hearts
+Player defends with Seven of Hearts
+Computer attacks with Seven of Clubs
+Player defends with Eight of Clubs
+Computer attacks with Eight of Hearts
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Spades, Nine of Hearts, King of Hearts, King of Spades, Ace of Diamonds, Eight of Diamonds.
+Player's hand: Queen of Spades, Six of Spades, Nine of Clubs, Ace of Spades, Six of Hearts, Seven of Hearts, Seven of Clubs, Eight of Clubs, Eight of Hearts.
+
+Computer attacks with Nine of Hearts
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Spades, King of Hearts, King of Spades, Ace of Diamonds, Eight of Diamonds, King of Diamonds.
+Player's hand: Queen of Spades, Six of Spades, Nine of Clubs, Ace of Spades, Six of Hearts, Seven of Hearts, Seven of Clubs, Eight of Clubs, Eight of Hearts, Nine of Hearts.
+
+Computer attacks with Jack of Spades
+Player defends with Queen of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, King of Spades, Ace of Diamonds, Eight of Diamonds, King of Diamonds, Queen of Diamonds.
+Player's hand: Six of Spades, Nine of Clubs, Ace of Spades, Six of Hearts, Seven of Hearts, Seven of Clubs, Eight of Clubs, Eight of Hearts, Nine of Hearts.
+
+Player attacks with Six of Hearts
+Computer defends with King of Hearts
+Player attacks with Six of Spades
+Computer defends with King of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Eight of Diamonds, King of Diamonds, Queen of Diamonds, Ten of Clubs, Jack of Hearts.
+Player's hand: Nine of Clubs, Ace of Spades, Seven of Hearts, Seven of Clubs, Eight of Clubs, Eight of Hearts, Nine of Hearts.
+
+Computer attacks with Ten of Clubs
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Eight of Diamonds, King of Diamonds, Queen of Diamonds, Jack of Hearts, Jack of Clubs.
+Player's hand: Nine of Clubs, Ace of Spades, Seven of Hearts, Seven of Clubs, Eight of Clubs, Eight of Hearts, Nine of Hearts, Ten of Clubs.
+
+Computer attacks with Jack of Hearts
+Player clicks on the Take button.
+Computer attacks with Jack of Clubs
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Eight of Diamonds, King of Diamonds, Queen of Diamonds, Jack of Diamonds, Seven of Spades.
+Player's hand: Nine of Clubs, Ace of Spades, Seven of Hearts, Seven of Clubs, Eight of Clubs, Eight of Hearts, Nine of Hearts, Ten of Clubs, Jack of Hearts, Jack of Clubs.
+
+Computer attacks with Seven of Spades
+Player defends with Ace of Spades
+Computer attacks with Ace of Diamonds
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Eight of Diamonds, King of Diamonds, Queen of Diamonds, Jack of Diamonds, Ace of Hearts, Seven of Diamonds.
+Player's hand: Nine of Clubs, Seven of Hearts, Seven of Clubs, Eight of Clubs, Eight of Hearts, Nine of Hearts, Ten of Clubs, Jack of Hearts, Jack of Clubs, Seven of Spades, Ace of Spades, Ace of Diamonds.
+
+Computer attacks with Ace of Hearts
+Player defends with Ace of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Eight of Diamonds, King of Diamonds, Queen of Diamonds, Jack of Diamonds, Seven of Diamonds, King of Clubs.
+Player's hand: Nine of Clubs, Seven of Hearts, Seven of Clubs, Eight of Clubs, Eight of Hearts, Nine of Hearts, Ten of Clubs, Jack of Hearts, Jack of Clubs, Seven of Spades, Ace of Spades.
+
+Player attacks with Seven of Clubs
+Computer defends with King of Clubs
+Player attacks with Seven of Hearts
+Computer defends with Seven of Diamonds
+Player attacks with Seven of Spades
+Computer defends with Eight of Diamonds
+Player attacks with Eight of Hearts
+Computer defends with Jack of Diamonds
+Player attacks with Eight of Clubs
+Computer defends with Queen of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Ten of Hearts, Ace of Clubs, Queen of Hearts, Queen of Clubs, Ten of Diamonds.
+Player's hand: Nine of Clubs, Nine of Hearts, Ten of Clubs, Jack of Hearts, Jack of Clubs, Ace of Spades.
+
+Computer attacks with Ten of Hearts
+Player defends with Jack of Hearts
+Computer attacks with Ten of Diamonds
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Ace of Clubs, Queen of Hearts, Queen of Clubs, Ten of Spades, Nine of Spades.
+Player's hand: Nine of Clubs, Nine of Hearts, Ten of Clubs, Jack of Clubs, Ace of Spades, Ten of Hearts, Jack of Hearts, Ten of Diamonds.
+
+Computer attacks with Nine of Spades
+Player defends with Ace of Spades
+Computer attacks with Ace of Clubs
+Player defends with Ten of Diamonds
+Computer attacks with Ten of Spades
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Queen of Hearts, Queen of Clubs, Eight of Spades, Six of Diamonds, Six of Clubs.
+Player's hand: Nine of Clubs, Nine of Hearts, Ten of Clubs, Jack of Clubs, Ten of Hearts, Jack of Hearts, Nine of Spades, Ace of Spades, Ace of Clubs, Ten of Diamonds, Ten of Spades.
+
+Computer attacks with Six of Clubs
+Player defends with Nine of Clubs
+Computer attacks with Six of Diamonds
+Player defends with Ten of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Queen of Hearts, Queen of Clubs, Eight of Spades, Nine of Diamonds.
+Player's hand: Nine of Hearts, Ten of Clubs, Jack of Clubs, Ten of Hearts, Jack of Hearts, Nine of Spades, Ace of Spades, Ace of Clubs, Ten of Spades.
+
+Player attacks with Nine of Spades
+Computer defends with Nine of Diamonds
+Player attacks with Nine of Hearts
+Computer defends with Queen of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Queen of Clubs, Eight of Spades.
+Player's hand: Ten of Clubs, Jack of Clubs, Ten of Hearts, Jack of Hearts, Ace of Spades, Ace of Clubs, Ten of Spades.
+
+Computer attacks with Eight of Spades
+Player defends with Ten of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Queen of Clubs.
+Player's hand: Ten of Clubs, Jack of Clubs, Ten of Hearts, Jack of Hearts, Ace of Spades, Ace of Clubs.
+
+Player attacks with Ace of Clubs
+Computer defends with King of Diamonds
+Player attacks with Ace of Spades
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Clubs, Ace of Clubs, King of Diamonds, Ace of Spades.
+Player's hand: Ten of Clubs, Jack of Clubs, Ten of Hearts, Jack of Hearts.
+
+Player attacks with Ten of Clubs
+Computer defends with Queen of Clubs
+Player attacks with Ten of Hearts
+Computer defends with King of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Clubs, Ace of Spades.
+Player's hand: Jack of Clubs, Jack of Hearts.
+
+Computer attacks with Ace of Clubs
+Player clicks on the Take button.
+Computer attacks with Ace of Spades
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: 
+Player's hand: Jack of Clubs, Jack of Hearts, Ace of Clubs, Ace of Spades.
+
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: 
+Player's hand: Jack of Clubs, Jack of Hearts, Ace of Clubs, Ace of Spades.
+
+Player loses the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:41:PM
+
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Seven of Clubs, Ace of Spades, Jack of Diamonds, Six of Spades.
+Player's hand: Eight of Clubs, Jack of Hearts, Queen of Spades, Nine of Hearts, Ten of Clubs, King of Diamonds.
+
+Trump card: Ace of Clubs
+
+------------------------------------------------------------------------------------------------------------------
+Computer attacks with Six of Spades
+Player defends with Queen of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Seven of Clubs, Ace of Spades, Jack of Diamonds, Seven of Diamonds.
+Player's hand: Eight of Clubs, Jack of Hearts, Nine of Hearts, Ten of Clubs, King of Diamonds, Jack of Spades.
+
+Player attacks with Nine of Hearts
+Computer defends with Seven of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Ace of Spades, Jack of Diamonds, Seven of Diamonds, Ace of Hearts.
+Player's hand: Eight of Clubs, Jack of Hearts, Ten of Clubs, King of Diamonds, Jack of Spades, Seven of Spades.
+
+Computer attacks with Seven of Diamonds
+Player defends with King of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Ace of Spades, Jack of Diamonds, Ace of Hearts, Ten of Hearts.
+Player's hand: Eight of Clubs, Jack of Hearts, Ten of Clubs, Jack of Spades, Seven of Spades, Nine of Clubs.
+
+Player attacks with Seven of Spades
+Computer defends with Ace of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Jack of Diamonds, Ace of Hearts, Ten of Hearts, Eight of Diamonds.
+Player's hand: Eight of Clubs, Jack of Hearts, Ten of Clubs, Jack of Spades, Nine of Clubs, Six of Hearts.
+
+Computer attacks with Eight of Diamonds
+Player defends with Eight of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Jack of Diamonds, Ace of Hearts, Ten of Hearts, Nine of Diamonds.
+Player's hand: Jack of Hearts, Ten of Clubs, Jack of Spades, Nine of Clubs, Six of Hearts, Eight of Hearts.
+
+Player attacks with Six of Hearts
+Computer defends with Ten of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Jack of Diamonds, Ace of Hearts, Nine of Diamonds, Queen of Clubs.
+Player's hand: Jack of Hearts, Ten of Clubs, Jack of Spades, Nine of Clubs, Eight of Hearts, Nine of Spades.
+
+Computer attacks with Nine of Diamonds
+Player defends with Nine of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Jack of Diamonds, Ace of Hearts, Queen of Clubs, Six of Clubs.
+Player's hand: Jack of Hearts, Ten of Clubs, Jack of Spades, Eight of Hearts, Nine of Spades, King of Hearts.
+
+Player attacks with Eight of Hearts
+Computer defends with Ace of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ten of Diamonds, Jack of Diamonds, Queen of Clubs, Six of Clubs, Queen of Hearts.
+Player's hand: Jack of Hearts, Ten of Clubs, Jack of Spades, Nine of Spades, King of Hearts, Queen of Diamonds.
+
+Computer attacks with Ten of Diamonds
+Player defends with Queen of Diamonds
+Computer attacks with Queen of Hearts
+Player defends with King of Hearts
+Computer attacks with Queen of Clubs
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Jack of Diamonds, Six of Clubs, King of Clubs, Seven of Hearts, Jack of Clubs.
+Player's hand: Jack of Hearts, Ten of Clubs, Jack of Spades, Nine of Spades, Ten of Diamonds, Queen of Diamonds, Queen of Hearts, King of Hearts, Queen of Clubs.
+
+Computer attacks with Seven of Hearts
+Player defends with Jack of Hearts
+Computer attacks with Jack of Diamonds
+Player defends with Queen of Diamonds
+Computer attacks with Jack of Clubs
+Player defends with Queen of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Six of Clubs, King of Clubs, Ten of Spades, Six of Diamonds, King of Spades.
+Player's hand: Ten of Clubs, Jack of Spades, Nine of Spades, Ten of Diamonds, Queen of Hearts, King of Hearts.
+
+Player attacks with Nine of Spades
+Computer defends with Ten of Spades
+Player attacks with Ten of Diamonds
+Computer defends with Ace of Diamonds
+Player attacks with Ten of Clubs
+Computer defends with King of Clubs
+Player attacks with King of Hearts
+Computer defends with Six of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Six of Diamonds, King of Spades, Ace of Clubs.
+Player's hand: Jack of Spades, Queen of Hearts, Eight of Spades.
+
+Computer attacks with Six of Diamonds
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Spades, Ace of Clubs.
+Player's hand: Jack of Spades, Queen of Hearts, Eight of Spades, Six of Diamonds.
+
+Computer attacks with King of Spades
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Clubs.
+Player's hand: Jack of Spades, Queen of Hearts, Eight of Spades, Six of Diamonds, King of Spades.
+
+Computer attacks with Ace of Clubs
+Player loses the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:43:PM
+
+Computer's hand: King of Hearts, Seven of Spades, Nine of Clubs, Queen of Hearts, Nine of Diamonds, King of Clubs.
+Player's hand: King of Spades, Six of Spades, Jack of Hearts, Six of Diamonds, Ace of Clubs, Seven of Hearts.
+
+Trump card: Ace of Spades
+
+------------------------------------------------------------------------------------------------------------------
+Player attacks with Six of Diamonds
+Computer defends with Nine of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, Seven of Spades, Nine of Clubs, Queen of Hearts, King of Clubs, Six of Hearts.
+Player's hand: King of Spades, Six of Spades, Jack of Hearts, Ace of Clubs, Seven of Hearts, Queen of Clubs.
+
+Computer attacks with Six of Hearts
+Player defends with Seven of Hearts
+Computer attacks with Seven of Spades
+Player clicks on the Take button.
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, Nine of Clubs, Queen of Hearts, King of Clubs, Jack of Spades, Ten of Spades.
+Player's hand: King of Spades, Six of Spades, Jack of Hearts, Ace of Clubs, Queen of Clubs, Six of Hearts, Seven of Hearts, Seven of Spades.
+
+Computer attacks with Nine of Clubs
+Player defends with Queen of Clubs
+Computer attacks with Queen of Hearts
+Player defends with Six of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, King of Clubs, Jack of Spades, Ten of Spades, Jack of Clubs, Nine of Hearts.
+Player's hand: King of Spades, Jack of Hearts, Ace of Clubs, Six of Hearts, Seven of Hearts, Seven of Spades.
+
+Player attacks with Seven of Spades
+Computer defends with Ten of Spades
+Player attacks with Seven of Hearts
+Computer defends with Nine of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Hearts, King of Clubs, Jack of Spades, Jack of Clubs, Eight of Hearts, Eight of Spades.
+Player's hand: King of Spades, Jack of Hearts, Ace of Clubs, Six of Hearts, Jack of Diamonds, Seven of Diamonds.
+
+Computer attacks with Eight of Hearts
+Player defends with Jack of Hearts
+Computer attacks with Jack of Clubs
+Player defends with Ace of Clubs
+Computer attacks with Eight of Spades
+Player defends with King of Spades
+Computer attacks with King of Hearts
+Player clicks on the Take button.
+Computer attacks with King of Clubs
+Computer attacks with Jack of Spades
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Clubs, Ace of Hearts, Ten of Diamonds, King of Diamonds, Seven of Clubs, Nine of Spades.
+Player's hand: Six of Hearts, Jack of Diamonds, Seven of Diamonds, Eight of Hearts, Jack of Hearts, Jack of Clubs, Ace of Clubs, Eight of Spades, King of Spades, King of Hearts, King of Clubs, Jack of Spades.
+
+Computer attacks with Seven of Clubs
+Player defends with Jack of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Clubs, Ace of Hearts, Ten of Diamonds, King of Diamonds, Nine of Spades, Ten of Hearts.
+Player's hand: Six of Hearts, Jack of Diamonds, Seven of Diamonds, Eight of Hearts, Jack of Hearts, Ace of Clubs, Eight of Spades, King of Spades, King of Hearts, King of Clubs, Jack of Spades.
+
+Player attacks with Eight of Hearts
+Computer defends with Ten of Hearts
+Player attacks with Eight of Spades
+Computer defends with Nine of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Clubs, Ace of Hearts, Ten of Diamonds, King of Diamonds, Ace of Diamonds, Eight of Diamonds.
+Player's hand: Six of Hearts, Jack of Diamonds, Seven of Diamonds, Jack of Hearts, Ace of Clubs, King of Spades, King of Hearts, King of Clubs, Jack of Spades.
+
+Computer attacks with Eight of Diamonds
+Player defends with Jack of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Clubs, Ace of Hearts, Ten of Diamonds, King of Diamonds, Ace of Diamonds, Queen of Diamonds.
+Player's hand: Six of Hearts, Seven of Diamonds, Jack of Hearts, Ace of Clubs, King of Spades, King of Hearts, King of Clubs, Jack of Spades.
+
+Player attacks with Six of Hearts
+Computer defends with Ace of Hearts
+Player attacks with Ace of Clubs
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Clubs, Ten of Diamonds, King of Diamonds, Ace of Diamonds, Queen of Diamonds, Six of Hearts, Ace of Hearts, Ace of Clubs.
+Player's hand: Seven of Diamonds, Jack of Hearts, King of Spades, King of Hearts, King of Clubs, Jack of Spades.
+
+Player attacks with Seven of Diamonds
+Computer defends with Ten of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Clubs, King of Diamonds, Ace of Diamonds, Queen of Diamonds, Six of Hearts, Ace of Hearts, Ace of Clubs.
+Player's hand: Jack of Hearts, King of Spades, King of Hearts, King of Clubs, Jack of Spades, Six of Clubs.
+
+Computer attacks with Six of Hearts
+Player defends with Jack of Hearts
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Clubs, King of Diamonds, Ace of Diamonds, Queen of Diamonds, Ace of Hearts, Ace of Clubs.
+Player's hand: King of Spades, King of Hearts, King of Clubs, Jack of Spades, Six of Clubs, Queen of Spades.
+
+Player attacks with Six of Clubs
+Computer defends with Ten of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Ace of Diamonds, Queen of Diamonds, Ace of Hearts, Ace of Clubs, Ace of Spades.
+Player's hand: King of Spades, King of Hearts, King of Clubs, Jack of Spades, Queen of Spades, Eight of Clubs.
+
+Computer attacks with Queen of Diamonds
+Player defends with Jack of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Ace of Diamonds, Ace of Hearts, Ace of Clubs, Ace of Spades.
+Player's hand: King of Spades, King of Hearts, King of Clubs, Queen of Spades, Eight of Clubs.
+
+Player attacks with Eight of Clubs
+Computer defends with Ace of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Diamonds, Ace of Diamonds, Ace of Hearts, Ace of Spades.
+Player's hand: King of Spades, King of Hearts, King of Clubs, Queen of Spades.
+
+Computer attacks with King of Diamonds
+Player defends with Queen of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ace of Hearts, Ace of Spades.
+Player's hand: King of Spades, King of Hearts, King of Clubs.
+
+Player attacks with King of Clubs
+Computer defends with Ace of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Diamonds, Ace of Hearts.
+Player's hand: King of Spades, King of Hearts.
+
+Computer attacks with Ace of Diamonds
+Player defends with King of Spades
+Computer attacks with Ace of Hearts
+Player clicks on the Take button.
+Player loses the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:44:PM
+
+Computer's hand: Ten of Diamonds, Seven of Hearts, Eight of Hearts, Ace of Clubs, King of Clubs, Eight of Diamonds.
+Player's hand: Nine of Diamonds, Ace of Spades, Ace of Hearts, Ten of Hearts, King of Spades, Queen of Hearts.
+
+Trump card: Queen of Diamonds
+
+------------------------------------------------------------------------------------------------------------------
+Computer attacks with Seven of Hearts
+Player defends with Queen of Hearts
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Eight of Hearts, Ace of Clubs, King of Clubs, Eight of Diamonds, Six of Hearts.
+Player's hand: Nine of Diamonds, Ace of Spades, Ace of Hearts, Ten of Hearts, King of Spades, King of Hearts.
+
+Player attacks with Ten of Hearts
+Computer defends with Eight of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Eight of Hearts, Ace of Clubs, King of Clubs, Six of Hearts, Six of Spades.
+Player's hand: Nine of Diamonds, Ace of Spades, Ace of Hearts, King of Spades, King of Hearts, Ace of Diamonds.
+
+Computer attacks with Six of Hearts
+Player defends with King of Hearts
+Computer attacks with Six of Spades
+Player defends with King of Spades
+Computer attacks with King of Clubs
+Player defends with Nine of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Eight of Hearts, Ace of Clubs, Jack of Spades, Seven of Diamonds, Nine of Spades.
+Player's hand: Ace of Spades, Ace of Hearts, Ace of Diamonds, Jack of Clubs, Six of Clubs, Six of Diamonds.
+
+Player attacks with Six of Clubs
+Computer defends with Ace of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Eight of Hearts, Jack of Spades, Seven of Diamonds, Nine of Spades, King of Diamonds.
+Player's hand: Ace of Spades, Ace of Hearts, Ace of Diamonds, Jack of Clubs, Six of Diamonds, Seven of Clubs.
+
+Computer attacks with Eight of Hearts
+Player defends with Ace of Hearts
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Jack of Spades, Seven of Diamonds, Nine of Spades, King of Diamonds, Nine of Hearts.
+Player's hand: Ace of Spades, Ace of Diamonds, Jack of Clubs, Six of Diamonds, Seven of Clubs, Queen of Spades.
+
+Player attacks with Seven of Clubs
+Computer defends with Seven of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Jack of Spades, Nine of Spades, King of Diamonds, Nine of Hearts, Eight of Spades.
+Player's hand: Ace of Spades, Ace of Diamonds, Jack of Clubs, Six of Diamonds, Queen of Spades, Jack of Diamonds.
+
+Computer attacks with Eight of Spades
+Player defends with Queen of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Diamonds, Jack of Spades, Nine of Spades, King of Diamonds, Nine of Hearts, Eight of Clubs.
+Player's hand: Ace of Spades, Ace of Diamonds, Jack of Clubs, Six of Diamonds, Jack of Diamonds, Ten of Clubs.
+
+Player attacks with Ten of Clubs
+Computer defends with Ten of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Jack of Spades, Nine of Spades, King of Diamonds, Nine of Hearts, Eight of Clubs, Queen of Clubs.
+Player's hand: Ace of Spades, Ace of Diamonds, Jack of Clubs, Six of Diamonds, Jack of Diamonds, Jack of Hearts.
+
+Computer attacks with Eight of Clubs
+Player defends with Jack of Clubs
+Computer attacks with Jack of Spades
+Player defends with Ace of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Nine of Spades, King of Diamonds, Nine of Hearts, Queen of Clubs, Ten of Spades, Seven of Spades.
+Player's hand: Ace of Diamonds, Six of Diamonds, Jack of Diamonds, Jack of Hearts, Nine of Clubs, Queen of Diamonds.
+
+Player attacks with Nine of Clubs
+Computer defends with Queen of Clubs
+Player attacks with Queen of Diamonds
+Computer defends with King of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Nine of Spades, Nine of Hearts, Ten of Spades, Seven of Spades.
+Player's hand: Ace of Diamonds, Six of Diamonds, Jack of Diamonds, Jack of Hearts.
+
+Computer attacks with Seven of Spades
+Player defends with Six of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Nine of Spades, Nine of Hearts, Ten of Spades.
+Player's hand: Ace of Diamonds, Jack of Diamonds, Jack of Hearts.
+
+Player attacks with Jack of Hearts
+Player attacks with Jack of Diamonds
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Nine of Spades, Nine of Hearts, Ten of Spades, Jack of Hearts, Jack of Diamonds.
+Player's hand: Ace of Diamonds.
+
+Player attacks with Ace of Diamonds
+Player wins the game.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:46:PM
+
+Computer's hand: Eight of Spades, King of Diamonds, Nine of Spades, Ace of Spades, Ace of Clubs, King of Clubs.
+Player's hand: Nine of Hearts, Seven of Diamonds, Seven of Spades, Ten of Diamonds, Queen of Clubs, Nine of Clubs.
+
+Trump card: Seven of Clubs
+
+------------------------------------------------------------------------------------------------------------------
+Player attacks with Seven of Diamonds
+Computer defends with King of Diamonds
+Player attacks with Seven of Spades
+Computer defends with Eight of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Nine of Spades, Ace of Spades, Ace of Clubs, King of Clubs, Seven of Hearts, Jack of Hearts.
+Player's hand: Nine of Hearts, Ten of Diamonds, Queen of Clubs, Nine of Clubs, Queen of Diamonds, Six of Diamonds.
+
+Computer attacks with Seven of Hearts
+Player defends with Nine of Hearts
+Computer attacks with Nine of Spades
+Player defends with Nine of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Spades, Ace of Clubs, King of Clubs, Jack of Hearts, Jack of Diamonds, Eight of Diamonds.
+Player's hand: Ten of Diamonds, Queen of Clubs, Queen of Diamonds, Six of Diamonds, Ace of Hearts, Ten of Hearts.
+
+Player attacks with Six of Diamonds
+Computer defends with Eight of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Spades, Ace of Clubs, King of Clubs, Jack of Hearts, Jack of Diamonds, Jack of Clubs.
+Player's hand: Ten of Diamonds, Queen of Clubs, Queen of Diamonds, Ace of Hearts, Ten of Hearts, Ten of Spades.
+
+Computer attacks with Jack of Hearts
+Player defends with Ace of Hearts
+Computer attacks with Jack of Diamonds
+Player defends with Queen of Diamonds
+Computer attacks with Ace of Spades
+Player defends with Queen of Clubs
+Computer attacks with Jack of Clubs
+Player clicks on the Take button.
+Computer attacks with Ace of Clubs
+Player picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Clubs, Queen of Hearts, Queen of Spades, Six of Spades, Jack of Spades, Eight of Hearts.
+Player's hand: Ten of Diamonds, Ten of Hearts, Ten of Spades, Jack of Hearts, Ace of Hearts, Jack of Diamonds, Queen of Diamonds, Ace of Spades, Queen of Clubs, Jack of Clubs, Ace of Clubs.
+
+Computer attacks with Six of Spades
+Player defends with Ten of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: King of Clubs, Queen of Hearts, Queen of Spades, Jack of Spades, Eight of Hearts, Six of Hearts.
+Player's hand: Ten of Diamonds, Ten of Hearts, Jack of Hearts, Ace of Hearts, Jack of Diamonds, Queen of Diamonds, Ace of Spades, Queen of Clubs, Jack of Clubs, Ace of Clubs.
+
+Player attacks with Ten of Diamonds
+Computer defends with King of Clubs
+Player attacks with Ten of Hearts
+Computer defends with Queen of Hearts
+Player attacks with Queen of Diamonds
+Player clicks on the Ready button.
+Computer picks up the cards from the table.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, Jack of Spades, Eight of Hearts, Six of Hearts, Ten of Diamonds, King of Clubs, Ten of Hearts, Queen of Hearts, Queen of Diamonds.
+Player's hand: Jack of Hearts, Ace of Hearts, Jack of Diamonds, Ace of Spades, Queen of Clubs, Jack of Clubs, Ace of Clubs.
+
+Player attacks with Jack of Diamonds
+Computer defends with Queen of Diamonds
+Player attacks with Jack of Hearts
+Computer defends with Queen of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, Jack of Spades, Eight of Hearts, Six of Hearts, Ten of Diamonds, King of Clubs, Ten of Hearts.
+Player's hand: Ace of Hearts, Ace of Spades, Queen of Clubs, Jack of Clubs, Ace of Clubs, King of Hearts.
+
+Computer attacks with Six of Hearts
+Player defends with King of Hearts
+Computer attacks with King of Clubs
+Player defends with Ace of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, Jack of Spades, Eight of Hearts, Ten of Diamonds, Ten of Hearts, Ace of Diamonds.
+Player's hand: Ace of Hearts, Ace of Spades, Queen of Clubs, Jack of Clubs, King of Spades, Nine of Diamonds.
+
+Player attacks with Nine of Diamonds
+Computer defends with Ten of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, Jack of Spades, Eight of Hearts, Ten of Hearts, Ace of Diamonds, Eight of Clubs.
+Player's hand: Ace of Hearts, Ace of Spades, Queen of Clubs, Jack of Clubs, King of Spades, Six of Clubs.
+
+Computer attacks with Eight of Hearts
+Player defends with Ace of Hearts
+Computer attacks with Ace of Diamonds
+Player defends with Six of Clubs
+Computer attacks with Eight of Clubs
+Player defends with Jack of Clubs
+Computer attacks with Jack of Spades
+Player defends with Ace of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, Ten of Hearts, Ten of Clubs.
+Player's hand: Queen of Clubs, King of Spades, Seven of Clubs.
+
+Player attacks with Seven of Clubs
+Computer defends with Ten of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Queen of Spades, Ten of Hearts.
+Player's hand: Queen of Clubs, King of Spades.
+
+Computer attacks with Ten of Hearts
+Player defends with Queen of Clubs
+Computer attacks with Queen of Spades
+Player defends with King of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: 
+Player's hand: 
+
+Game ends in a draw.
+Player clicks on the Reset button.
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-11-2020 11:50:PM
+
+Computer's hand: Ten of Hearts, Ace of Hearts, Ten of Diamonds, Ten of Clubs, Seven of Spades, Nine of Spades.
+Player's hand: Queen of Clubs, Seven of Clubs, Queen of Hearts, King of Diamonds, Eight of Clubs, Nine of Clubs.
+
+Trump card: Ace of Clubs
+
+------------------------------------------------------------------------------------------------------------------
+Player attacks with Queen of Hearts
+Computer defends with Ace of Hearts
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Ten of Diamonds, Ten of Clubs, Seven of Spades, Nine of Spades, Eight of Hearts.
+Player's hand: Queen of Clubs, Seven of Clubs, King of Diamonds, Eight of Clubs, Nine of Clubs, Six of Diamonds.
+
+Computer attacks with Seven of Spades
+Player defends with Seven of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Ten of Diamonds, Ten of Clubs, Nine of Spades, Eight of Hearts, Ten of Spades.
+Player's hand: Queen of Clubs, King of Diamonds, Eight of Clubs, Nine of Clubs, Six of Diamonds, Queen of Diamonds.
+
+Player attacks with Six of Diamonds
+Computer defends with Ten of Diamonds
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Ten of Clubs, Nine of Spades, Eight of Hearts, Ten of Spades, King of Hearts.
+Player's hand: Queen of Clubs, King of Diamonds, Eight of Clubs, Nine of Clubs, Queen of Diamonds, Queen of Spades.
+
+Computer attacks with Eight of Hearts
+Player defends with Eight of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Ten of Clubs, Nine of Spades, Ten of Spades, King of Hearts, Jack of Spades.
+Player's hand: Queen of Clubs, King of Diamonds, Nine of Clubs, Queen of Diamonds, Queen of Spades, Seven of Diamonds.
+
+Player attacks with Seven of Diamonds
+Computer defends with Ten of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Nine of Spades, Ten of Spades, King of Hearts, Jack of Spades, Ace of Spades.
+Player's hand: Queen of Clubs, King of Diamonds, Nine of Clubs, Queen of Diamonds, Queen of Spades, Six of Spades.
+
+Computer attacks with Nine of Spades
+Player defends with Queen of Spades
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Ten of Spades, King of Hearts, Jack of Spades, Ace of Spades, Nine of Diamonds.
+Player's hand: Queen of Clubs, King of Diamonds, Nine of Clubs, Queen of Diamonds, Six of Spades, Jack of Hearts.
+
+Player attacks with Six of Spades
+Computer defends with Ten of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, King of Hearts, Jack of Spades, Ace of Spades, Nine of Diamonds, King of Clubs.
+Player's hand: Queen of Clubs, King of Diamonds, Nine of Clubs, Queen of Diamonds, Jack of Hearts, Jack of Clubs.
+
+Computer attacks with Nine of Diamonds
+Player defends with Queen of Diamonds
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, King of Hearts, Jack of Spades, Ace of Spades, King of Clubs, Six of Clubs.
+Player's hand: Queen of Clubs, King of Diamonds, Nine of Clubs, Jack of Hearts, Jack of Clubs, Ace of Diamonds.
+
+Player attacks with Jack of Hearts
+Computer defends with King of Hearts
+Player attacks with King of Diamonds
+Computer defends with Six of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Jack of Spades, Ace of Spades, King of Clubs, Jack of Diamonds, Seven of Hearts.
+Player's hand: Queen of Clubs, Nine of Clubs, Jack of Clubs, Ace of Diamonds, Eight of Spades, Eight of Diamonds.
+
+Computer attacks with Seven of Hearts
+Player defends with Nine of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Jack of Spades, Ace of Spades, King of Clubs, Jack of Diamonds, King of Spades.
+Player's hand: Queen of Clubs, Jack of Clubs, Ace of Diamonds, Eight of Spades, Eight of Diamonds, Nine of Hearts.
+
+Player attacks with Eight of Diamonds
+Computer defends with Jack of Diamonds
+Player attacks with Eight of Spades
+Computer defends with Jack of Spades
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ten of Hearts, Ace of Spades, King of Clubs, King of Spades, Ace of Clubs.
+Player's hand: Queen of Clubs, Jack of Clubs, Ace of Diamonds, Nine of Hearts, Six of Hearts.
+
+Computer attacks with Ten of Hearts
+Player defends with Jack of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Spades, King of Clubs, King of Spades, Ace of Clubs.
+Player's hand: Queen of Clubs, Ace of Diamonds, Nine of Hearts, Six of Hearts.
+
+Player attacks with Six of Hearts
+Computer defends with King of Clubs
+Player clicks on the Ready button.
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Spades, King of Spades, Ace of Clubs.
+Player's hand: Queen of Clubs, Ace of Diamonds, Nine of Hearts.
+
+Computer attacks with King of Spades
+Player defends with Queen of Clubs
+
+NEW ROUND
+------------------------------------------------------------------------------------------------------------------
+Computer's hand: Ace of Spades, Ace of Clubs.
+Player's hand: Ace of Diamonds, Nine of Hearts.
+
+Player attacks with Nine of Hearts
+Computer defends with Ace of Clubs
+Player attacks with Ace of Diamonds
+Player wins the game.
+The game ended at 04-12-2020 12:03:AM
+==================================================================================================================
+
+
+==================================================================================================================
+The game was started at 04-12-2020 12:03:AM
+
+Computer's hand: King of Hearts, King of Clubs, Nine of Clubs, Ace of Spades, Jack of Clubs, Ten of Clubs.
+Player's hand: Queen of Diamonds, King of Diamonds, Queen of Hearts, Seven of Clubs, Seven of Diamonds, Eight of Spades.
+
+Trump card: Eight of Diamonds
+
+------------------------------------------------------------------------------------------------------------------
+The game ended at 04-12-2020 12:03:AM
+==================================================================================================================
+
+
